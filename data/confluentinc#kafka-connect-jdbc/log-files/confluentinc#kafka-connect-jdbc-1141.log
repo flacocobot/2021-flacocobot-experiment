@@ -1,0 +1,208 @@
+Execute pipeline with following supplementary args: --smtpPort 25 --listenerMode NOOP --launcherMode FAULT_LOCALIZATION  --gitrepourl https://github.com/confluentinc/kafka-connect-jdbc --gitrepopullrequest 1141
+java -cp /usr/local/openjdk-11/lib/tools.jar:repairnator-pipeline.jar -Dlogback.configurationFile=/root/logback.xml fr.inria.spirals.repairnator.pipeline.Launcher -d --runId null -o /var/log --ghOauth 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 --faultLocalization --flacocoThreshold 0.0 --flacocoTopK null --flacocoResultsRepository flacocobot/flacocobot-experiment-3 --ghOauth  --smtpPort 25 --listenerMode NOOP --launcherMode FAULT_LOCALIZATION  --gitrepourl https://github.com/confluentinc/kafka-connect-jdbc --gitrepopullrequest 1141
+
+02:11:41.870 [main] INFO  f.i.s.r.p.g.GithubInitSerializerEngines - Initialize file serializer engines.
+02:11:41.871 [main] INFO  f.i.s.r.p.g.GithubInitSerializerEngines - MongoDB won't be used for serialization.
+02:11:41.872 [main] INFO  f.i.s.r.p.github.GithubInitNotifiers - The email notifier engine won't be used.
+02:11:41.886 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:11:41.886 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE STEPS
+02:11:41.886 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:11:41.886 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneCheckoutGitPullRequest
+02:11:41.886 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject
+02:11:41.886 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject
+02:11:41.886 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath
+02:11:41.886 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir
+02:11:41.886 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir
+02:11:41.886 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation
+02:11:41.886 [main] INFO  f.i.s.r.p.i.ProjectInspector - FlacocoLocalization
+02:11:41.886 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushFaultLocalizationSuggestionsOnExternalRepository
+02:11:41.886 [main] INFO  f.i.s.r.p.s.CloneCheckoutGitPullRequest - Cloning repository https://github.com/confluentinc/kafka-connect-jdbc.git in the following directory: ./workspace/confluentinc-kafka-connect-jdbc-master-1141_repo
+02:19:25.371 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Tests run: 27, Failures: 9, Errors: 0, Skipped: 0, Time elapsed: 0.983 s <<< FAILURE! - in io.confluent.connect.jdbc.dialect.SqliteDatabaseDialectTest
+02:19:25.376 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] io.confluent.connect.jdbc.dialect.SqliteDatabaseDialectTest.createThreeColTwoPk  Time elapsed: 0.019 s  <<< FAILURE!
+02:19:25.399 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] io.confluent.connect.jdbc.dialect.SqliteDatabaseDialectTest.createOneColNoPk  Time elapsed: 0.021 s  <<< FAILURE!
+02:19:25.405 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] io.confluent.connect.jdbc.dialect.SqliteDatabaseDialectTest.alterAddOneCol  Time elapsed: 0.02 s  <<< FAILURE!
+02:19:25.441 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] io.confluent.connect.jdbc.dialect.SqliteDatabaseDialectTest.shouldBuildUpsertStatement  Time elapsed: 0.015 s  <<< FAILURE!
+02:19:25.456 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] io.confluent.connect.jdbc.dialect.SqliteDatabaseDialectTest.alterAddTwoCol  Time elapsed: 0.021 s  <<< FAILURE!
+02:19:25.475 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] io.confluent.connect.jdbc.dialect.SqliteDatabaseDialectTest.upsert  Time elapsed: 0.022 s  <<< FAILURE!
+02:19:25.475 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] io.confluent.connect.jdbc.dialect.SqliteDatabaseDialectTest.createOneColOnePk  Time elapsed: 0.001 s  <<< FAILURE!
+02:19:25.555 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] io.confluent.connect.jdbc.dialect.SqliteDatabaseDialectTest.shouldBuildCreateQueryStatement  Time elapsed: 0.029 s  <<< FAILURE!
+02:19:25.563 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] io.confluent.connect.jdbc.dialect.SqliteDatabaseDialectTest.shouldBuildAlterTableStatement  Time elapsed: 0.023 s  <<< FAILURE!
+02:20:45.346 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:20:45 AM org.postgresql.Driver parseURL
+02:20:45.348 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: JDBC URL must contain a / at the end of the host or port: jdbc:postgresql://something
+02:20:45.349 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:20:45 AM org.postgresql.Driver parseURL
+02:20:45.349 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: JDBC URL must contain a / at the end of the host or port: jdbc:postgresql://something
+02:20:45.349 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:20:45 AM org.postgresql.Driver parseURL
+02:20:45.349 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: JDBC URL must contain a / at the end of the host or port: jdbc:postgresql://something
+02:20:45.351 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:20:45 AM org.postgresql.Driver parseURL
+02:20:45.352 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: JDBC URL must contain a / at the end of the host or port: jdbc:postgresql://something
+02:20:45.366 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:20:45 AM org.postgresql.Driver parseURL
+02:20:45.371 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: JDBC URL must contain a / at the end of the host or port: jdbc:postgresql://something
+02:20:45.371 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:20:45 AM org.postgresql.Driver parseURL
+02:20:45.371 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: JDBC URL must contain a / at the end of the host or port: jdbc:postgresql://something
+02:20:45.375 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:20:45 AM org.postgresql.Driver parseURL
+02:20:45.375 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: JDBC URL must contain a / at the end of the host or port: jdbc:postgresql://something
+02:20:45.379 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:20:45 AM org.postgresql.Driver parseURL
+02:20:45.379 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: JDBC URL must contain a / at the end of the host or port: jdbc:postgresql://something
+02:20:45.381 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:20:45 AM org.postgresql.Driver parseURL
+02:20:45.382 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: JDBC URL must contain a / at the end of the host or port: jdbc:postgresql://something
+02:20:45.443 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:20:45 AM org.postgresql.Driver parseURL
+02:20:45.444 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: JDBC URL must contain a / at the end of the host or port: jdbc:postgresql://something
+02:20:45.449 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:20:45 AM org.postgresql.Driver parseURL
+02:20:45.449 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: JDBC URL must contain a / at the end of the host or port: jdbc:postgresql://something
+02:20:45.453 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:20:45 AM org.postgresql.Driver parseURL
+02:20:45.454 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: JDBC URL must contain a / at the end of the host or port: jdbc:postgresql://something
+02:20:45.461 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:20:45 AM org.postgresql.Driver parseURL
+02:20:45.461 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: JDBC URL must contain a / at the end of the host or port: jdbc:postgresql://something
+02:20:45.465 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:20:45 AM org.postgresql.Driver parseURL
+02:20:45.466 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: JDBC URL must contain a / at the end of the host or port: jdbc:postgresql://something
+02:20:45.472 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:20:45 AM org.postgresql.Driver parseURL
+02:20:45.473 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: JDBC URL must contain a / at the end of the host or port: jdbc:postgresql://something
+02:20:45.480 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:20:45 AM org.postgresql.Driver parseURL
+02:20:45.480 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: JDBC URL must contain a / at the end of the host or port: jdbc:postgresql://something
+02:23:23.614 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Exception in thread "Thread-880" org.apache.kafka.connect.errors.ConnectException: Simulated error with the db.
+02:23:23.615 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.confluent.connect.jdbc.source.TableMonitorThreadTest$1.answer(TableMonitorThreadTest.java:164)
+02:23:23.615 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.confluent.connect.jdbc.source.TableMonitorThreadTest$1.answer(TableMonitorThreadTest.java:160)
+02:23:23.615 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.easymock.internal.Result.answer(Result.java:133)
+02:23:23.615 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.easymock.internal.ReplayState.invokeInner(ReplayState.java:61)
+02:23:23.615 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.easymock.internal.ReplayState.invoke(ReplayState.java:47)
+02:23:23.615 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.easymock.internal.MockInvocationHandler.invoke(MockInvocationHandler.java:40)
+02:23:23.615 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.easymock.internal.ObjectMethodsFilter.invoke(ObjectMethodsFilter.java:101)
+02:23:23.615 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at com.sun.proxy.$Proxy28.getConnection(Unknown Source)
+02:23:23.615 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.confluent.connect.jdbc.source.TableMonitorThread.updateTables(TableMonitorThread.java:141)
+02:23:23.615 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.confluent.connect.jdbc.source.TableMonitorThread.run(TableMonitorThread.java:76)
+02:24:31.470 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failures: 
+02:24:31.470 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   SqliteDatabaseDialectTest.alterAddOneCol:226->BaseDialectTest.verifyAlterAddOneCol:399 arrays first differed at element [0]; expected:<ALTER TABLE [`myTable` ADD `newcol1`] INTEGER NULL> but was:<ALTER TABLE ["myTable" ADD "newcol1"] INTEGER NULL>
+02:24:31.470 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   SqliteDatabaseDialectTest.alterAddTwoCol:231->BaseDialectTest.verifyAlterAddTwoCols:405 arrays first differed at element [0]; expected:<ALTER TABLE [`myTable` ADD `newcol1`] INTEGER NULL> but was:<ALTER TABLE ["myTable" ADD "newcol1"] INTEGER NULL>
+02:24:31.470 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   SqliteDatabaseDialectTest.createOneColNoPk:198->BaseDialectTest.verifyCreateOneColNoPk:373 expected:<CREATE TABLE [`myTable` (
+02:24:31.470 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   SqliteDatabaseDialectTest.createOneColOnePk:204->BaseDialectTest.verifyCreateOneColOnePk:379 expected:<CREATE TABLE [`myTable` (
+02:24:31.471 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   SqliteDatabaseDialectTest.createThreeColTwoPk:211->BaseDialectTest.verifyCreateThreeColTwoPk:391 expected:<CREATE TABLE [`myTable` (
+02:24:31.471 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   SqliteDatabaseDialectTest.shouldBuildAlterTableStatement:155->BaseDialectTest.assertStatements:351 expected:<ALTER TABLE [`myTable` ADD `c1`] INTEGER NOT NULL> but was:<ALTER TABLE ["myTable" ADD "c1"] INTEGER NOT NULL>
+02:24:31.471 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   SqliteDatabaseDialectTest.shouldBuildCreateQueryStatement:120 expected:<CREATE TABLE [`myTable` (
+02:24:31.472 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   SqliteDatabaseDialectTest.shouldBuildUpsertStatement:193 expected:<...ERT OR REPLACE INTO [`myTable`(`id1`,`id2`,`columnA`,`columnB`,`columnC`,`columnD`]) VALUES(?,?,?,?,?,?...> but was:<...ERT OR REPLACE INTO ["myTable"("id1","id2","columnA","columnB","columnC","columnD"]) VALUES(?,?,?,?,?,?...>
+02:24:31.472 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   SqliteDatabaseDialectTest.upsert:238 expected:<...ERT OR REPLACE INTO [`Book`(`author`,`title`,`ISBN`,`year`,`pages`]) VALUES(?,?,?,?,?)> but was:<...ERT OR REPLACE INTO ["Book"("author","title","ISBN","year","pages"]) VALUES(?,?,?,?,?)>
+02:24:31.472 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Tests run: 745, Failures: 9, Errors: 0, Skipped: 2
+02:24:31.484 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M4:test (default-test) on project kafka-connect-jdbc: There are test failures.
+02:24:31.484 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+02:24:31.484 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/confluentinc-kafka-connect-jdbc-master-1141_repo/target/surefire-reports for the individual test results.
+02:24:31.484 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+02:24:31.484 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+02:24:31.500 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+02:24:31.501 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+02:24:31.501 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+02:24:31.501 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+02:24:31.501 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+02:25:04.765 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - 1 source dir was found:
+02:25:04.766 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/confluentinc-kafka-connect-jdbc-master-1141_repo/src/main/java
+02:25:05.144 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 2 problems were encountered while building the effective model for io.confluent:kafka-connect-jdbc:10.3.x-SNAPSHOT
+[ERROR] Failed to determine Java version for profile dependency-check @ io.confluent:common-parent:6.0.0
+[ERROR] Failed to determine Java version for profile java-9+ @ io.confluent:common-parent:6.0.0
+
+02:25:05.210 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - 1 test dir was found:
+02:25:05.210 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/confluentinc-kafka-connect-jdbc-master-1141_repo/src/test/java
+02:25:06.304 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation - Get the following failing module path: /root/workspace/confluentinc-kafka-connect-jdbc-master-1141_repo
+02:25:06.306 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation - ---Test results---
+02:25:06.307 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Total tests: 745
+02:25:06.307 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Tests run: 743
+02:25:06.307 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Tests passing: 734
+02:25:06.307 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Failures: 9
+02:25:06.307 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Errors: 0
+02:25:06.307 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Skipped: 2
+[0] INFO Flacoco - Running Flacoco...
+[337805] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.sink.integration.MicrosoftSqlServerSinkIT#verifyConnectorFailsWhenTableNameS result was not reported by test-runner.
+[338637] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.dialect.GenericDatabaseDialectTypeTest#testValueConversion result was not reported by test-runner.
+[338663] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.dialect.DerbyDatabaseDialectTest#upsert result was not reported by test-runner.
+[338674] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.dialect.DerbyDatabaseDialectTest#shouldBuildUpsertStatement result was not reported by test-runner.
+[338883] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.integration.MSSQLDateTimeIT#verifyTimeStampModeFailsWithDateTime result was not reported by test-runner.
+[338883] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.integration.MSSQLDateTimeIT#verifyTimeStampAndIncrementingModeFailsWithDatetime result was not reported by test-runner.
+[338883] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.integration.MSSQLDateTimeIT#verifyDateTimeAllowedAsNonTimeStamp result was not reported by test-runner.
+[338942] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.NumericMappingConfigTest#testNumericMapping result was not reported by test-runner.
+[338943] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testBoolean result was not reported by test-runner.
+[338943] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testNullableBoolean result was not reported by test-runner.
+[338943] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testSmallInt result was not reported by test-runner.
+[338943] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testNullableSmallInt result was not reported by test-runner.
+[338943] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testInt result was not reported by test-runner.
+[338943] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testNullableInt result was not reported by test-runner.
+[338943] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testBigInt result was not reported by test-runner.
+[338943] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testNullableBigInt result was not reported by test-runner.
+[338943] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testReal result was not reported by test-runner.
+[338943] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testNullableReal result was not reported by test-runner.
+[338943] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testDouble result was not reported by test-runner.
+[338943] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testNullableDouble result was not reported by test-runner.
+[338943] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testNullableChar result was not reported by test-runner.
+[338943] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testVarChar result was not reported by test-runner.
+[338943] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testNullableVarChar result was not reported by test-runner.
+[338943] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testBlob result was not reported by test-runner.
+[338943] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testNullableBlob result was not reported by test-runner.
+[338943] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testClob result was not reported by test-runner.
+[338943] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testNullableClob result was not reported by test-runner.
+[338943] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testBinary result was not reported by test-runner.
+[338943] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testNullableBinary result was not reported by test-runner.
+[338943] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testNumeric result was not reported by test-runner.
+[338943] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testDecimal result was not reported by test-runner.
+[338943] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testNullableDecimal result was not reported by test-runner.
+[338943] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testDate result was not reported by test-runner.
+[338943] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testNullableDate result was not reported by test-runner.
+[338943] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testTime result was not reported by test-runner.
+[338943] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testNullableTime result was not reported by test-runner.
+[338943] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testTimestamp result was not reported by test-runner.
+[338943] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testNullableTimestamp result was not reported by test-runner.
+[338943] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testChar result was not reported by test-runner.
+[339412] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.sink.integration.MicrosoftSqlServerSinkIT#verifyConnectorFailsWhenTableNameS result was not reported by test-runner.
+[340388] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.dialect.GenericDatabaseDialectTypeTest#testValueConversion result was not reported by test-runner.
+[340396] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.dialect.DerbyDatabaseDialectTest#upsert result was not reported by test-runner.
+[340397] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.dialect.DerbyDatabaseDialectTest#shouldBuildUpsertStatement result was not reported by test-runner.
+[340561] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.integration.MSSQLDateTimeIT#verifyTimeStampModeFailsWithDateTime result was not reported by test-runner.
+[340561] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.integration.MSSQLDateTimeIT#verifyTimeStampAndIncrementingModeFailsWithDatetime result was not reported by test-runner.
+[340561] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.integration.MSSQLDateTimeIT#verifyDateTimeAllowedAsNonTimeStamp result was not reported by test-runner.
+[340613] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.NumericMappingConfigTest#testNumericMapping result was not reported by test-runner.
+[340615] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testBoolean result was not reported by test-runner.
+[340615] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testNullableBoolean result was not reported by test-runner.
+[340615] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testSmallInt result was not reported by test-runner.
+[340615] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testNullableSmallInt result was not reported by test-runner.
+[340615] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testInt result was not reported by test-runner.
+[340615] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testNullableInt result was not reported by test-runner.
+[340615] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testBigInt result was not reported by test-runner.
+[340615] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testNullableBigInt result was not reported by test-runner.
+[340615] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testReal result was not reported by test-runner.
+[340615] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testNullableReal result was not reported by test-runner.
+[340615] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testDouble result was not reported by test-runner.
+[340615] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testNullableDouble result was not reported by test-runner.
+[340615] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testNullableChar result was not reported by test-runner.
+[340615] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testVarChar result was not reported by test-runner.
+[340615] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testNullableVarChar result was not reported by test-runner.
+[340615] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testBlob result was not reported by test-runner.
+[340615] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testNullableBlob result was not reported by test-runner.
+[340615] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testClob result was not reported by test-runner.
+[340615] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testNullableClob result was not reported by test-runner.
+[340615] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testBinary result was not reported by test-runner.
+[340615] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testNullableBinary result was not reported by test-runner.
+[340615] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testNumeric result was not reported by test-runner.
+[340615] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testDecimal result was not reported by test-runner.
+[340615] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testNullableDecimal result was not reported by test-runner.
+[340615] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testDate result was not reported by test-runner.
+[340615] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testNullableDate result was not reported by test-runner.
+[340615] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testTime result was not reported by test-runner.
+[340615] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testNullableTime result was not reported by test-runner.
+[340615] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testTimestamp result was not reported by test-runner.
+[340615] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testNullableTimestamp result was not reported by test-runner.
+[340615] WARN CoverageRunner - Test [Manual]TestMethod=io.confluent.connect.jdbc.source.JdbcSourceTaskConversionTest#testChar result was not reported by test-runner.
+[340638] INFO CoverageRunner - Tests found: 1200
+[340638] INFO CoverageRunner - Tests executed: 1122
+02:30:48.096 [main] INFO  fr.inria.jtravis.JTravis - GitHub ratelimit: Limit: 5000 Remaining: 3443 Reset hour: 00:12:34
+02:30:50.717 [main] INFO  f.i.s.r.p.s.f.FlacocoLocalization - 
+02:30:51.794 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:30:51.795 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE EXECUTION SUMMARY
+02:30:51.795 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:30:51.795 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneCheckoutGitPullRequest..........................SUCCESS [   6 s ]
+02:30:51.796 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject.........................................SUCCESS [ 361 s ]
+02:30:51.796 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject..........................................SUCCESS [ 401 s ]
+02:30:51.796 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath.....................................SUCCESS [  33 s ]
+02:30:51.797 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir.....................................SUCCESS [   0 s ]
+02:30:51.797 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir.......................................SUCCESS [   0 s ]
+02:30:51.797 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation................................SUCCESS [   1 s ]
+02:30:51.797 [main] INFO  f.i.s.r.p.i.ProjectInspector - FlacocoLocalization..................................SUCCESS [ 340 s ]
+02:30:51.797 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushFaultLocalizationSuggestionsOnExternalRepository.SUCCESS [   3 s ]
+02:30:51.798 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:30:51.798 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE FINDING: TEST FAILURE
+02:30:51.799 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:30:51.799 [main] INFO  f.i.s.r.p.github.GithubMainProcess - Inspector is finished. The process will exit now.

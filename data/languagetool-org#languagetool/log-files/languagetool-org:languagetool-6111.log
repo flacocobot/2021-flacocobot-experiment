@@ -1,0 +1,775 @@
+Execute pipeline with following supplementary args: --smtpPort 25 --listenerMode NOOP --launcherMode FAULT_LOCALIZATION  --gitrepourl https://github.com/languagetool-org/languagetool --gitrepopullrequest 6111
+java -cp /usr/local/openjdk-11/lib/tools.jar:repairnator-pipeline.jar -Dlogback.configurationFile=/root/logback.xml fr.inria.spirals.repairnator.pipeline.Launcher -d --runId null -o /var/log --ghOauth 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 --faultLocalization --flacocoThreshold 0.0 --flacocoTopK null --flacocoResultsRepository flacocobot/flacocobot-experiment-3 --ghOauth  --smtpPort 25 --listenerMode NOOP --launcherMode FAULT_LOCALIZATION  --gitrepourl https://github.com/languagetool-org/languagetool --gitrepopullrequest 6111
+
+02:11:52.600 [main] INFO  f.i.s.r.p.g.GithubInitSerializerEngines - Initialize file serializer engines.
+02:11:52.602 [main] INFO  f.i.s.r.p.g.GithubInitSerializerEngines - MongoDB won't be used for serialization.
+02:11:52.602 [main] INFO  f.i.s.r.p.github.GithubInitNotifiers - The email notifier engine won't be used.
+02:11:52.622 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:11:52.622 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE STEPS
+02:11:52.622 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:11:52.623 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneCheckoutGitPullRequest
+02:11:52.623 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject
+02:11:52.623 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject
+02:11:52.623 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath
+02:11:52.623 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir
+02:11:52.623 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir
+02:11:52.623 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation
+02:11:52.623 [main] INFO  f.i.s.r.p.i.ProjectInspector - FlacocoLocalization
+02:11:52.623 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushFaultLocalizationSuggestionsOnExternalRepository
+02:11:52.623 [main] INFO  f.i.s.r.p.s.CloneCheckoutGitPullRequest - Cloning repository https://github.com/languagetool-org/languagetool.git in the following directory: ./workspace/languagetool-org-languagetool-master-6111_repo
+02:27:21.039 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Skipping message tests for unmaintained language Testlanguage
+02:27:28.883 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+02:27:28.883 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+02:27:28.883 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+02:28:08.787 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - ################################################################################################
+02:28:08.787 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: 36 default='temp_off' rules for English (US), please make sure to turn on these
+02:28:08.788 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: rules after they have been tested (or use default='off' to turn them off permanently)
+02:28:08.788 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: (this warning appears if there are more than 20 default='temp_off' rules)
+02:28:08.788 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: temp_off rules by file:
+02:28:08.788 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: 3 in /org/languagetool/rules/en/en-US/grammar.xml
+02:28:08.788 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: 31 in /org/languagetool/rules/en/grammar.xml
+02:28:08.788 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - ################################################################################################
+02:28:23.267 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticMDCBinder".
+02:28:23.269 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation MDCAdapter implementation.
+02:28:23.269 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#no_static_mdc_binder for further details.
+02:29:15.978 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+02:29:15.981 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+02:29:15.983 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+02:29:18.191 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: Persian. Rule: RemoveThesePhrases-to[1]:
+02:29:18.192 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   از عبارت‌های هم‌‌معنی مانند «تا»، «الی» در یک جمله استفاده نکنید
+02:29:18.192 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: آیا منظور شما «<suggestion>\1</suggestion>» است؟
+02:29:18.192 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: Persian. Rule: RemoveThesePhrases-age[1]:
+02:29:18.202 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   از عبارت‌های هم‌‌معنی مانند «سن»، «سالگی» در یک جمله استفاده نکنید
+02:29:18.203 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: آیا منظور شما «<suggestion>\2 \3</suggestion>» است؟
+02:29:18.203 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: Persian. Rule: Bad_ZWNJ[1]:
+02:29:18.211 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   فاصلهٔ مجازی پس از سجاوندی، اعداد و بعضی از حروف فارسی مجاز نیست.
+02:29:18.211 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>:  آیا منظور شما«<suggestion>\1</suggestion>» است؟
+02:29:18.211 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: Persian. Rule: Bad_ZWNJ[2]:
+02:29:18.211 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   فاصلهٔ مجازی پیش از حروف لاتین، اعداد و سجاوندی مجاز نیست.
+02:29:18.215 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>:  آیا منظور شما«<suggestion>\2</suggestion>» است؟
+02:29:18.216 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: Persian. Rule: Complex_Past_Verbs[1]:
+02:29:18.216 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   «می و نمی» را با فاصلهٔ مجازی به فعل گذشته بچسبانید
+02:29:18.216 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: آیا منظور شما «<suggestion>\1‌\2</suggestion>» است؟
+02:29:19.619 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Persian: Please limit repetition in regex, e.g. use '{2,30}' instead of '{2,}': (.*)([ًٌٍَُِّْ]){2,}(.*) (FixDoubleTanvin[1])
+02:29:19.636 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: The Persian rule: ZWNJ_Connection[82], token [2], contains "الحوائج" that is marked as regular expression but probably is not one.
+02:29:20.974 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: Persian. Rule: RemoveThesePhrases-to[1]:
+02:29:20.975 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   از عبارت‌های هم‌‌معنی مانند «تا»، «الی» در یک جمله استفاده نکنید
+02:29:20.975 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: آیا منظور شما «<suggestion>\1</suggestion>» است؟
+02:29:20.975 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: Persian. Rule: RemoveThesePhrases-age[1]:
+02:29:20.975 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   از عبارت‌های هم‌‌معنی مانند «سن»، «سالگی» در یک جمله استفاده نکنید
+02:29:20.975 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: آیا منظور شما «<suggestion>\2 \3</suggestion>» است؟
+02:29:20.975 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: Persian. Rule: Bad_ZWNJ[1]:
+02:29:20.981 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   فاصلهٔ مجازی پس از سجاوندی، اعداد و بعضی از حروف فارسی مجاز نیست.
+02:29:20.981 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>:  آیا منظور شما«<suggestion>\1</suggestion>» است؟
+02:29:20.981 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: Persian. Rule: Bad_ZWNJ[2]:
+02:29:20.981 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   فاصلهٔ مجازی پیش از حروف لاتین، اعداد و سجاوندی مجاز نیست.
+02:29:20.981 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>:  آیا منظور شما«<suggestion>\2</suggestion>» است؟
+02:29:20.981 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: Persian. Rule: Complex_Past_Verbs[1]:
+02:29:20.982 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   «می و نمی» را با فاصلهٔ مجازی به فعل گذشته بچسبانید
+02:29:20.982 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: آیا منظور شما «<suggestion>\1‌\2</suggestion>» است؟
+02:29:21.240 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Skipping message tests for unmaintained language Persian
+02:29:24.011 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+02:29:24.014 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+02:29:24.015 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+02:29:39.329 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+02:29:39.330 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+02:29:39.343 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+02:30:14.910 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Suggested compound word is possibly misspelled: quart-temps
+02:30:14.911 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Suggested compound word is possibly misspelled: porte-épingles
+02:30:14.912 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Suggested compound word is possibly misspelled: Portes-lès-Valence
+02:30:14.912 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Suggested compound word is possibly misspelled: brise-vue
+02:30:14.912 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Suggested compound word is possibly misspelled: Bar-Mitsvah
+02:30:50.571 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - ################################################################################################
+02:30:50.572 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: 83 default='temp_off' rules for French, please make sure to turn on these
+02:30:50.572 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: rules after they have been tested (or use default='off' to turn them off permanently)
+02:30:50.572 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: (this warning appears if there are more than 20 default='temp_off' rules)
+02:30:50.572 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: temp_off rules by file:
+02:30:50.575 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: 83 in /org/languagetool/rules/fr/grammar.xml
+02:30:50.575 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - ################################################################################################
+02:31:03.750 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+02:31:03.751 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+02:31:03.751 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+02:31:33.957 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: WOHL_ODER_UEBEL[1]:
+02:31:33.957 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:31:33.957 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Meinten Sie 'wohl oder \3' (= notgedrungen)?
+02:31:33.957 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: WIDER_ERWARTEN[1]:
+02:31:33.957 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:31:33.957 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Meinten Sie die Wendung 'wider \2'?
+02:31:33.957 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: KOSTEN_SUBST[3]:
+02:31:33.957 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:31:33.957 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Bitte prüfen Sie die Kleinschreibung.
+02:31:33.957 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: KOSTEN_SUBST[4]:
+02:31:33.957 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:31:33.957 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Bitte prüfen Sie die Kleinschreibung.
+02:31:33.957 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: KOSTEN_SUBST[5]:
+02:31:33.958 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:31:33.958 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Bitte prüfen Sie die Kleinschreibung.
+02:31:33.958 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: KOSTEN_SUBST[6]:
+02:31:33.958 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:31:33.958 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Bitte prüfen Sie die Kleinschreibung.
+02:31:33.958 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: KOSTEN_SUBST[7]:
+02:31:33.958 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:31:33.958 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Bitte prüfen Sie die Kleinschreibung.
+02:31:33.958 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: KOSTEN_SUBST[8]:
+02:31:33.958 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:31:33.959 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Bitte prüfen Sie die Kleinschreibung.
+02:31:33.959 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: ZUM_WOHL[5]:
+02:31:33.959 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:31:33.959 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Meinten Sie <suggestion>\3</suggestion>?
+02:31:33.959 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_MAS[1]:
+02:31:33.959 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:31:33.959 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:31:33.959 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_MAS[2]:
+02:31:33.959 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:31:33.959 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:31:33.959 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_MAS[3]:
+02:31:33.959 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:31:33.959 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:31:33.960 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_NEU[1]:
+02:31:33.960 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:31:33.960 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:31:33.960 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_NEU[2]:
+02:31:33.960 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:31:33.960 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:31:33.960 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_NEU[3]:
+02:31:33.960 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:31:33.960 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:31:33.960 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_NEU[4]:
+02:31:33.960 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:31:33.961 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:31:33.961 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_NEU[5]:
+02:31:33.961 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:31:33.961 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:31:33.961 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: RAT_UND_TAT[1]:
+02:31:33.961 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:31:33.961 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Meinten Sie die Redewendung 'mit Rat und Tat'?
+02:31:33.961 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: RAT_UND_TAT[2]:
+02:31:33.961 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:31:33.961 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Meinten Sie die Redewendung 'mit Rat und Tat'?
+02:32:00.881 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: German: Please limit repetition in regex, e.g. use '{2,30}' instead of '{2,}': [a-zäöü]{6,}würdigen (ERHALTENSWUERDIGEN[1])
+02:32:00.882 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: German: Please limit repetition in regex, e.g. use '{2,30}' instead of '{2,}': (Rettungs|Kranken)wagen|[A-Z][a-zäöüß]{4,}(schmerzen|strecken) (RETTUNGSWAGEN[1])
+02:32:00.882 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: German: Please limit repetition in regex, e.g. use '{2,30}' instead of '{2,}': [A-ZÄÖÜ][a-zäöüß]{3,}beamte (SUB_BEAMTE[1])
+02:32:00.883 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: German: Please limit repetition in regex, e.g. use '{2,30}' instead of '{2,}': [A-ZÄÖÜ][a-zäöüß]{3,}beamte (SUB_BEAMTE[2])
+02:32:00.883 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: German: Please limit repetition in regex, e.g. use '{2,30}' instead of '{2,}': [A-ZÄÖÜ][a-zäöüß]{3,}beamte (SUB_BEAMTE[3])
+02:32:00.888 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: German: Please limit repetition in regex, e.g. use '{2,30}' instead of '{2,}': [\-]{3,} (HYPHENS[1])
+02:32:45.397 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: WOHL_ODER_UEBEL[1]:
+02:32:45.398 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:32:45.398 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Meinten Sie 'wohl oder \3' (= notgedrungen)?
+02:32:45.398 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: WIDER_ERWARTEN[1]:
+02:32:45.398 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:32:45.398 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Meinten Sie die Wendung 'wider \2'?
+02:32:45.398 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: KOSTEN_SUBST[3]:
+02:32:45.398 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:32:45.398 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Bitte prüfen Sie die Kleinschreibung.
+02:32:45.398 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: KOSTEN_SUBST[4]:
+02:32:45.398 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:32:45.398 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Bitte prüfen Sie die Kleinschreibung.
+02:32:45.398 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: KOSTEN_SUBST[5]:
+02:32:45.398 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:32:45.398 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Bitte prüfen Sie die Kleinschreibung.
+02:32:45.398 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: KOSTEN_SUBST[6]:
+02:32:45.398 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:32:45.398 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Bitte prüfen Sie die Kleinschreibung.
+02:32:45.399 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: KOSTEN_SUBST[7]:
+02:32:45.399 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:32:45.399 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Bitte prüfen Sie die Kleinschreibung.
+02:32:45.399 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: KOSTEN_SUBST[8]:
+02:32:45.399 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:32:45.399 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Bitte prüfen Sie die Kleinschreibung.
+02:32:45.399 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: ZUM_WOHL[5]:
+02:32:45.399 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:32:45.399 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Meinten Sie <suggestion>\3</suggestion>?
+02:32:45.399 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_MAS[1]:
+02:32:45.399 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:32:45.399 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:32:45.399 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_MAS[2]:
+02:32:45.399 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:32:45.399 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:32:45.399 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_MAS[3]:
+02:32:45.400 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:32:45.400 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:32:45.400 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_NEU[1]:
+02:32:45.400 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:32:45.400 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:32:45.400 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_NEU[2]:
+02:32:45.400 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:32:45.400 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:32:45.400 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_NEU[3]:
+02:32:45.400 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:32:45.400 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:32:45.400 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_NEU[4]:
+02:32:45.400 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:32:45.400 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:32:45.401 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_NEU[5]:
+02:32:45.401 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:32:45.401 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:32:45.401 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: RAT_UND_TAT[1]:
+02:32:45.401 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:32:45.401 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Meinten Sie die Redewendung 'mit Rat und Tat'?
+02:32:45.401 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: RAT_UND_TAT[2]:
+02:32:45.401 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:32:45.401 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Meinten Sie die Redewendung 'mit Rat und Tat'?
+02:32:45.559 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: WOHL_ODER_UEBEL[1]:
+02:32:45.559 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:32:45.559 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Meinten Sie 'wohl oder \3' (= notgedrungen)?
+02:32:45.559 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: WIDER_ERWARTEN[1]:
+02:32:45.559 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:32:45.559 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Meinten Sie die Wendung 'wider \2'?
+02:32:45.559 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: KOSTEN_SUBST[3]:
+02:32:45.559 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:32:45.559 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Bitte prüfen Sie die Kleinschreibung.
+02:32:45.559 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: KOSTEN_SUBST[4]:
+02:32:45.559 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:32:45.559 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Bitte prüfen Sie die Kleinschreibung.
+02:32:45.559 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: KOSTEN_SUBST[5]:
+02:32:45.559 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:32:45.559 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Bitte prüfen Sie die Kleinschreibung.
+02:32:45.559 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: KOSTEN_SUBST[6]:
+02:32:45.559 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:32:45.559 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Bitte prüfen Sie die Kleinschreibung.
+02:32:45.560 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: KOSTEN_SUBST[7]:
+02:32:45.560 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:32:45.560 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Bitte prüfen Sie die Kleinschreibung.
+02:32:45.560 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: KOSTEN_SUBST[8]:
+02:32:45.560 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:32:45.560 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Bitte prüfen Sie die Kleinschreibung.
+02:32:45.560 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: ZUM_WOHL[5]:
+02:32:45.560 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:32:45.560 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Meinten Sie <suggestion>\3</suggestion>?
+02:32:45.560 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_MAS[1]:
+02:32:45.560 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:32:45.560 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:32:45.560 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_MAS[2]:
+02:32:45.560 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:32:45.560 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:32:45.561 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_MAS[3]:
+02:32:45.561 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:32:45.561 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:32:45.561 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_NEU[1]:
+02:32:45.561 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:32:45.561 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:32:45.561 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_NEU[2]:
+02:32:45.561 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:32:45.561 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:32:45.561 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_NEU[3]:
+02:32:45.562 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:32:45.562 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:32:45.562 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_NEU[4]:
+02:32:45.562 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:32:45.562 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:32:45.562 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_NEU[5]:
+02:32:45.562 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:32:45.562 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:32:45.562 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: RAT_UND_TAT[1]:
+02:32:45.562 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:32:45.562 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Meinten Sie die Redewendung 'mit Rat und Tat'?
+02:32:45.562 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: RAT_UND_TAT[2]:
+02:32:45.562 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:32:45.562 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Meinten Sie die Redewendung 'mit Rat und Tat'?
+02:32:54.974 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+02:32:54.975 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+02:32:54.975 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+02:33:06.428 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Sentence start in <marker>: PCON_VERB[1] (hasExplicitMarker: false) - please move the <marker> so the SENT_START is not covered
+02:33:06.429 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Sentence start in <marker>: PCON_VERB[2] (hasExplicitMarker: false) - please move the <marker> so the SENT_START is not covered
+02:33:06.429 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Sentence start in <marker>: PCON_VERB[3] (hasExplicitMarker: false) - please move the <marker> so the SENT_START is not covered
+02:33:06.429 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Sentence start in <marker>: NIGDY_NIE[2] (hasExplicitMarker: false) - please move the <marker> so the SENT_START is not covered
+02:33:06.598 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Polish: Please limit repetition in regex, e.g. use '{2,30}' instead of '{2,}': \p{Ll}{1,} (DNI_TYGODNIA[1])
+02:33:06.619 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Polish: Please limit repetition in regex, e.g. use '{2,30}' instead of '{2,}': \p{L}{2,}-\p{L}+-.* (PRZECIAGNIJ-I-UPUSC[1])
+02:33:07.290 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Polish rule COFANIE_PRZECINKA[6] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Poszedłem tam, mimo<marker>, iż</marker> nie chciałem. => [mimo iż]
+02:33:07.299 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Polish rule COFANIE_PRZECINKA[8] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Wprawdzie upił się, tyle<marker>, że</marker> akurat on nie prowadził samochodu. => [tyle że]
+02:33:07.304 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Polish rule COFANIE_PRZECINKA[11] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Jadłem śledzia, podczas<marker>, gdy</marker> on siedział na kanapie. => [podczas gdy]
+02:33:07.311 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Polish rule COFANIE_PRZECINKA[5] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Poszedłem tam, mimo<marker>, że</marker> nie chciałem. => [mimo że]
+02:33:07.372 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Polish rule COFANIE_PRZECINKA[20] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Premier powołał go na stanowisko, chyba<marker>, żeby</marker> go poniżyć. => [chyba żeby]
+02:33:07.373 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Polish rule COFANIE_PRZECINKA[23] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Premier powołał go na stanowisko, jeszcze<marker>, zanim</marker> odwołał go z funkcji przewodniczącego klubu. => [jeszcze zanim]
+02:33:23.238 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+02:33:23.238 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+02:33:23.239 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+02:34:07.832 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+02:34:07.833 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+02:34:07.833 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+02:34:12.067 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+02:34:12.067 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+02:34:12.067 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+02:34:17.078 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+02:34:17.078 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+02:34:17.078 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+02:34:40.750 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+02:34:40.750 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+02:34:40.750 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+02:34:45.122 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: The Portuguese rule: LP_NAO_A[1], token [3], contains duplicated disjunction part (a) within "(?:c(?:a(?:m(?:i(?:nhos?|sas)|a(?:rada|s)?|elos|po)|r(?:t(?:ilha|as?)|ác?ter|amujo|ros?|ne)|s(?:t(?:el(?:hanos|o)|igo)|as?|os?|ca)|p(?:it(?:a(?:is|l)|ães)|richos?|as)|b(?:reiros|otino|eça)|l(?:deiradas|çado|or)|ch(?:orrinho|aça)|(?:ntinh|gaç)o|u(?:dal|sas)|valos?|tarse|ça|os)|o(?:n(?:t(?:r(?:abandistas|ole)|estar)|f(?:iança|orto)|se(?:lhos|nso))|m(?:p(?:romisso|anhia)|bate|ida|um|o)?|(?:b(?:r(?:anç)?|ertur)|us|v)a|i(?:sa(?:-ruim)?|ros)|adjutor)|h(?:a(?:ma(?:riz)?|nce|ves)|e(?:(?:iro|que)s|fes?)|oque|uva|á)|r(?:i(?:a(?:(?:nça|do)s|tura)|m(?:inoso|es?)|se)|ase)|e(?:r(?:t(?:ezas?|as)|imônia)|go(?:nha)?|ntro)|l(?:a(?:ro-escuro|sse)|i(?:entel|m)a|ube)|i(?:n(?:e(?:asta|mas?)|co)|úmes|pó)|u(?:l(?:pado|tura)|ra)|á(?:lculo)?|éu)|a(?:l(?:g(?:u(?:ma?|ns)|as)|(?:caid|arm|fac)e|t(?:ernativas|a)|m(?:oço|a)|deias|vará|i)|m(?:(?:bulante|igo|pla)s|a(?:nuense|rgura)|or)|t(?:a(?:ques?|lhos)|mosfera|rasos?|eus|é)|p(?:e(?:tite|nas)|o(?:ios?|sta)|lausos)|r(?:istocracias|t(?:ista|e)|voredo|ma)|s(?:s(?:i(?:stentes|m)|adura)|pas)?|(?:g(?:ricultur|end)|ind)a|c(?:(?:úmul|ord)o|ademias)|(?:n(?:imai|o)|forismo)s|u(?:to(?:móvel|r)|las)|qu(?:el(?:as?|es?)|i)|b(?:ertura|rigo)|ju(?:ste|da)|z(?:uis|ar)|(?:vanç)?o|dmirar|í)|d(?:e(?:s(?:e(?:(?:mpreg|rt)o|jar)|(?:graçad|leix|tin)o|c(?:ulpas?|anso)|(?:vio|sa)s|pedida|ordem|ar)|(?:u(?:se)?|talhe)s|n(?:úncias|tro)|certo|ver|z)?|i(?:v(?:i(?:dendos|nas?)|ergências)|f(?:iculdades|erenças?)|s(?:[st]o|farce)|a(?:(?:bo)?s)?|(?:plom|et)a|rec?tor|álogo)|o(?:u(?:tr(?:ina|os)|s)|r(?:mi(?:mos|r))?|(?:ming|l)o|enças?|çura|ce|is)?|u(?:(?:que|a)s|vidar)|(?:r(?:am|og)|ívid)a|a(?:dos|ta)|úvidas?)|e(?:s(?:t(?:(?:(?:údi|ud)o|ratégia)s|a(?:tísticas)?|ômago|es?)|c(?:ol(?:as|ha)|ândalo|ravos|apar)|p(?:erança|écies|aços?)|s(?:es?|a)|forços)|m(?:p(?:a(?:t(?:es|ia)|das)|(?:lastr|reg)o|enhos?)|bargo)?|n(?:c(?:arregados|ontro)|fermidades|ganos?|ergia|tre)|(?:x(?:ager|empl)|goísm)o|(?:vidência|lefante)s|pi(?:demias?|sódio)|r(?:ros?|mos|va)|conomia|quipes?)?|p(?:r(?:o(?:gr(?:esso|ama)|blemas?|dígio|tetor|vas?)|a(?:z(?:er|o)|xe)|incípios?|essas?)|e(?:r(?:(?:plexidade|spec?tiva|íodo)s|igo|da)|s(?:soa[ls]?|ar)|nedos|ixe)|o(?:r(?:tugueses|que|ém)?|lí(?:ticas?|cias)|(?:esi|t)a|der|sse|is|vo)|a(?:(?:ciênci|lavr)a|r(?:tidos?|a)|ssagem|pel|ís|i)|i(?:o(?:lhos|r)|stas)|úblico|lanos)|b(?:a(?:n(?:(?:h(?:eir)?o|quete|ana)s|[cd]o)|l(?:a(?:nça|s)|iza)|r(?:racas|co)|i(?:le|a)|gatelas|se)|o(?:n(?:ança|de|zo|s)|t(?:equim|a)|m(?:bas)?|(?:rd)?a|gas)|e(?:l(?:(?:ez)?a|os)|rnarda|ijo|m)|r(?:aços?|uxas)|i(?:cho|rra)|álsamo|uracos)|m(?:e(?:n(?:digo|ina)|d(?:ida|o)|s(?:as|mo)|ios?|lhor)|o(?:t(?:orista|ivos)|l(?:éstia|hos)|delos?|rte|ça)|a(?:l(?:andro|es)?|(?:nhã)?s|i(?:or|s)|rgem)|(?:á(?:scar|go)|úsic)a|u(?:danças|itas?|lher)|é(?:dicos?|todos?)|i(?:lagre|ster)|ãos)|r(?:e(?:c(?:u(?:rsos?|os)|ei(?:tas|o))|f(?:(?:erência|ugiado)s|orma)|g(?:ist(?:ros?|o)|ra)|s(?:postas?|ervas)|m(?:édi|ors)o|i)|a(?:ci(?:ocínios|smo)|ças|paz)|i(?:queza|scos?)|osas|ua)|s(?:e(?:n(?:ti(?:do|r)|ador)|g(?:redos?|unda)|r(?:viço|eia)?|mpre|quer|is)|u(?:b(?:tileza|sídio)s|rf)|o(?:(?:cia)?l|bre|no|m)|i(?:na(?:is|l)|mpatia)|a(?:ngue|ída|las)|ó)|t(?:e(?:(?:r(?:apêutic|r)|cnologi)a|m(?:or|po)|stemunhas)|r(?:a(?:balho|gédia)|(?:eva|ê)s|istezas?|áfico|opa)|a(?:(?:ref|nt)a|l(?:vez)?|mbém)|(?:o[dl]|ip)o)|n(?:e(?:nhu(?:ma?|ns)|s(?:t[ae]|sa)|g(?:ros|ar)|l(?:es?|a)|m)|o(?:(?:v(?:idade|o)|t(?:íci)?a)?s|mes?|ite)?|a(?:(?:scente)?s|da)?|i(?:nguém|sso)|úmeros)|f(?:o(?:r(?:ças?|mas?|tuna)|me)|a(?:l(?:ar|ta)|mília|to)|i(?:dalgos|lósofo|m)|u(?:(?:tur|m)o|gir)|e(?:stas?|bre)|é(?:rias)?|órmulas?)|v(?:e(?:r(?:(?:dadeir|s)os)?|stígio|detas)|i(?:n(?:gança|ho)|slumbrar|zinhos|da)|a(?:ci(?:lar|na)|idades|gas?|lor)|o(?:ltas?|z)|éu)|i(?:(?:m(?:possívei|agen)|deologia)s|n(?:teresse|dícios|imigo)|gual)|g(?:r(?:a(?:ndes?|des|ça)|upos)|o(?:nçalinh|vern|st)o|arantias?)|l(?:i(?:nguagem|mites?|vros?|ames|xo)|u(?:[az]|tas?|gar)|eis?|á)|o(?:u(?:tr(?:os?|a)|ro)?|(?:bstácul|lh)os|fensa|rdem|nde)?|h(?:o(?:me(?:ns|m)|nra|je)|ipótese)|qu(?:a(?:(?:is|l)quer|se)|em?)|j(?:o(?:rnai|go)s|ustiça|á)|á(?:r(?:vore|ea)|lbum|gua)|u(?:m(?:as?)?|topias)|é(?:pocas?)?|ânimo)".
+02:34:48.820 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: The Portuguese (Portugal) rule: LP_NAO_A[1], token [3], contains duplicated disjunction part (a) within "(?:c(?:a(?:m(?:i(?:nhos?|sas)|a(?:rada|s)?|elos|po)|r(?:t(?:ilha|as?)|ác?ter|amujo|ros?|ne)|s(?:t(?:el(?:hanos|o)|igo)|as?|os?|ca)|p(?:it(?:a(?:is|l)|ães)|richos?|as)|b(?:reiros|otino|eça)|l(?:deiradas|çado|or)|ch(?:orrinho|aça)|(?:ntinh|gaç)o|u(?:dal|sas)|valos?|tarse|ça|os)|o(?:n(?:t(?:r(?:abandistas|ole)|estar)|f(?:iança|orto)|se(?:lhos|nso))|m(?:p(?:romisso|anhia)|bate|ida|um|o)?|(?:b(?:r(?:anç)?|ertur)|us|v)a|i(?:sa(?:-ruim)?|ros)|adjutor)|h(?:a(?:ma(?:riz)?|nce|ves)|e(?:(?:iro|que)s|fes?)|oque|uva|á)|r(?:i(?:a(?:(?:nça|do)s|tura)|m(?:inoso|es?)|se)|ase)|e(?:r(?:t(?:ezas?|as)|imônia)|go(?:nha)?|ntro)|l(?:a(?:ro-escuro|sse)|i(?:entel|m)a|ube)|i(?:n(?:e(?:asta|mas?)|co)|úmes|pó)|u(?:l(?:pado|tura)|ra)|á(?:lculo)?|éu)|a(?:l(?:g(?:u(?:ma?|ns)|as)|(?:caid|arm|fac)e|t(?:ernativas|a)|m(?:oço|a)|deias|vará|i)|m(?:(?:bulante|igo|pla)s|a(?:nuense|rgura)|or)|t(?:a(?:ques?|lhos)|mosfera|rasos?|eus|é)|p(?:e(?:tite|nas)|o(?:ios?|sta)|lausos)|r(?:istocracias|t(?:ista|e)|voredo|ma)|s(?:s(?:i(?:stentes|m)|adura)|pas)?|(?:g(?:ricultur|end)|ind)a|c(?:(?:úmul|ord)o|ademias)|(?:n(?:imai|o)|forismo)s|u(?:to(?:móvel|r)|las)|qu(?:el(?:as?|es?)|i)|b(?:ertura|rigo)|ju(?:ste|da)|z(?:uis|ar)|(?:vanç)?o|dmirar|í)|d(?:e(?:s(?:e(?:(?:mpreg|rt)o|jar)|(?:graçad|leix|tin)o|c(?:ulpas?|anso)|(?:vio|sa)s|pedida|ordem|ar)|(?:u(?:se)?|talhe)s|n(?:úncias|tro)|certo|ver|z)?|i(?:v(?:i(?:dendos|nas?)|ergências)|f(?:iculdades|erenças?)|s(?:[st]o|farce)|a(?:(?:bo)?s)?|(?:plom|et)a|rec?tor|álogo)|o(?:u(?:tr(?:ina|os)|s)|r(?:mi(?:mos|r))?|(?:ming|l)o|enças?|çura|ce|is)?|u(?:(?:que|a)s|vidar)|(?:r(?:am|og)|ívid)a|a(?:dos|ta)|úvidas?)|e(?:s(?:t(?:(?:(?:údi|ud)o|ratégia)s|a(?:tísticas)?|ômago|es?)|c(?:ol(?:as|ha)|ândalo|ravos|apar)|p(?:erança|écies|aços?)|s(?:es?|a)|forços)|m(?:p(?:a(?:t(?:es|ia)|das)|(?:lastr|reg)o|enhos?)|bargo)?|n(?:c(?:arregados|ontro)|fermidades|ganos?|ergia|tre)|(?:x(?:ager|empl)|goísm)o|(?:vidência|lefante)s|pi(?:demias?|sódio)|r(?:ros?|mos|va)|conomia|quipes?)?|p(?:r(?:o(?:gr(?:esso|ama)|blemas?|dígio|tetor|vas?)|a(?:z(?:er|o)|xe)|incípios?|essas?)|e(?:r(?:(?:plexidade|spec?tiva|íodo)s|igo|da)|s(?:soa[ls]?|ar)|nedos|ixe)|o(?:r(?:tugueses|que|ém)?|lí(?:ticas?|cias)|(?:esi|t)a|der|sse|is|vo)|a(?:(?:ciênci|lavr)a|r(?:tidos?|a)|ssagem|pel|ís|i)|i(?:o(?:lhos|r)|stas)|úblico|lanos)|b(?:a(?:n(?:(?:h(?:eir)?o|quete|ana)s|[cd]o)|l(?:a(?:nça|s)|iza)|r(?:racas|co)|i(?:le|a)|gatelas|se)|o(?:n(?:ança|de|zo|s)|t(?:equim|a)|m(?:bas)?|(?:rd)?a|gas)|e(?:l(?:(?:ez)?a|os)|rnarda|ijo|m)|r(?:aços?|uxas)|i(?:cho|rra)|álsamo|uracos)|m(?:e(?:n(?:digo|ina)|d(?:ida|o)|s(?:as|mo)|ios?|lhor)|o(?:t(?:orista|ivos)|l(?:éstia|hos)|delos?|rte|ça)|a(?:l(?:andro|es)?|(?:nhã)?s|i(?:or|s)|rgem)|(?:á(?:scar|go)|úsic)a|u(?:danças|itas?|lher)|é(?:dicos?|todos?)|i(?:lagre|ster)|ãos)|r(?:e(?:c(?:u(?:rsos?|os)|ei(?:tas|o))|f(?:(?:erência|ugiado)s|orma)|g(?:ist(?:ros?|o)|ra)|s(?:postas?|ervas)|m(?:édi|ors)o|i)|a(?:ci(?:ocínios|smo)|ças|paz)|i(?:queza|scos?)|osas|ua)|s(?:e(?:n(?:ti(?:do|r)|ador)|g(?:redos?|unda)|r(?:viço|eia)?|mpre|quer|is)|u(?:b(?:tileza|sídio)s|rf)|o(?:(?:cia)?l|bre|no|m)|i(?:na(?:is|l)|mpatia)|a(?:ngue|ída|las)|ó)|t(?:e(?:(?:r(?:apêutic|r)|cnologi)a|m(?:or|po)|stemunhas)|r(?:a(?:balho|gédia)|(?:eva|ê)s|istezas?|áfico|opa)|a(?:(?:ref|nt)a|l(?:vez)?|mbém)|(?:o[dl]|ip)o)|n(?:e(?:nhu(?:ma?|ns)|s(?:t[ae]|sa)|g(?:ros|ar)|l(?:es?|a)|m)|o(?:(?:v(?:idade|o)|t(?:íci)?a)?s|mes?|ite)?|a(?:(?:scente)?s|da)?|i(?:nguém|sso)|úmeros)|f(?:o(?:r(?:ças?|mas?|tuna)|me)|a(?:l(?:ar|ta)|mília|to)|i(?:dalgos|lósofo|m)|u(?:(?:tur|m)o|gir)|e(?:stas?|bre)|é(?:rias)?|órmulas?)|v(?:e(?:r(?:(?:dadeir|s)os)?|stígio|detas)|i(?:n(?:gança|ho)|slumbrar|zinhos|da)|a(?:ci(?:lar|na)|idades|gas?|lor)|o(?:ltas?|z)|éu)|i(?:(?:m(?:possívei|agen)|deologia)s|n(?:teresse|dícios|imigo)|gual)|g(?:r(?:a(?:ndes?|des|ça)|upos)|o(?:nçalinh|vern|st)o|arantias?)|l(?:i(?:nguagem|mites?|vros?|ames|xo)|u(?:[az]|tas?|gar)|eis?|á)|o(?:u(?:tr(?:os?|a)|ro)?|(?:bstácul|lh)os|fensa|rdem|nde)?|h(?:o(?:me(?:ns|m)|nra|je)|ipótese)|qu(?:a(?:(?:is|l)quer|se)|em?)|j(?:o(?:rnai|go)s|ustiça|á)|á(?:r(?:vore|ea)|lbum|gua)|u(?:m(?:as?)?|topias)|é(?:pocas?)?|ânimo)".
+02:34:50.234 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: The Portuguese (Brazil) rule: LP_NAO_A[1], token [3], contains duplicated disjunction part (a) within "(?:c(?:a(?:m(?:i(?:nhos?|sas)|a(?:rada|s)?|elos|po)|r(?:t(?:ilha|as?)|ác?ter|amujo|ros?|ne)|s(?:t(?:el(?:hanos|o)|igo)|as?|os?|ca)|p(?:it(?:a(?:is|l)|ães)|richos?|as)|b(?:reiros|otino|eça)|l(?:deiradas|çado|or)|ch(?:orrinho|aça)|(?:ntinh|gaç)o|u(?:dal|sas)|valos?|tarse|ça|os)|o(?:n(?:t(?:r(?:abandistas|ole)|estar)|f(?:iança|orto)|se(?:lhos|nso))|m(?:p(?:romisso|anhia)|bate|ida|um|o)?|(?:b(?:r(?:anç)?|ertur)|us|v)a|i(?:sa(?:-ruim)?|ros)|adjutor)|h(?:a(?:ma(?:riz)?|nce|ves)|e(?:(?:iro|que)s|fes?)|oque|uva|á)|r(?:i(?:a(?:(?:nça|do)s|tura)|m(?:inoso|es?)|se)|ase)|e(?:r(?:t(?:ezas?|as)|imônia)|go(?:nha)?|ntro)|l(?:a(?:ro-escuro|sse)|i(?:entel|m)a|ube)|i(?:n(?:e(?:asta|mas?)|co)|úmes|pó)|u(?:l(?:pado|tura)|ra)|á(?:lculo)?|éu)|a(?:l(?:g(?:u(?:ma?|ns)|as)|(?:caid|arm|fac)e|t(?:ernativas|a)|m(?:oço|a)|deias|vará|i)|m(?:(?:bulante|igo|pla)s|a(?:nuense|rgura)|or)|t(?:a(?:ques?|lhos)|mosfera|rasos?|eus|é)|p(?:e(?:tite|nas)|o(?:ios?|sta)|lausos)|r(?:istocracias|t(?:ista|e)|voredo|ma)|s(?:s(?:i(?:stentes|m)|adura)|pas)?|(?:g(?:ricultur|end)|ind)a|c(?:(?:úmul|ord)o|ademias)|(?:n(?:imai|o)|forismo)s|u(?:to(?:móvel|r)|las)|qu(?:el(?:as?|es?)|i)|b(?:ertura|rigo)|ju(?:ste|da)|z(?:uis|ar)|(?:vanç)?o|dmirar|í)|d(?:e(?:s(?:e(?:(?:mpreg|rt)o|jar)|(?:graçad|leix|tin)o|c(?:ulpas?|anso)|(?:vio|sa)s|pedida|ordem|ar)|(?:u(?:se)?|talhe)s|n(?:úncias|tro)|certo|ver|z)?|i(?:v(?:i(?:dendos|nas?)|ergências)|f(?:iculdades|erenças?)|s(?:[st]o|farce)|a(?:(?:bo)?s)?|(?:plom|et)a|rec?tor|álogo)|o(?:u(?:tr(?:ina|os)|s)|r(?:mi(?:mos|r))?|(?:ming|l)o|enças?|çura|ce|is)?|u(?:(?:que|a)s|vidar)|(?:r(?:am|og)|ívid)a|a(?:dos|ta)|úvidas?)|e(?:s(?:t(?:(?:(?:údi|ud)o|ratégia)s|a(?:tísticas)?|ômago|es?)|c(?:ol(?:as|ha)|ândalo|ravos|apar)|p(?:erança|écies|aços?)|s(?:es?|a)|forços)|m(?:p(?:a(?:t(?:es|ia)|das)|(?:lastr|reg)o|enhos?)|bargo)?|n(?:c(?:arregados|ontro)|fermidades|ganos?|ergia|tre)|(?:x(?:ager|empl)|goísm)o|(?:vidência|lefante)s|pi(?:demias?|sódio)|r(?:ros?|mos|va)|conomia|quipes?)?|p(?:r(?:o(?:gr(?:esso|ama)|blemas?|dígio|tetor|vas?)|a(?:z(?:er|o)|xe)|incípios?|essas?)|e(?:r(?:(?:plexidade|spec?tiva|íodo)s|igo|da)|s(?:soa[ls]?|ar)|nedos|ixe)|o(?:r(?:tugueses|que|ém)?|lí(?:ticas?|cias)|(?:esi|t)a|der|sse|is|vo)|a(?:(?:ciênci|lavr)a|r(?:tidos?|a)|ssagem|pel|ís|i)|i(?:o(?:lhos|r)|stas)|úblico|lanos)|b(?:a(?:n(?:(?:h(?:eir)?o|quete|ana)s|[cd]o)|l(?:a(?:nça|s)|iza)|r(?:racas|co)|i(?:le|a)|gatelas|se)|o(?:n(?:ança|de|zo|s)|t(?:equim|a)|m(?:bas)?|(?:rd)?a|gas)|e(?:l(?:(?:ez)?a|os)|rnarda|ijo|m)|r(?:aços?|uxas)|i(?:cho|rra)|álsamo|uracos)|m(?:e(?:n(?:digo|ina)|d(?:ida|o)|s(?:as|mo)|ios?|lhor)|o(?:t(?:orista|ivos)|l(?:éstia|hos)|delos?|rte|ça)|a(?:l(?:andro|es)?|(?:nhã)?s|i(?:or|s)|rgem)|(?:á(?:scar|go)|úsic)a|u(?:danças|itas?|lher)|é(?:dicos?|todos?)|i(?:lagre|ster)|ãos)|r(?:e(?:c(?:u(?:rsos?|os)|ei(?:tas|o))|f(?:(?:erência|ugiado)s|orma)|g(?:ist(?:ros?|o)|ra)|s(?:postas?|ervas)|m(?:édi|ors)o|i)|a(?:ci(?:ocínios|smo)|ças|paz)|i(?:queza|scos?)|osas|ua)|s(?:e(?:n(?:ti(?:do|r)|ador)|g(?:redos?|unda)|r(?:viço|eia)?|mpre|quer|is)|u(?:b(?:tileza|sídio)s|rf)|o(?:(?:cia)?l|bre|no|m)|i(?:na(?:is|l)|mpatia)|a(?:ngue|ída|las)|ó)|t(?:e(?:(?:r(?:apêutic|r)|cnologi)a|m(?:or|po)|stemunhas)|r(?:a(?:balho|gédia)|(?:eva|ê)s|istezas?|áfico|opa)|a(?:(?:ref|nt)a|l(?:vez)?|mbém)|(?:o[dl]|ip)o)|n(?:e(?:nhu(?:ma?|ns)|s(?:t[ae]|sa)|g(?:ros|ar)|l(?:es?|a)|m)|o(?:(?:v(?:idade|o)|t(?:íci)?a)?s|mes?|ite)?|a(?:(?:scente)?s|da)?|i(?:nguém|sso)|úmeros)|f(?:o(?:r(?:ças?|mas?|tuna)|me)|a(?:l(?:ar|ta)|mília|to)|i(?:dalgos|lósofo|m)|u(?:(?:tur|m)o|gir)|e(?:stas?|bre)|é(?:rias)?|órmulas?)|v(?:e(?:r(?:(?:dadeir|s)os)?|stígio|detas)|i(?:n(?:gança|ho)|slumbrar|zinhos|da)|a(?:ci(?:lar|na)|idades|gas?|lor)|o(?:ltas?|z)|éu)|i(?:(?:m(?:possívei|agen)|deologia)s|n(?:teresse|dícios|imigo)|gual)|g(?:r(?:a(?:ndes?|des|ça)|upos)|o(?:nçalinh|vern|st)o|arantias?)|l(?:i(?:nguagem|mites?|vros?|ames|xo)|u(?:[az]|tas?|gar)|eis?|á)|o(?:u(?:tr(?:os?|a)|ro)?|(?:bstácul|lh)os|fensa|rdem|nde)?|h(?:o(?:me(?:ns|m)|nra|je)|ipótese)|qu(?:a(?:(?:is|l)quer|se)|em?)|j(?:o(?:rnai|go)s|ustiça|á)|á(?:r(?:vore|ea)|lbum|gua)|u(?:m(?:as?)?|topias)|é(?:pocas?)?|ânimo)".
+02:34:51.023 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: The Portuguese (Angola preAO) rule: LP_NAO_A[1], token [3], contains duplicated disjunction part (a) within "(?:c(?:a(?:m(?:i(?:nhos?|sas)|a(?:rada|s)?|elos|po)|r(?:t(?:ilha|as?)|ác?ter|amujo|ros?|ne)|s(?:t(?:el(?:hanos|o)|igo)|as?|os?|ca)|p(?:it(?:a(?:is|l)|ães)|richos?|as)|b(?:reiros|otino|eça)|l(?:deiradas|çado|or)|ch(?:orrinho|aça)|(?:ntinh|gaç)o|u(?:dal|sas)|valos?|tarse|ça|os)|o(?:n(?:t(?:r(?:abandistas|ole)|estar)|f(?:iança|orto)|se(?:lhos|nso))|m(?:p(?:romisso|anhia)|bate|ida|um|o)?|(?:b(?:r(?:anç)?|ertur)|us|v)a|i(?:sa(?:-ruim)?|ros)|adjutor)|h(?:a(?:ma(?:riz)?|nce|ves)|e(?:(?:iro|que)s|fes?)|oque|uva|á)|r(?:i(?:a(?:(?:nça|do)s|tura)|m(?:inoso|es?)|se)|ase)|e(?:r(?:t(?:ezas?|as)|imônia)|go(?:nha)?|ntro)|l(?:a(?:ro-escuro|sse)|i(?:entel|m)a|ube)|i(?:n(?:e(?:asta|mas?)|co)|úmes|pó)|u(?:l(?:pado|tura)|ra)|á(?:lculo)?|éu)|a(?:l(?:g(?:u(?:ma?|ns)|as)|(?:caid|arm|fac)e|t(?:ernativas|a)|m(?:oço|a)|deias|vará|i)|m(?:(?:bulante|igo|pla)s|a(?:nuense|rgura)|or)|t(?:a(?:ques?|lhos)|mosfera|rasos?|eus|é)|p(?:e(?:tite|nas)|o(?:ios?|sta)|lausos)|r(?:istocracias|t(?:ista|e)|voredo|ma)|s(?:s(?:i(?:stentes|m)|adura)|pas)?|(?:g(?:ricultur|end)|ind)a|c(?:(?:úmul|ord)o|ademias)|(?:n(?:imai|o)|forismo)s|u(?:to(?:móvel|r)|las)|qu(?:el(?:as?|es?)|i)|b(?:ertura|rigo)|ju(?:ste|da)|z(?:uis|ar)|(?:vanç)?o|dmirar|í)|d(?:e(?:s(?:e(?:(?:mpreg|rt)o|jar)|(?:graçad|leix|tin)o|c(?:ulpas?|anso)|(?:vio|sa)s|pedida|ordem|ar)|(?:u(?:se)?|talhe)s|n(?:úncias|tro)|certo|ver|z)?|i(?:v(?:i(?:dendos|nas?)|ergências)|f(?:iculdades|erenças?)|s(?:[st]o|farce)|a(?:(?:bo)?s)?|(?:plom|et)a|rec?tor|álogo)|o(?:u(?:tr(?:ina|os)|s)|r(?:mi(?:mos|r))?|(?:ming|l)o|enças?|çura|ce|is)?|u(?:(?:que|a)s|vidar)|(?:r(?:am|og)|ívid)a|a(?:dos|ta)|úvidas?)|e(?:s(?:t(?:(?:(?:údi|ud)o|ratégia)s|a(?:tísticas)?|ômago|es?)|c(?:ol(?:as|ha)|ândalo|ravos|apar)|p(?:erança|écies|aços?)|s(?:es?|a)|forços)|m(?:p(?:a(?:t(?:es|ia)|das)|(?:lastr|reg)o|enhos?)|bargo)?|n(?:c(?:arregados|ontro)|fermidades|ganos?|ergia|tre)|(?:x(?:ager|empl)|goísm)o|(?:vidência|lefante)s|pi(?:demias?|sódio)|r(?:ros?|mos|va)|conomia|quipes?)?|p(?:r(?:o(?:gr(?:esso|ama)|blemas?|dígio|tetor|vas?)|a(?:z(?:er|o)|xe)|incípios?|essas?)|e(?:r(?:(?:plexidade|spec?tiva|íodo)s|igo|da)|s(?:soa[ls]?|ar)|nedos|ixe)|o(?:r(?:tugueses|que|ém)?|lí(?:ticas?|cias)|(?:esi|t)a|der|sse|is|vo)|a(?:(?:ciênci|lavr)a|r(?:tidos?|a)|ssagem|pel|ís|i)|i(?:o(?:lhos|r)|stas)|úblico|lanos)|b(?:a(?:n(?:(?:h(?:eir)?o|quete|ana)s|[cd]o)|l(?:a(?:nça|s)|iza)|r(?:racas|co)|i(?:le|a)|gatelas|se)|o(?:n(?:ança|de|zo|s)|t(?:equim|a)|m(?:bas)?|(?:rd)?a|gas)|e(?:l(?:(?:ez)?a|os)|rnarda|ijo|m)|r(?:aços?|uxas)|i(?:cho|rra)|álsamo|uracos)|m(?:e(?:n(?:digo|ina)|d(?:ida|o)|s(?:as|mo)|ios?|lhor)|o(?:t(?:orista|ivos)|l(?:éstia|hos)|delos?|rte|ça)|a(?:l(?:andro|es)?|(?:nhã)?s|i(?:or|s)|rgem)|(?:á(?:scar|go)|úsic)a|u(?:danças|itas?|lher)|é(?:dicos?|todos?)|i(?:lagre|ster)|ãos)|r(?:e(?:c(?:u(?:rsos?|os)|ei(?:tas|o))|f(?:(?:erência|ugiado)s|orma)|g(?:ist(?:ros?|o)|ra)|s(?:postas?|ervas)|m(?:édi|ors)o|i)|a(?:ci(?:ocínios|smo)|ças|paz)|i(?:queza|scos?)|osas|ua)|s(?:e(?:n(?:ti(?:do|r)|ador)|g(?:redos?|unda)|r(?:viço|eia)?|mpre|quer|is)|u(?:b(?:tileza|sídio)s|rf)|o(?:(?:cia)?l|bre|no|m)|i(?:na(?:is|l)|mpatia)|a(?:ngue|ída|las)|ó)|t(?:e(?:(?:r(?:apêutic|r)|cnologi)a|m(?:or|po)|stemunhas)|r(?:a(?:balho|gédia)|(?:eva|ê)s|istezas?|áfico|opa)|a(?:(?:ref|nt)a|l(?:vez)?|mbém)|(?:o[dl]|ip)o)|n(?:e(?:nhu(?:ma?|ns)|s(?:t[ae]|sa)|g(?:ros|ar)|l(?:es?|a)|m)|o(?:(?:v(?:idade|o)|t(?:íci)?a)?s|mes?|ite)?|a(?:(?:scente)?s|da)?|i(?:nguém|sso)|úmeros)|f(?:o(?:r(?:ças?|mas?|tuna)|me)|a(?:l(?:ar|ta)|mília|to)|i(?:dalgos|lósofo|m)|u(?:(?:tur|m)o|gir)|e(?:stas?|bre)|é(?:rias)?|órmulas?)|v(?:e(?:r(?:(?:dadeir|s)os)?|stígio|detas)|i(?:n(?:gança|ho)|slumbrar|zinhos|da)|a(?:ci(?:lar|na)|idades|gas?|lor)|o(?:ltas?|z)|éu)|i(?:(?:m(?:possívei|agen)|deologia)s|n(?:teresse|dícios|imigo)|gual)|g(?:r(?:a(?:ndes?|des|ça)|upos)|o(?:nçalinh|vern|st)o|arantias?)|l(?:i(?:nguagem|mites?|vros?|ames|xo)|u(?:[az]|tas?|gar)|eis?|á)|o(?:u(?:tr(?:os?|a)|ro)?|(?:bstácul|lh)os|fensa|rdem|nde)?|h(?:o(?:me(?:ns|m)|nra|je)|ipótese)|qu(?:a(?:(?:is|l)quer|se)|em?)|j(?:o(?:rnai|go)s|ustiça|á)|á(?:r(?:vore|ea)|lbum|gua)|u(?:m(?:as?)?|topias)|é(?:pocas?)?|ânimo)".
+02:34:51.989 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: The Portuguese (Moçambique preAO) rule: LP_NAO_A[1], token [3], contains duplicated disjunction part (a) within "(?:c(?:a(?:m(?:i(?:nhos?|sas)|a(?:rada|s)?|elos|po)|r(?:t(?:ilha|as?)|ác?ter|amujo|ros?|ne)|s(?:t(?:el(?:hanos|o)|igo)|as?|os?|ca)|p(?:it(?:a(?:is|l)|ães)|richos?|as)|b(?:reiros|otino|eça)|l(?:deiradas|çado|or)|ch(?:orrinho|aça)|(?:ntinh|gaç)o|u(?:dal|sas)|valos?|tarse|ça|os)|o(?:n(?:t(?:r(?:abandistas|ole)|estar)|f(?:iança|orto)|se(?:lhos|nso))|m(?:p(?:romisso|anhia)|bate|ida|um|o)?|(?:b(?:r(?:anç)?|ertur)|us|v)a|i(?:sa(?:-ruim)?|ros)|adjutor)|h(?:a(?:ma(?:riz)?|nce|ves)|e(?:(?:iro|que)s|fes?)|oque|uva|á)|r(?:i(?:a(?:(?:nça|do)s|tura)|m(?:inoso|es?)|se)|ase)|e(?:r(?:t(?:ezas?|as)|imônia)|go(?:nha)?|ntro)|l(?:a(?:ro-escuro|sse)|i(?:entel|m)a|ube)|i(?:n(?:e(?:asta|mas?)|co)|úmes|pó)|u(?:l(?:pado|tura)|ra)|á(?:lculo)?|éu)|a(?:l(?:g(?:u(?:ma?|ns)|as)|(?:caid|arm|fac)e|t(?:ernativas|a)|m(?:oço|a)|deias|vará|i)|m(?:(?:bulante|igo|pla)s|a(?:nuense|rgura)|or)|t(?:a(?:ques?|lhos)|mosfera|rasos?|eus|é)|p(?:e(?:tite|nas)|o(?:ios?|sta)|lausos)|r(?:istocracias|t(?:ista|e)|voredo|ma)|s(?:s(?:i(?:stentes|m)|adura)|pas)?|(?:g(?:ricultur|end)|ind)a|c(?:(?:úmul|ord)o|ademias)|(?:n(?:imai|o)|forismo)s|u(?:to(?:móvel|r)|las)|qu(?:el(?:as?|es?)|i)|b(?:ertura|rigo)|ju(?:ste|da)|z(?:uis|ar)|(?:vanç)?o|dmirar|í)|d(?:e(?:s(?:e(?:(?:mpreg|rt)o|jar)|(?:graçad|leix|tin)o|c(?:ulpas?|anso)|(?:vio|sa)s|pedida|ordem|ar)|(?:u(?:se)?|talhe)s|n(?:úncias|tro)|certo|ver|z)?|i(?:v(?:i(?:dendos|nas?)|ergências)|f(?:iculdades|erenças?)|s(?:[st]o|farce)|a(?:(?:bo)?s)?|(?:plom|et)a|rec?tor|álogo)|o(?:u(?:tr(?:ina|os)|s)|r(?:mi(?:mos|r))?|(?:ming|l)o|enças?|çura|ce|is)?|u(?:(?:que|a)s|vidar)|(?:r(?:am|og)|ívid)a|a(?:dos|ta)|úvidas?)|e(?:s(?:t(?:(?:(?:údi|ud)o|ratégia)s|a(?:tísticas)?|ômago|es?)|c(?:ol(?:as|ha)|ândalo|ravos|apar)|p(?:erança|écies|aços?)|s(?:es?|a)|forços)|m(?:p(?:a(?:t(?:es|ia)|das)|(?:lastr|reg)o|enhos?)|bargo)?|n(?:c(?:arregados|ontro)|fermidades|ganos?|ergia|tre)|(?:x(?:ager|empl)|goísm)o|(?:vidência|lefante)s|pi(?:demias?|sódio)|r(?:ros?|mos|va)|conomia|quipes?)?|p(?:r(?:o(?:gr(?:esso|ama)|blemas?|dígio|tetor|vas?)|a(?:z(?:er|o)|xe)|incípios?|essas?)|e(?:r(?:(?:plexidade|spec?tiva|íodo)s|igo|da)|s(?:soa[ls]?|ar)|nedos|ixe)|o(?:r(?:tugueses|que|ém)?|lí(?:ticas?|cias)|(?:esi|t)a|der|sse|is|vo)|a(?:(?:ciênci|lavr)a|r(?:tidos?|a)|ssagem|pel|ís|i)|i(?:o(?:lhos|r)|stas)|úblico|lanos)|b(?:a(?:n(?:(?:h(?:eir)?o|quete|ana)s|[cd]o)|l(?:a(?:nça|s)|iza)|r(?:racas|co)|i(?:le|a)|gatelas|se)|o(?:n(?:ança|de|zo|s)|t(?:equim|a)|m(?:bas)?|(?:rd)?a|gas)|e(?:l(?:(?:ez)?a|os)|rnarda|ijo|m)|r(?:aços?|uxas)|i(?:cho|rra)|álsamo|uracos)|m(?:e(?:n(?:digo|ina)|d(?:ida|o)|s(?:as|mo)|ios?|lhor)|o(?:t(?:orista|ivos)|l(?:éstia|hos)|delos?|rte|ça)|a(?:l(?:andro|es)?|(?:nhã)?s|i(?:or|s)|rgem)|(?:á(?:scar|go)|úsic)a|u(?:danças|itas?|lher)|é(?:dicos?|todos?)|i(?:lagre|ster)|ãos)|r(?:e(?:c(?:u(?:rsos?|os)|ei(?:tas|o))|f(?:(?:erência|ugiado)s|orma)|g(?:ist(?:ros?|o)|ra)|s(?:postas?|ervas)|m(?:édi|ors)o|i)|a(?:ci(?:ocínios|smo)|ças|paz)|i(?:queza|scos?)|osas|ua)|s(?:e(?:n(?:ti(?:do|r)|ador)|g(?:redos?|unda)|r(?:viço|eia)?|mpre|quer|is)|u(?:b(?:tileza|sídio)s|rf)|o(?:(?:cia)?l|bre|no|m)|i(?:na(?:is|l)|mpatia)|a(?:ngue|ída|las)|ó)|t(?:e(?:(?:r(?:apêutic|r)|cnologi)a|m(?:or|po)|stemunhas)|r(?:a(?:balho|gédia)|(?:eva|ê)s|istezas?|áfico|opa)|a(?:(?:ref|nt)a|l(?:vez)?|mbém)|(?:o[dl]|ip)o)|n(?:e(?:nhu(?:ma?|ns)|s(?:t[ae]|sa)|g(?:ros|ar)|l(?:es?|a)|m)|o(?:(?:v(?:idade|o)|t(?:íci)?a)?s|mes?|ite)?|a(?:(?:scente)?s|da)?|i(?:nguém|sso)|úmeros)|f(?:o(?:r(?:ças?|mas?|tuna)|me)|a(?:l(?:ar|ta)|mília|to)|i(?:dalgos|lósofo|m)|u(?:(?:tur|m)o|gir)|e(?:stas?|bre)|é(?:rias)?|órmulas?)|v(?:e(?:r(?:(?:dadeir|s)os)?|stígio|detas)|i(?:n(?:gança|ho)|slumbrar|zinhos|da)|a(?:ci(?:lar|na)|idades|gas?|lor)|o(?:ltas?|z)|éu)|i(?:(?:m(?:possívei|agen)|deologia)s|n(?:teresse|dícios|imigo)|gual)|g(?:r(?:a(?:ndes?|des|ça)|upos)|o(?:nçalinh|vern|st)o|arantias?)|l(?:i(?:nguagem|mites?|vros?|ames|xo)|u(?:[az]|tas?|gar)|eis?|á)|o(?:u(?:tr(?:os?|a)|ro)?|(?:bstácul|lh)os|fensa|rdem|nde)?|h(?:o(?:me(?:ns|m)|nra|je)|ipótese)|qu(?:a(?:(?:is|l)quer|se)|em?)|j(?:o(?:rnai|go)s|ustiça|á)|á(?:r(?:vore|ea)|lbum|gua)|u(?:m(?:as?)?|topias)|é(?:pocas?)?|ânimo)".
+02:35:03.014 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+02:35:03.015 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+02:35:03.015 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+02:35:15.165 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+02:35:15.165 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+02:35:15.165 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+02:35:15.928 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Skipping message tests for unmaintained language Asturian
+02:35:17.666 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+02:35:17.666 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+02:35:17.666 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+02:35:18.361 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Skipping message tests for unmaintained language Belarusian
+02:35:20.126 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+02:35:20.126 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+02:35:20.126 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+02:35:22.334 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Skipping message tests for unmaintained language Chinese
+02:35:22.335 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: zh-CN: 惶_皇[1]: 'id' and 'name' are identical for this rule
+02:35:22.335 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: zh-CN: 慌_皇[2]: 'id' and 'name' are identical for this rule
+02:35:23.277 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+02:35:23.277 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+02:35:23.277 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+02:35:24.284 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Skipping message tests for unmaintained language Danish
+02:35:24.293 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: da-DK: Ordgentagelse[1]: 'id' and 'name' are identical for this rule
+02:35:24.293 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: da-DK: Ordgentagelse[2]: 'id' and 'name' are identical for this rule
+02:35:24.293 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: da-DK: Ordgentagelse[3]: 'id' and 'name' are identical for this rule
+02:35:24.293 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: da-DK: Ordgentagelse[4]: 'id' and 'name' are identical for this rule
+02:35:24.293 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: da-DK: Ordgentagelse[5]: 'id' and 'name' are identical for this rule
+02:35:24.293 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: da-DK: inkl.[1]: 'id' and 'name' are identical for this rule
+02:35:24.293 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: da-DK: inkl.[2]: 'id' and 'name' are identical for this rule
+02:35:24.293 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: da-DK: inkl.[3]: 'id' and 'name' are identical for this rule
+02:35:24.293 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: da-DK: inkl.[4]: 'id' and 'name' are identical for this rule
+02:35:24.293 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: da-DK: ekskl.[1]: 'id' and 'name' are identical for this rule
+02:35:24.293 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: da-DK: ekskl.[2]: 'id' and 'name' are identical for this rule
+02:35:24.294 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: da-DK: ekskl.[3]: 'id' and 'name' are identical for this rule
+02:35:24.294 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: da-DK: ekskl.[4]: 'id' and 'name' are identical for this rule
+02:35:25.119 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+02:35:25.119 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+02:35:25.119 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+02:35:26.231 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Esperanto: Please limit repetition in regex, e.g. use '{2,30}' instead of '{2,}': .{2,}(?:a|o|i)n?tuloj?n? (SUPERFLUA_UL[1])
+02:35:27.182 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+02:35:27.182 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+02:35:27.182 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+02:35:27.744 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Galician: Please limit repetition in regex, e.g. use '{2,30}' instead of '{2,}': (?:\p{Lu}{2,})s (ACRONYMS_PLURAL[1])
+02:35:29.052 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Skipping message tests for unmaintained language Galician
+02:35:30.045 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+02:35:30.045 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+02:35:30.045 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+02:35:31.944 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+02:35:31.944 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+02:35:31.944 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+02:35:33.010 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+02:35:33.011 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+02:35:33.011 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+02:35:33.390 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Skipping message tests for unmaintained language Japanese
+02:35:34.552 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+02:35:34.553 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+02:35:34.553 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+02:35:35.213 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Skipping message tests for unmaintained language Khmer
+02:35:35.982 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+02:35:35.982 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+02:35:35.982 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+02:35:37.103 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+02:35:37.103 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+02:35:37.103 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+02:35:38.542 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+02:35:38.542 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+02:35:38.542 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+02:35:38.924 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Skipping message tests for unmaintained language Romanian
+02:35:39.615 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Romanian rule VIRGULA_ETC[1] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: A adus mere, pere, prune <marker>, etc</marker>. => [etc]
+02:35:39.615 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Romanian rule VIRGULA_CRATIMA[1] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: A spus <marker>, –</marker> printre altele – că nu mai vine. => [–]
+02:35:40.821 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+02:35:40.821 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+02:35:40.821 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+02:35:41.729 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Skipping message tests for unmaintained language Slovak
+02:35:43.619 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+02:35:43.619 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+02:35:43.619 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+02:35:44.169 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: The Slovenian rule: POMISLJAJ_2[1] (exception in token [1]), token [1], contains "->" that contains token separators, so can't possibly be matched.
+02:35:44.169 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: The Slovenian rule: POMISLJAJ_3[1] (exception in token [1]), token [1], contains "<-" that contains token separators, so can't possibly be matched.
+02:35:44.407 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Skipping message tests for unmaintained language Slovenian
+02:35:45.308 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+02:35:45.309 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+02:35:45.309 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+02:35:51.817 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - ################################################################################################
+02:35:51.818 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: 35 default='temp_off' rules for Spanish, please make sure to turn on these
+02:35:51.818 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: rules after they have been tested (or use default='off' to turn them off permanently)
+02:35:51.818 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: (this warning appears if there are more than 20 default='temp_off' rules)
+02:35:51.818 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: temp_off rules by file:
+02:35:51.818 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: 35 in /org/languagetool/rules/es/grammar.xml
+02:35:51.818 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - ################################################################################################
+02:36:00.361 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+02:36:00.362 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+02:36:00.362 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+02:36:00.703 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Skipping message tests for unmaintained language Swedish
+02:36:00.719 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: sv: Ordningstal[1]: 'id' and 'name' are identical for this rule
+02:36:00.720 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: sv: Ordningstal2[1]: 'id' and 'name' are identical for this rule
+02:36:00.720 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: sv: PLANER_OM[1]: 'id' and 'name' are identical for this rule
+02:36:02.483 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+02:36:02.484 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+02:36:02.484 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+02:36:03.355 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Skipping message tests for unmaintained language Tamil
+02:36:04.437 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+02:36:04.437 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+02:36:04.437 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+02:36:05.057 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Skipping message tests for unmaintained language Tagalog
+02:36:27.157 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+02:36:27.157 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+02:36:27.157 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+02:36:29.624 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule NEBENSAETZE[10] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Er hat vor<marker>, seine</marker> Tante zu besuchen. => []
+02:36:29.631 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule NEBENSAETZE[11] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Er hat vor<marker>, seine</marker> Tante zu besuchen und ihr bei der Gartenarbeit zu helfen. => []
+02:36:29.633 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule NEBENSAETZE[9] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Er hat ihr befohlen<marker>, auf</marker> das Geld aufzupassen. => []
+02:36:29.645 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule NEBENSAETZE[11] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Er hat vor<marker>, seine</marker> Tante zu besuchen und ihr beizustehen. => []
+02:36:29.672 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule INDIREKTE_REDE[2] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Er stellte fest<marker>, sie</marker> sie sei schön. => []
+02:36:29.678 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule INDIREKTE_REDE[3] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Er gibt an<marker>, sie</marker> sei um 10 Uhr gekommen. => []
+02:36:29.679 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule INDIREKTE_REDE[7] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Ihre Behauptung<marker>, er</marker> wisse überhaupt nichts, kränkte ihn. => []
+02:36:29.680 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule INDIREKTE_REDE[6] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Ihre Behauptung<marker>, er</marker> könne das niemals schaffen, kränkte ihn. => []
+02:36:29.680 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule INDIREKTE_REDE[1] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Er sagte<marker>, er</marker> sei 30 Jahre alt. => []
+02:36:29.687 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule INDIREKTE_REDE[4] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Er teilt mit<marker>, sie</marker> sei um 10 Uhr gekommen. => []
+02:36:29.687 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule INDIREKTE_REDE[5] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Er nimmt an<marker>, sie</marker> sei um 10 Uhr gekommen. => []
+02:36:29.690 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule INDIREKTE_REDE[8] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Mit ihrer Behauptung<marker>, er</marker> wisse überhaupt nichts, kränkte sie ihn. => []
+02:36:29.690 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule INDIREKTE_REDE[9] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Gemäß ihrer Aussage<marker>, er</marker> habe unfair gespielt, disqualifizierte man ihn. => []
+02:36:29.750 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule RELATIVSAETZE[1] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Der Mann<marker>, der</marker> gut singt, tritt heute abend auf. => []
+02:36:29.771 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule RELATIVSAETZE[1] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Der Mann<marker>, dem</marker> ich so gerne zuhöre, tritt heute abend auf. => []
+02:36:29.771 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule INDIREKTE_REDE[6] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Ihre Behauptung<marker>, er</marker> habe unfair gespielt, kränkte ihn. => []
+02:36:29.778 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule RELATIVSAETZE[1] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Der Mann<marker>, dessen</marker> Stimme so schön klingt, tritt heute abend auf. => []
+02:36:29.785 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule RELATIVSAETZE[1] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Der Mann<marker>, über den</marker> viel gesprochen wird, tritt heute abend auf. => []
+02:36:29.799 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule KONJUNKTIV[1] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Sie sagte<marker>, man sei</marker> bereit. => []
+02:36:29.803 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule INDIREKTE_REDE[9] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Durch seine Behauptung<marker>, er</marker> könne das schaffen, war ich besonders motiviert. => []
+02:36:29.807 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule KONJUNKTIV[3] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Sie sagte<marker>, morgen könnte</marker> es regnen. => []
+02:36:29.819 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule RELATIVSAETZE[1] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Das sind die Freunde<marker>, mit denen</marker> ich viel Zeit verbringe. => []
+02:36:29.824 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule RELATIVSAETZE[1] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Bodo<marker>, den</marker> ich schon ewig kenne, ist sehr lustig. => []
+02:36:29.850 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule RELATIVSAETZE[1] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Marta<marker>, die</marker> eine Brille trägt, geht in meine Klasse. => []
+02:36:29.869 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule RELATIVSAETZE[1] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Linda<marker>, deren</marker> Lächeln bezaubernd ist, kann toll tanzen. => []
+02:36:29.888 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule RELATIVSAETZE[1] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Und hier ist Knut<marker>, dem</marker> ich viel verdanke. => []
+02:36:29.893 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule RELATIVSAETZE[1] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Der Mann<marker>, den</marker> ich gerne singen höre, tritt heute abend auf. => []
+02:36:29.901 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule RELATIVSAETZE[1] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Bodo<marker>, den</marker> ich öfter bummeln sehe, kommt gern her. => []
+02:36:29.909 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule RELATIVSAETZE[1] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Er ist jemand<marker>, der</marker> gern lacht und selten schimpft. => []
+02:36:29.929 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule RELATIVSAETZE[1] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Er ist jemand<marker>, der</marker> gern lacht, viel isst und selten schimpft. => []
+02:36:29.933 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule RELATIVSAETZE[1] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Er ist jemand<marker>, der</marker> gern lacht und auf den alle hören. => []
+02:36:29.943 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule RELATIVSAETZE[1] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Er ist jemand<marker>, der</marker> gern lacht, aber wenig Kritik verträgt. => []
+02:36:29.949 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule RELATIVSAETZE[1] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Er ist jemand<marker>, der</marker> gern lacht, dem alles egal ist und über den keiner schimpft. => []
+02:36:29.956 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule RELATIVSAETZE[1] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Er ist jemand<marker>, der</marker> gern lacht, nichts nachträgt und auf den alle hören. => []
+02:36:29.960 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: Simple German rule RELATIVSAETZE[1] removes ', ' but doesn't have a space, comma, semicolon, or dot at the start of the suggestion: Er ist jemand<marker>, der</marker> gern lacht, der selten schimpft und viel Geduld hat => []
+02:36:33.320 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: WOHL_ODER_UEBEL[1]:
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Meinten Sie 'wohl oder \3' (= notgedrungen)?
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: WIDER_ERWARTEN[1]:
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Meinten Sie die Wendung 'wider \2'?
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: KOSTEN_SUBST[3]:
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Bitte prüfen Sie die Kleinschreibung.
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: KOSTEN_SUBST[4]:
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Bitte prüfen Sie die Kleinschreibung.
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: KOSTEN_SUBST[5]:
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Bitte prüfen Sie die Kleinschreibung.
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: KOSTEN_SUBST[6]:
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Bitte prüfen Sie die Kleinschreibung.
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: KOSTEN_SUBST[7]:
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Bitte prüfen Sie die Kleinschreibung.
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: KOSTEN_SUBST[8]:
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Bitte prüfen Sie die Kleinschreibung.
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: ZUM_WOHL[5]:
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Meinten Sie <suggestion>\3</suggestion>?
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_MAS[1]:
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_MAS[2]:
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_MAS[3]:
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_NEU[1]:
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_NEU[2]:
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_NEU[3]:
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:36:33.321 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:36:33.322 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_NEU[4]:
+02:36:33.322 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:36:33.322 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:36:33.322 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_NEU[5]:
+02:36:33.322 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:36:33.322 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:36:33.322 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: RAT_UND_TAT[1]:
+02:36:33.322 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:36:33.322 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Meinten Sie die Redewendung 'mit Rat und Tat'?
+02:36:33.322 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: RAT_UND_TAT[2]:
+02:36:33.322 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:36:33.322 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Meinten Sie die Redewendung 'mit Rat und Tat'?
+02:36:33.886 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: WOHL_ODER_UEBEL[1]:
+02:36:33.887 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:36:33.887 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Meinten Sie 'wohl oder \3' (= notgedrungen)?
+02:36:33.887 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: WIDER_ERWARTEN[1]:
+02:36:33.887 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:36:33.887 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Meinten Sie die Wendung 'wider \2'?
+02:36:33.887 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: KOSTEN_SUBST[3]:
+02:36:33.887 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:36:33.887 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Bitte prüfen Sie die Kleinschreibung.
+02:36:33.887 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: KOSTEN_SUBST[4]:
+02:36:33.887 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:36:33.887 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Bitte prüfen Sie die Kleinschreibung.
+02:36:33.888 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: KOSTEN_SUBST[5]:
+02:36:33.888 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:36:33.888 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Bitte prüfen Sie die Kleinschreibung.
+02:36:33.888 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: KOSTEN_SUBST[6]:
+02:36:33.888 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:36:33.888 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Bitte prüfen Sie die Kleinschreibung.
+02:36:33.888 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: KOSTEN_SUBST[7]:
+02:36:33.888 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:36:33.888 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Bitte prüfen Sie die Kleinschreibung.
+02:36:33.888 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: KOSTEN_SUBST[8]:
+02:36:33.888 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:36:33.888 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Bitte prüfen Sie die Kleinschreibung.
+02:36:33.889 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: ZUM_WOHL[5]:
+02:36:33.889 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:36:33.889 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Meinten Sie <suggestion>\3</suggestion>?
+02:36:33.889 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_MAS[1]:
+02:36:33.889 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:36:33.889 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:36:33.889 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_MAS[2]:
+02:36:33.889 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:36:33.889 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:36:33.889 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_MAS[3]:
+02:36:33.889 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:36:33.889 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:36:33.890 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_NEU[1]:
+02:36:33.890 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:36:33.890 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:36:33.890 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_NEU[2]:
+02:36:33.890 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:36:33.890 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:36:33.890 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_NEU[3]:
+02:36:33.890 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:36:33.890 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:36:33.890 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_NEU[4]:
+02:36:33.890 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:36:33.891 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:36:33.891 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: SIMPLE_AGREEMENT_NEU[5]:
+02:36:33.891 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Evtl. keine Übereinstimmung von Kasus, Genus oder Numerus
+02:36:33.891 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Hier scheint der Artikel nicht korrekt zu sein.
+02:36:33.891 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: RAT_UND_TAT[1]:
+02:36:33.891 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:36:33.891 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Meinten Sie die Redewendung 'mit Rat und Tat'?
+02:36:33.894 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Warning: The content of <short> should be shorter than the content of <message>. Language: German. Rule: RAT_UND_TAT[2]:
+02:36:33.895 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <short>:   Bitte überprüfen Sie die Groß-/Kleinschreibung.
+02:36:33.895 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler -   <message>: Meinten Sie die Redewendung 'mit Rat und Tat'?
+02:36:34.377 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: German: Please limit repetition in regex, e.g. use '{2,30}' instead of '{2,}': [a-zäöü]{6,}würdigen (ERHALTENSWUERDIGEN[1])
+02:36:34.377 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: German: Please limit repetition in regex, e.g. use '{2,30}' instead of '{2,}': (Rettungs|Kranken)wagen|[A-Z][a-zäöüß]{4,}(schmerzen|strecken) (RETTUNGSWAGEN[1])
+02:36:34.378 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: German: Please limit repetition in regex, e.g. use '{2,30}' instead of '{2,}': [A-ZÄÖÜ][a-zäöüß]{3,}beamte (SUB_BEAMTE[1])
+02:36:34.378 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: German: Please limit repetition in regex, e.g. use '{2,30}' instead of '{2,}': [A-ZÄÖÜ][a-zäöüß]{3,}beamte (SUB_BEAMTE[2])
+02:36:34.378 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: German: Please limit repetition in regex, e.g. use '{2,30}' instead of '{2,}': [A-ZÄÖÜ][a-zäöüß]{3,}beamte (SUB_BEAMTE[3])
+02:36:34.381 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - *** WARNING: German: Please limit repetition in regex, e.g. use '{2,30}' instead of '{2,}': [\-]{3,} (HYPHENS[1])
+02:36:35.646 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+02:36:35.646 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+02:36:35.646 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+02:37:41.073 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 2021-12-06 01:37:41 +0000 Exception was caused by this text (0 chars, showing up to 500):
+02:37:41.073 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 
+02:37:51.944 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Tests run: 8, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 34.209 s <<< FAILURE! - in org.languagetool.server.HTTPServerTest
+02:37:51.945 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] testHTTPServer(org.languagetool.server.HTTPServerTest)  Time elapsed: 7.184 s  <<< ERROR!
+02:38:03.246 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Tests run: 3, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 11.296 s <<< FAILURE! - in org.languagetool.server.HTTPSServerTest
+02:38:03.247 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] testHTTPSServer(org.languagetool.server.HTTPSServerTest)  Time elapsed: 0.569 s  <<< ERROR!
+02:38:03.250 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] runRequestLimitationTest(org.languagetool.server.HTTPSServerTest)  Time elapsed: 5.194 s  <<< ERROR!
+02:38:03.440 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 2021-12-06 01:38:03 +0000 Exception was caused by this text (0 chars, showing up to 500):
+02:38:03.440 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 
+02:38:03.440 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 2021-12-06 01:38:03 +0000 Exception was caused by this text (0 chars, showing up to 500):
+02:38:03.440 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 
+02:38:34.432 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Tests run: 8, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 31.177 s <<< FAILURE! - in org.languagetool.server.HTTPServerLoadTest
+02:38:34.433 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] testHTTPServer(org.languagetool.server.HTTPServerLoadTest)  Time elapsed: 5.189 s  <<< ERROR!
+02:38:35.751 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Errors: 
+02:38:35.751 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   HTTPSServerTest.runRequestLimitationTest:57->check:177->check:173 » IO Server ...
+02:38:35.751 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   HTTPSServerTest.testHTTPSServer:117->runTests:162->check:173 » IO Server retur...
+02:38:35.751 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   HTTPServerLoadTest.testHTTPServer:55->doTest:73 » Execution java.lang.RuntimeE...
+02:38:35.751 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   HTTPServerTest.testHTTPServer:64->runTestsV2:113->checkV2:417->checkV2:425->plainTextCheck:433->check:448 » IO
+02:38:35.751 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Tests run: 54, Failures: 0, Errors: 4, Skipped: 9
+02:38:35.755 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project languagetool-server: There are test failures.
+02:38:35.756 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+02:38:35.756 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-server/target/surefire-reports for the individual test results.
+02:38:35.756 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+02:38:35.756 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+02:38:35.759 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+02:38:35.759 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+02:38:35.759 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+02:38:35.759 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+02:38:35.759 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+02:38:35.759 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+02:38:35.759 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+02:38:35.759 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :languagetool-server
+02:38:40.698 [main] ERROR f.i.s.r.p.s.paths.ComputeClasspath - The classpath file is empty.
+02:38:40.698 [main] ERROR f.i.s.r.p.s.paths.ComputeClasspath - The classpath seems not to contain JUnit, maybe this project does not use JUnit for testing.
+02:38:40.698 [main] ERROR f.i.s.r.p.s.paths.ComputeClasspath - The file does not exist: /root/./workspace/languagetool-org-languagetool-master-6111_repo/target/classes.
+02:38:40.698 [main] ERROR f.i.s.r.p.s.paths.ComputeClasspath - The file does not exist: /root/./workspace/languagetool-org-languagetool-master-6111_repo/target/test-classes.
+02:38:40.745 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+02:38:40.758 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+02:38:40.758 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - 44 source dirs were found:
+02:38:40.758 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-commandline/src/main/java
+02:38:40.758 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-core/src/main/java
+02:38:40.758 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-dev/src/main/java
+02:38:40.758 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-gui-commons/src/main/java
+02:38:40.758 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-http-client/src/main/java
+02:38:40.758 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/ar/src/main/java
+02:38:40.758 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/ast/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/be/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/br/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/ca/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/da/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/de-DE-x-simple-language/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/de/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/el/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/en/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/eo/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/es/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/fa/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/fr/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/ga/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/gl/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/is/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/it/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/ja/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/km/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/lt/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/ml/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/nl/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/pl/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/pt/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/ro/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/ru/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/sk/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/sl/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/sv/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/ta/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/tl/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/uk/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/zh/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-office-extension/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-server/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-standalone/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-tools/src/main/java
+02:38:40.759 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-wikipedia/src/main/java
+02:38:40.820 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+02:38:40.839 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - 44 test dirs were found:
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-commandline/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-core/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-dev/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-gui-commons/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-http-client/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/ar/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/ast/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/be/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/br/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/ca/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/da/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/de-DE-x-simple-language/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/de/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/el/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/en/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/eo/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/es/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/fa/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/fr/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/ga/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/gl/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/is/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/it/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/ja/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/km/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/lt/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/ml/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/nl/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/pl/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/pt/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/ro/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/ru/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/sk/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/sl/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/sv/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/ta/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/tl/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/uk/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-language-modules/zh/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-office-extension/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-server/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-standalone/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-tools/src/test/java
+02:38:40.839 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-wikipedia/src/test/java
+02:38:41.559 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation - Get the following failing module path: /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-server
+02:38:41.580 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation - Get the following failing module path: /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-server
+02:38:41.587 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation - Get the following failing module path: /root/workspace/languagetool-org-languagetool-master-6111_repo/languagetool-server
+02:38:41.612 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation - ---Test results---
+02:38:41.612 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Total tests: 1185
+02:38:41.612 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Tests run: 1133
+02:38:41.612 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Tests passing: 1129
+02:38:41.612 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Failures: 0
+02:38:41.612 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Errors: 4
+02:38:41.612 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Skipped: 52
+[0] INFO Flacoco - Running Flacoco...
+[16] WARN TestMethodFilter - NoClassDefFoundError: class org.languagetool.server.ServerMetricsCollector
+[20] WARN TestMethodFilter - NoClassDefFoundError: class org.languagetool.server.V2TextChecker
+[22] WARN TestMethodFilter - NoClassDefFoundError: class org.languagetool.server.DatabaseAccessOpenSource
+[24] WARN TestMethodFilter - NoClassDefFoundError: class org.languagetool.server.ResultExtender
+[25] WARN TestMethodFilter - NoClassDefFoundError: class org.languagetool.server.UserLimits
+[30] WARN TestMethodFilter - NoClassDefFoundError: class org.languagetool.server.RemoteRuleMatchTest
+[35] WARN TestMethodFilter - NoClassDefFoundError: class org.languagetool.server.HTTPServerMultiLangLoadTest2
+[35] WARN TestMethodFilter - NoClassDefFoundError: class org.languagetool.server.HTTPServerLanguageIdentifierTest
+[36] WARN TestMethodFilter - NoClassDefFoundError: class org.languagetool.server.TextCheckerTest
+[37] WARN TestMethodFilter - NoClassDefFoundError: class org.languagetool.server.HTTPServerMultiLangLoadTest
+[37] WARN TestMethodFilter - NoClassDefFoundError: class org.languagetool.server.HTTPServerTest
+[38] WARN TestMethodFilter - NoClassDefFoundError: class org.languagetool.server.HTTPSServerTest
+[38] WARN TestMethodFilter - NoClassDefFoundError: class org.languagetool.server.HTTPServerLoadTest
+[39] WARN TestMethodFilter - NoClassDefFoundError: class org.languagetool.rules.DictionaryMatchFilterTest
+[41] WARN TestMethodFilter - NoClassDefFoundError: class org.languagetool.server.ApiV2
+[41] WARN TestMethodFilter - NoClassDefFoundError: class org.languagetool.server.ServerMetricsCollector
+[42] WARN TestMethodFilter - NoClassDefFoundError: class org.languagetool.server.V2TextChecker
+[42] WARN TestMethodFilter - NoClassDefFoundError: class org.languagetool.server.DatabaseAccessOpenSource
+[42] WARN TestMethodFilter - NoClassDefFoundError: class org.languagetool.server.ResultExtender
+[42] WARN TestMethodFilter - NoClassDefFoundError: class org.languagetool.server.UserLimits
+[42] WARN TestMethodFilter - NoClassDefFoundError: class org.languagetool.server.ServerTools
+[43] WARN TestMethodFilter - NoClassDefFoundError: class org.languagetool.server.DatabaseLogger
+[43] WARN TestMethodFilter - NoClassDefFoundError: class org.languagetool.server.RemoteRuleMatchTest
+[44] WARN TestMethodFilter - NoClassDefFoundError: class org.languagetool.server.HTTPServerMultiLangLoadTest2
+[44] WARN TestMethodFilter - NoClassDefFoundError: class org.languagetool.server.HTTPServerLanguageIdentifierTest
+[44] WARN TestMethodFilter - NoClassDefFoundError: class org.languagetool.server.ExampleSentenceProvider
+[44] WARN TestMethodFilter - NoClassDefFoundError: class org.languagetool.server.TextCheckerTest
+[44] WARN TestMethodFilter - NoClassDefFoundError: class org.languagetool.server.HTTPServerOverheadTest
+[45] WARN TestMethodFilter - NoClassDefFoundError: class org.languagetool.server.HTTPServerMultiLangLoadTest
+[45] WARN TestMethodFilter - NoClassDefFoundError: class org.languagetool.server.HTTPServerTest
+[45] WARN TestMethodFilter - NoClassDefFoundError: class org.languagetool.server.HTTPSServerTest
+[45] WARN TestMethodFilter - NoClassDefFoundError: class org.languagetool.server.HTTPServerLoadTest
+[45] WARN TestMethodFilter - NoClassDefFoundError: class org.languagetool.rules.DictionaryMatchFilterTest
+[838] WARN CoverageRunner - Test [Manual]TestMethod=org.languagetool.server.LanguageIdentificationTest#testEverShorterText result was not reported by test-runner.
+[838] WARN CoverageRunner - Test [Manual]TestMethod=org.languagetool.server.HTTPSServerTesting#interactiveHTTPServerTest result was not reported by test-runner.
+[1659] WARN CoverageRunner - Test [Manual]TestMethod=org.languagetool.server.ApiV2Test#testRuleExamples result was not reported by test-runner.
+[1659] WARN CoverageRunner - Test [Manual]TestMethod=org.languagetool.server.BertResortingBugTest#testHttpApi result was not reported by test-runner.
+[1705] WARN CoverageRunner - Test [Manual]TestMethod=org.languagetool.server.HTTPServerOverheadTest#test result was not reported by test-runner.
+[1705] WARN CoverageRunner - Test [Manual]TestMethod=org.languagetool.server.PipelinePoolTest#testPipelinePrewarming result was not reported by test-runner.
+[1705] WARN CoverageRunner - Test [Manual]TestMethod=org.languagetool.server.PipelinePoolTest#testPipelineCreatedAndUsed result was not reported by test-runner.
+[1705] WARN CoverageRunner - Test [Manual]TestMethod=org.languagetool.server.PipelinePoolTest#testDifferentPipelineSettings result was not reported by test-runner.
+[1705] WARN CoverageRunner - Test [Manual]TestMethod=org.languagetool.server.PipelinePoolTest#testMaxPipelinePoolSize result was not reported by test-runner.
+[1705] WARN CoverageRunner - Test [Manual]TestMethod=org.languagetool.server.PipelinePoolTest#testPipelinePoolExpireTime result was not reported by test-runner.
+[1705] WARN CoverageRunner - Test [Manual]TestMethod=org.languagetool.server.PipelinePoolTest#testPipelinePoolUserConfig result was not reported by test-runner.
+[1705] WARN CoverageRunner - Test [Manual]TestMethod=org.languagetool.server.PipelinePoolTest#testPipelineMutation result was not reported by test-runner.
+[1767] INFO CoverageRunner - Tests found: 28
+[1767] INFO CoverageRunner - Tests executed: 16
+02:38:43.828 [main] INFO  fr.inria.jtravis.JTravis - GitHub ratelimit: Limit: 5000 Remaining: 3922 Reset hour: 00:12:38
+02:38:45.139 [main] WARN  f.i.s.r.p.s.p.PushFaultLocalizationSuggestionsOnExternalRepository - Flacoco has found 120 suspicious lines, but none were matched to the diff
+02:38:45.651 [main] INFO  f.i.s.r.p.s.f.FlacocoLocalization - 
+02:38:46.319 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:38:46.319 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE EXECUTION SUMMARY
+02:38:46.319 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:38:46.319 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneCheckoutGitPullRequest..........................SUCCESS [ 598 s ]
+02:38:46.319 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject.........................................SUCCESS [ 285 s ]
+02:38:46.319 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject..........................................SUCCESS [ 720 s ]
+02:38:46.319 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath.....................................SUCCESS [   4 s ]
+02:38:46.319 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir.....................................SUCCESS [   0 s ]
+02:38:46.319 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir.......................................SUCCESS [   0 s ]
+02:38:46.319 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation................................SUCCESS [   0 s ]
+02:38:46.319 [main] INFO  f.i.s.r.p.i.ProjectInspector - FlacocoLocalization..................................SUCCESS [   1 s ]
+02:38:46.319 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushFaultLocalizationSuggestionsOnExternalRepository.SUCCESS          
+02:38:46.320 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:38:46.320 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE FINDING: TEST FAILURE
+02:38:46.320 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:38:46.320 [main] INFO  f.i.s.r.p.github.GithubMainProcess - Inspector is finished. The process will exit now.

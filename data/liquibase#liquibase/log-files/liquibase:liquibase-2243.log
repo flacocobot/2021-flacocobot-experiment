@@ -1,0 +1,178 @@
+Execute pipeline with following supplementary args: --smtpPort 25 --listenerMode NOOP --launcherMode FAULT_LOCALIZATION  --gitrepourl https://github.com/liquibase/liquibase --gitrepopullrequest 2243
+java -cp /usr/local/openjdk-11/lib/tools.jar:repairnator-pipeline.jar -Dlogback.configurationFile=/root/logback.xml fr.inria.spirals.repairnator.pipeline.Launcher -d --runId null -o /var/log --ghOauth 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 --faultLocalization --flacocoThreshold 0.0 --flacocoTopK null --flacocoResultsRepository flacocobot/flacocobot-experiment-3 --ghOauth  --smtpPort 25 --listenerMode NOOP --launcherMode FAULT_LOCALIZATION  --gitrepourl https://github.com/liquibase/liquibase --gitrepopullrequest 2243
+
+02:11:38.025 [main] INFO  f.i.s.r.p.g.GithubInitSerializerEngines - Initialize file serializer engines.
+02:11:38.027 [main] INFO  f.i.s.r.p.g.GithubInitSerializerEngines - MongoDB won't be used for serialization.
+02:11:38.027 [main] INFO  f.i.s.r.p.github.GithubInitNotifiers - The email notifier engine won't be used.
+02:11:38.049 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:11:38.049 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE STEPS
+02:11:38.049 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:11:38.049 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneCheckoutGitPullRequest
+02:11:38.050 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject
+02:11:38.050 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject
+02:11:38.050 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath
+02:11:38.050 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir
+02:11:38.050 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir
+02:11:38.050 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation
+02:11:38.050 [main] INFO  f.i.s.r.p.i.ProjectInspector - FlacocoLocalization
+02:11:38.050 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushFaultLocalizationSuggestionsOnExternalRepository
+02:11:38.050 [main] INFO  f.i.s.r.p.s.CloneCheckoutGitPullRequest - Cloning repository https://github.com/liquibase/liquibase.git in the following directory: ./workspace/liquibase-liquibase-master-2243_repo
+02:13:36.635 [Thread-5] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: An illegal reflective access operation has occurred
+02:13:36.637 [Thread-5] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Illegal reflective access by org.codehaus.groovy.reflection.CachedClass (file:/root/./workspace/liquibase-liquibase-master-2243_repo/.m2/org/codehaus/groovy/groovy-all/2.4.15/groovy-all-2.4.15.jar) to method java.lang.Object.finalize()
+02:13:36.637 [Thread-5] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Please consider reporting this to the maintainers of org.codehaus.groovy.reflection.CachedClass
+02:13:36.637 [Thread-5] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+02:13:36.637 [Thread-5] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: All illegal access operations will be denied in a future release
+02:16:57.159 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: An illegal reflective access operation has occurred
+02:16:57.159 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Illegal reflective access by org.codehaus.groovy.reflection.CachedClass (file:/root/./workspace/liquibase-liquibase-master-2243_repo/.m2/org/codehaus/groovy/groovy-all/2.4.15/groovy-all-2.4.15.jar) to method java.lang.Object.finalize()
+02:16:57.159 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Please consider reporting this to the maintainers of org.codehaus.groovy.reflection.CachedClass
+02:16:57.159 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+02:16:57.159 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: All illegal access operations will be denied in a future release
+02:17:11.384 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.405 s <<< FAILURE! - in liquibase.changelog.ChangeLogRewriterTest
+02:17:11.384 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] register changelog readonly(liquibase.changelog.ChangeLogRewriterTest)  Time elapsed: 0.17 s  <<< FAILURE!
+02:19:01.800 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failures: 
+02:19:01.801 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   ChangeLogRewriterTest.register changelog readonly:101 Condition not satisfied:
+02:19:01.806 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Tests run: 3292, Failures: 1, Errors: 0, Skipped: 10
+02:19:01.834 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.1:test (default-test) on project liquibase-core: There are test failures.
+02:19:01.835 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+02:19:01.837 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/liquibase-liquibase-master-2243_repo/liquibase-core/target/surefire-reports for the individual test results.
+02:19:01.838 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+02:19:01.839 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+02:19:01.887 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+02:19:01.887 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+02:19:01.888 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+02:19:01.889 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+02:19:01.892 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+02:19:01.893 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+02:19:01.893 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+02:19:01.893 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :liquibase-core
+02:19:21.016 [main] ERROR f.i.s.r.p.s.paths.ComputeClasspath - The file does not exist: /root/./workspace/liquibase-liquibase-master-2243_repo/target/classes.
+02:19:21.017 [main] ERROR f.i.s.r.p.s.paths.ComputeClasspath - The file does not exist: /root/./workspace/liquibase-liquibase-master-2243_repo/target/test-classes.
+02:19:21.195 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for org.liquibase:liquibase:0-SNAPSHOT
+[ERROR] Failed to determine Java version for profile non-jdk-8 @ 
+
+02:19:21.250 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for org.liquibase:liquibase-integration-tests:0-SNAPSHOT
+[ERROR] Failed to determine Java version for profile non-jdk-8 @ org.liquibase:liquibase:0-SNAPSHOT, /root/workspace/liquibase-liquibase-master-2243_repo/pom.xml
+
+02:19:21.251 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+02:19:21.266 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for org.liquibase:liquibase-dist:0-SNAPSHOT
+[ERROR] Failed to determine Java version for profile non-jdk-8 @ org.liquibase:liquibase:0-SNAPSHOT, /root/workspace/liquibase-liquibase-master-2243_repo/pom.xml
+
+02:19:21.267 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+02:19:21.283 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - 6 source dirs were found:
+02:19:21.283 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/liquibase-liquibase-master-2243_repo/liquibase-cdi/src/main/java
+02:19:21.283 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/liquibase-liquibase-master-2243_repo/liquibase-cli/src/main/java
+02:19:21.283 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/liquibase-liquibase-master-2243_repo/liquibase-core/src/main/java
+02:19:21.283 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/liquibase-liquibase-master-2243_repo/liquibase-extension-examples/src/main/java
+02:19:21.283 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/liquibase-liquibase-master-2243_repo/liquibase-extension-testing/src/main/java
+02:19:21.283 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/liquibase-liquibase-master-2243_repo/liquibase-maven-plugin/src/main/java
+02:19:21.288 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for org.liquibase:liquibase:0-SNAPSHOT
+[ERROR] Failed to determine Java version for profile non-jdk-8 @ 
+
+02:19:21.336 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for org.liquibase:liquibase-core:0-SNAPSHOT
+[ERROR] Failed to determine Java version for profile non-jdk-8 @ org.liquibase:liquibase:0-SNAPSHOT, /root/workspace/liquibase-liquibase-master-2243_repo/pom.xml
+
+02:19:21.359 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for org.liquibase:liquibase-cli:0-SNAPSHOT
+[ERROR] Failed to determine Java version for profile non-jdk-8 @ org.liquibase:liquibase:0-SNAPSHOT, /root/workspace/liquibase-liquibase-master-2243_repo/pom.xml
+
+02:19:21.359 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+02:19:21.381 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for org.liquibase:liquibase-maven-plugin:0-SNAPSHOT
+[ERROR] Failed to determine Java version for profile non-jdk-8 @ org.liquibase:liquibase:0-SNAPSHOT, /root/workspace/liquibase-liquibase-master-2243_repo/pom.xml
+
+02:19:21.397 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for org.liquibase:liquibase-cdi:0-SNAPSHOT
+[ERROR] Failed to determine Java version for profile non-jdk-8 @ org.liquibase:liquibase:0-SNAPSHOT, /root/workspace/liquibase-liquibase-master-2243_repo/pom.xml
+
+02:19:21.428 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for org.liquibase:liquibase-integration-tests:0-SNAPSHOT
+[ERROR] Failed to determine Java version for profile non-jdk-8 @ org.liquibase:liquibase:0-SNAPSHOT, /root/workspace/liquibase-liquibase-master-2243_repo/pom.xml
+
+02:19:21.449 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for org.liquibase:liquibase-dist:0-SNAPSHOT
+[ERROR] Failed to determine Java version for profile non-jdk-8 @ org.liquibase:liquibase:0-SNAPSHOT, /root/workspace/liquibase-liquibase-master-2243_repo/pom.xml
+
+02:19:21.456 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+02:19:21.461 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for org.liquibase:liquibase-extension-examples:0-SNAPSHOT
+[ERROR] Failed to determine Java version for profile non-jdk-8 @ org.liquibase:liquibase:0-SNAPSHOT, /root/workspace/liquibase-liquibase-master-2243_repo/pom.xml
+
+02:19:21.461 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+02:19:21.477 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for org.liquibase:liquibase-extension-testing:0-SNAPSHOT
+[ERROR] Failed to determine Java version for profile non-jdk-8 @ org.liquibase:liquibase:0-SNAPSHOT, /root/workspace/liquibase-liquibase-master-2243_repo/pom.xml
+
+02:19:21.487 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+02:19:21.488 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - 4 test dirs were found:
+02:19:21.489 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/liquibase-liquibase-master-2243_repo/liquibase-cdi/src/test/java
+02:19:21.489 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/liquibase-liquibase-master-2243_repo/liquibase-core/src/test/java
+02:19:21.489 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/liquibase-liquibase-master-2243_repo/liquibase-integration-tests/src/test/java
+02:19:21.489 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/liquibase-liquibase-master-2243_repo/liquibase-maven-plugin/src/test/java
+02:19:23.521 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation - Get the following failing module path: /root/workspace/liquibase-liquibase-master-2243_repo/liquibase-core
+02:19:23.525 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation - ---Test results---
+02:19:23.525 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Total tests: 3292
+02:19:23.525 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Tests run: 3282
+02:19:23.525 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Tests passing: 3281
+02:19:23.525 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Failures: 1
+02:19:23.525 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Errors: 0
+02:19:23.526 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Skipped: 10
+[1] INFO Flacoco - Running Flacoco...
+[610] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.integration.ant.type.ConnectionProperties
+[616] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.integration.ant.type.ChangeLogOutputFile
+[950] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.change.core.LoadUpdateDataChange
+[989] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.change.core.LoadDataChange
+[1230] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.util.csv.CSVReader
+[1988] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.integration.ant.GenerateChangeLogTaskTest
+[1989] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.integration.ant.DatabaseUpdateTaskTest
+[1990] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.integration.ant.ChangeLogSyncTaskTest
+[1990] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.integration.ant.DatabaseRollbackFutureTaskTest
+[1991] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.integration.ant.DiffDatabaseTaskTest
+[1991] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.integration.ant.ChangeLogDirectoryTest
+[1992] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.integration.ant.MarkNextChangeSetRanTaskTest
+[1993] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.integration.ant.DiffDatabaseToChangeLogTaskTest
+[1993] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.integration.ant.DropAllTaskTest
+[1994] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.integration.ant.DatabaseRollbackTaskTest
+[1998] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.integration.ant.DBDocTaskTest
+[2013] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.integration.ant.TagDatabaseTaskTest
+[2017] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.integration.ant.DatabaseUpdateTestingRollbackTaskTest
+[3147] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.integration.ant.type.ConnectionProperties
+[3147] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.integration.ant.type.ChangeLogOutputFile
+[3242] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.change.core.LoadUpdateDataChange
+[3249] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.change.core.LoadDataChange
+[3276] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.util.csv.CSVReader
+[3323] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.integration.ant.GenerateChangeLogTaskTest
+[3323] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.integration.ant.DatabaseUpdateTaskTest
+[3323] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.integration.ant.ChangeLogSyncTaskTest
+[3323] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.integration.ant.DatabaseRollbackFutureTaskTest
+[3323] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.integration.ant.DiffDatabaseTaskTest
+[3323] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.integration.ant.ChangeLogDirectoryTest
+[3323] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.integration.ant.MarkNextChangeSetRanTaskTest
+[3324] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.integration.ant.DiffDatabaseToChangeLogTaskTest
+[3324] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.integration.ant.DropAllTaskTest
+[3324] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.integration.ant.DatabaseRollbackTaskTest
+[3324] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.integration.ant.DBDocTaskTest
+[3324] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.integration.ant.TagDatabaseTaskTest
+[3324] WARN TestMethodFilter - NoClassDefFoundError: class liquibase.integration.ant.DatabaseUpdateTestingRollbackTaskTest
+[66404] WARN CoverageRunner - Test [Manual]TestMethod=liquibase.integration.servlet.LiquibaseServletListenerTest#testShouldNotShutEmbeddedDerbyDown result was not reported by test-runner.
+[67453] WARN CoverageRunner - Test [Manual]TestMethod=liquibase.verify.change.VerifyChangeClassesTest#extraParamsIsValidSql result was not reported by test-runner.
+[67459] WARN CoverageRunner - Test [Manual]TestMethod=liquibase.change.AbstractChangeTest#createSupportedDatabasesMetaData_nullAnnotation result was not reported by test-runner.
+[74616] WARN CoverageRunner - Test [Manual]TestMethod=liquibase.util.DependencyUtilTest#$spock_feature_0_3 result was not reported by test-runner.
+[74616] WARN CoverageRunner - Test [Manual]TestMethod=liquibase.util.DependencyUtilTest#$spock_feature_0_4 result was not reported by test-runner.
+[74616] WARN CoverageRunner - Test [Manual]TestMethod=liquibase.util.DependencyUtilTest#$spock_feature_0_5 result was not reported by test-runner.
+[74616] WARN CoverageRunner - Test [Manual]TestMethod=liquibase.util.DependencyUtilTest#$spock_feature_0_6 result was not reported by test-runner.
+[74689] WARN CoverageRunner - Test [Manual]TestMethod=liquibase.sqlgenerator.core.AddColumnGeneratorSQLiteTest#supportsSQLLite result was not reported by test-runner.
+[74689] WARN CoverageRunner - Test [Manual]TestMethod=liquibase.sqlgenerator.core.AddColumnGeneratorSQLiteTest#doesNotSupportMariaDB result was not reported by test-runner.
+[74699] INFO CoverageRunner - Tests found: 603
+[74699] INFO CoverageRunner - Tests executed: 594
+02:20:40.078 [main] INFO  fr.inria.jtravis.JTravis - GitHub ratelimit: Limit: 5000 Remaining: 4019 Reset hour: 00:12:34
+02:20:41.651 [main] WARN  f.i.s.r.p.s.p.PushFaultLocalizationSuggestionsOnExternalRepository - Flacoco has found 878 suspicious lines, but none were matched to the diff
+02:20:42.205 [main] INFO  f.i.s.r.p.s.f.FlacocoLocalization - 
+02:20:44.077 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:20:44.077 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE EXECUTION SUMMARY
+02:20:44.078 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:20:44.078 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneCheckoutGitPullRequest..........................SUCCESS [  25 s ]
+02:20:44.078 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject.........................................SUCCESS [ 265 s ]
+02:20:44.078 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject..........................................SUCCESS [ 153 s ]
+02:20:44.078 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath.....................................SUCCESS [  18 s ]
+02:20:44.078 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir.....................................SUCCESS [   0 s ]
+02:20:44.078 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir.......................................SUCCESS [   0 s ]
+02:20:44.078 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation................................SUCCESS [   1 s ]
+02:20:44.078 [main] INFO  f.i.s.r.p.i.ProjectInspector - FlacocoLocalization..................................SUCCESS [  75 s ]
+02:20:44.078 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushFaultLocalizationSuggestionsOnExternalRepository.SUCCESS          
+02:20:44.079 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:20:44.079 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE FINDING: TEST FAILURE
+02:20:44.079 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:20:44.079 [main] INFO  f.i.s.r.p.github.GithubMainProcess - Inspector is finished. The process will exit now.

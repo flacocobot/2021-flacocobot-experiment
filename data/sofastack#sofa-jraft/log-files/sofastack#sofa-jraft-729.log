@@ -1,0 +1,468 @@
+Execute pipeline with following supplementary args: --smtpPort 25 --listenerMode NOOP --launcherMode FAULT_LOCALIZATION  --gitrepourl https://github.com/sofastack/sofa-jraft --gitrepopullrequest 729
+java -cp /usr/local/openjdk-11/lib/tools.jar:repairnator-pipeline.jar -Dlogback.configurationFile=/root/logback.xml fr.inria.spirals.repairnator.pipeline.Launcher -d --runId null -o /var/log --ghOauth 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 --faultLocalization --flacocoThreshold 0.0 --flacocoTopK null --flacocoResultsRepository flacocobot/flacocobot-experiment-3 --ghOauth  --smtpPort 25 --listenerMode NOOP --launcherMode FAULT_LOCALIZATION  --gitrepourl https://github.com/sofastack/sofa-jraft --gitrepopullrequest 729
+
+02:11:47.643 [main] INFO  f.i.s.r.p.g.GithubInitSerializerEngines - Initialize file serializer engines.
+02:11:47.645 [main] INFO  f.i.s.r.p.g.GithubInitSerializerEngines - MongoDB won't be used for serialization.
+02:11:47.645 [main] INFO  f.i.s.r.p.github.GithubInitNotifiers - The email notifier engine won't be used.
+02:11:47.663 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:11:47.664 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE STEPS
+02:11:47.664 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:11:47.664 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneCheckoutGitPullRequest
+02:11:47.664 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject
+02:11:47.664 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject
+02:11:47.664 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath
+02:11:47.664 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir
+02:11:47.664 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir
+02:11:47.664 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation
+02:11:47.664 [main] INFO  f.i.s.r.p.i.ProjectInspector - FlacocoLocalization
+02:11:47.664 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushFaultLocalizationSuggestionsOnExternalRepository
+02:11:47.664 [main] INFO  f.i.s.r.p.s.CloneCheckoutGitPullRequest - Cloning repository https://github.com/sofastack/sofa-jraft.git in the following directory: ./workspace/sofastack-sofa-jraft-master-729_repo
+02:25:36.132 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Read-index so fast: 4ms
+02:32:09.611 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project jraft-core: There are test failures.
+02:32:09.611 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+02:32:09.611 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/sofastack-sofa-jraft-master-729_repo/jraft-core/target/surefire-reports for the individual test results.
+02:32:09.611 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+02:32:09.616 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+02:32:09.616 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+02:32:09.616 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+02:32:09.616 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+02:32:09.616 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+02:32:09.617 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+02:32:09.617 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+02:32:09.617 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :jraft-core
+02:32:15.971 [main] ERROR f.i.s.r.p.s.paths.ComputeClasspath - The classpath file is empty.
+02:32:15.971 [main] ERROR f.i.s.r.p.s.paths.ComputeClasspath - The classpath seems not to contain JUnit, maybe this project does not use JUnit for testing.
+02:32:15.971 [main] ERROR f.i.s.r.p.s.paths.ComputeClasspath - The file does not exist: /root/./workspace/sofastack-sofa-jraft-master-729_repo/target/classes.
+02:32:15.971 [main] ERROR f.i.s.r.p.s.paths.ComputeClasspath - The file does not exist: /root/./workspace/sofastack-sofa-jraft-master-729_repo/target/test-classes.
+02:32:16.049 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - 6 source dirs were found:
+02:32:16.050 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/sofastack-sofa-jraft-master-729_repo/jraft-core/src/main/java
+02:32:16.050 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/sofastack-sofa-jraft-master-729_repo/jraft-example/src/main/java
+02:32:16.050 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/sofastack-sofa-jraft-master-729_repo/jraft-extension/rpc-grpc-impl/src/main/java
+02:32:16.050 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/sofastack-sofa-jraft-master-729_repo/jraft-rheakv/rheakv-core/src/main/java
+02:32:16.050 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/sofastack-sofa-jraft-master-729_repo/jraft-rheakv/rheakv-pd/src/main/java
+02:32:16.050 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/sofastack-sofa-jraft-master-729_repo/jraft-test/src/main/java
+02:32:16.085 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+02:32:16.094 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+02:32:16.120 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - 4 test dirs were found:
+02:32:16.120 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/sofastack-sofa-jraft-master-729_repo/jraft-core/src/test/java
+02:32:16.120 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/sofastack-sofa-jraft-master-729_repo/jraft-extension/rpc-grpc-impl/src/test/java
+02:32:16.120 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/sofastack-sofa-jraft-master-729_repo/jraft-rheakv/rheakv-core/src/test/java
+02:32:16.120 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/sofastack-sofa-jraft-master-729_repo/jraft-rheakv/rheakv-pd/src/test/java
+02:32:16.667 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation - Get the following failing module path: /root/workspace/sofastack-sofa-jraft-master-729_repo/jraft-core
+02:32:16.668 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation - Get the following failing module path: /root/workspace/sofastack-sofa-jraft-master-729_repo/jraft-core
+02:32:16.668 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation - Get the following failing module path: /root/workspace/sofastack-sofa-jraft-master-729_repo/jraft-core
+02:32:16.668 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation - ---Test results---
+02:32:16.668 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Total tests: 427
+02:32:16.668 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Tests run: 426
+02:32:16.668 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Tests passing: 420
+02:32:16.668 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Failures: 6
+02:32:16.669 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Errors: 0
+02:32:16.669 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Skipped: 1
+[0] INFO Flacoco - Running Flacoco...
+[57] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.FileService
+[66] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.impl.LocalRaftMetaStorage
+[67] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.impl.RocksDBLogStorage
+[71] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.impl.LogManagerImpl
+[76] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.snapshot.local.LocalSnapshot
+[77] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.snapshot.local.LocalSnapshotMetaTable
+[77] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.snapshot.local.LocalSnapshotWriter
+[80] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.snapshot.local.LocalSnapshotReader
+[80] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.snapshot.local.LocalSnapshotCopier
+[84] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.snapshot.local.SnapshotFileReader
+[88] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.snapshot.SnapshotExecutorImpl
+[89] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.log.CheckpointFile
+[93] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.log.RocksDBSegmentLogStorage
+[93] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.io.ProtoBufFile
+[104] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.option.CliOptions
+[106] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.option.RpcOptions
+[109] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.option.NodeOptions
+[114] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.core.ReadOnlyServiceImpl
+[116] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.core.FSMCallerImpl
+[117] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.core.NodeImpl
+[117] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.core.NodeMetrics
+[124] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.core.Replicator
+[132] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.AddPeerRequestProcessor
+[132] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.TransferLeaderRequestProcessor
+[133] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.AddLearnersRequestProcessor
+[133] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.CliClientServiceImpl
+[134] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.RemovePeerRequestProcessor
+[134] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.ResetLearnersRequestProcessor
+[134] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.GetPeersRequestProcessor
+[135] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.GetLeaderRequestProcessor
+[135] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.SnapshotRequestProcessor
+[135] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.ChangePeersRequestProcessor
+[136] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.RemoveLearnersRequestProcessor
+[136] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.ResetPeerRequestProcessor
+[137] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.core.RequestVoteRequestProcessor
+[138] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.core.AppendEntriesRequestProcessor
+[138] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.core.InstallSnapshotRequestProcessor
+[138] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.core.ReadIndexRequestProcessor
+[139] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.core.TimeoutNowRequestProcessor
+[139] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.core.DefaultRaftClientService
+[140] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.core.GetFileRequestProcessor
+[140] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.BoltRpcServer
+[140] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.PingRequestProcessor
+[141] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.BoltRaftRpcFactory
+[142] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.BoltRpcClient
+[143] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.RpcRequests
+[144] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.RpcRequestClosure
+[144] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.CliRequests
+[146] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.ProtobufMsgFactory
+[148] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.StorageOptionsFactory
+[153] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.Utils
+[154] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.MetricReporter
+[156] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.DisruptorBuilder
+[163] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.ThreadPoolMetricRegistry
+[184] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.AsciiStringUtil
+[189] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.error.RaftException
+[190] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.entity.LocalFileMetaOutter
+[193] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.entity.codec.v2.LogOutter
+[193] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.entity.codec.v2.V2Decoder
+[195] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.entity.ReadIndexStatus
+[200] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.entity.LogEntry
+[201] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.entity.LocalStorageOutter
+[201] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.entity.EnumOutter
+[202] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.entity.RaftOutter
+[202] WARN TestMethodFilter - NoClassDefFoundError: class com.google.protobuf.ZeroByteStringHelper
+[237] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.snapshot.local.LocalSnapshotWriterTest
+[237] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.snapshot.local.LocalSnapshotCopierTest
+[245] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.SnapshotExecutorTest
+[246] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.io.ProtobufFileTest
+[254] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.core.ReplicatorTest
+[257] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.core.ReadOnlyServiceTest
+[270] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.ResetLearnersRequestProcessorTest
+[271] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.BaseCliRequestProcessorTest
+[271] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.ChangePeersRequestProcessorTest
+[271] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.AddLearnersRequestProcessorTest
+[271] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.ResetPeersRequestProcessorTest
+[272] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.AddPeerRequestProcessorTest
+[272] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.TransferLeadershipRequestProcessorTest
+[272] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.GetPeersRequestProcessorTest
+[273] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.RemovePeerRequestProcessorTest
+[273] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.RemoveLearnersRequestProcessorTest
+[273] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.SnapshotRequestProcessorTest
+[274] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.core.InstallSnapshotRequestProcessorTest
+[274] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.core.RequestVoteRequestProcessorTest
+[275] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.core.NodeRequestProcessorTest
+[276] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.core.ReadIndexRequestProcessorTest
+[277] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.core.PreVoteRequestProcessorTest
+[277] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.core.AppendEntriesRequestProcessorTest
+[278] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.core.TimeoutNowRequestProcessorTest
+[279] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.generated.AppendEntriesBenchmark_adaptiveAndPooled_jmhTest
+[284] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.generated.AppendEntriesBenchmark_jmhType_B1
+[285] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.generated.AppendEntriesBenchmark_zeroCopy_jmhTest
+[286] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.generated.AppendEntriesBenchmark_pooled_jmhTest
+[287] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.generated.AppendEntriesBenchmark_jmhType_B3
+[292] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.generated.AppendEntriesBenchmark_copy_jmhTest
+[296] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.generated.AppendEntriesBenchmark_jmhType
+[296] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.generated.AppendEntriesBenchmark_jmhType_B2
+[297] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.ProtobufSerializerTest
+[297] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.AbstractClientServiceTest
+[300] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.AppendEntriesBenchmark
+[301] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.AsciiCodecBenchmark
+[302] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.Utf8CodecBenchmark
+[320] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.generated.AsciiCodecBenchmark_jmhType_B3
+[321] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.generated.Utf8CodecBenchmark_defaultToUtf8String_jmhTest
+[321] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.generated.Utf8CodecBenchmark_unsafeToUtf8String_jmhTest
+[322] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.generated.AsciiCodecBenchmark_normalpathDecode_jmhTest
+[322] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.generated.AsciiCodecBenchmark_jmhType_B1
+[323] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.generated.Utf8CodecBenchmark_jmhType_B2
+[323] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.generated.AsciiCodecBenchmark_jmhType
+[324] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.generated.Utf8CodecBenchmark_unsafeToUtf8Bytes_jmhTest
+[324] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.generated.Utf8CodecBenchmark_defaultToUtf8Bytes_jmhTest
+[325] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.generated.AsciiCodecBenchmark_fastpathEncode_jmhTest
+[325] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.generated.Utf8CodecBenchmark_jmhType_B1
+[325] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.generated.AsciiCodecBenchmark_jmhType_B2
+[326] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.generated.Utf8CodecBenchmark_jmhType
+[326] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.generated.AsciiCodecBenchmark_normalpathEncode_jmhTest
+[327] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.generated.AsciiCodecBenchmark_fastpathDecode_jmhTest
+[327] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.generated.Utf8CodecBenchmark_jmhType_B3
+[330] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.concurrent.SingleThreadExecutorBenchmark
+[331] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.concurrent.generated.SingleThreadExecutorBenchmark_mpscSingleThreadExecutorWithLinkedBlockingQueue_jmhTest
+[331] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.concurrent.generated.SingleThreadExecutorBenchmark_jmhType_B1
+[332] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.concurrent.generated.SingleThreadExecutorBenchmark_jmhType_B3
+[333] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.concurrent.generated.SingleThreadExecutorBenchmark_nettyDefaultEventExecutor_jmhTest
+[334] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.concurrent.generated.SingleThreadExecutorBenchmark_defaultSingleThreadPollExecutor_jmhTest
+[334] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.concurrent.generated.SingleThreadExecutorBenchmark_mpscSingleThreadExecutorWithConcurrentLinkedQueue_jmhTest
+[334] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.concurrent.generated.SingleThreadExecutorBenchmark_jmhType_B2
+[335] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.concurrent.generated.SingleThreadExecutorBenchmark_mpscSingleThreadExecutor_jmhTest
+[337] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.concurrent.generated.SingleThreadExecutorBenchmark_mpscSingleThreadExecutorWithLinkedTransferQueue_jmhTest
+[343] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.concurrent.generated.SingleThreadExecutorBenchmark_jmhType
+[345] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.test.MockAsyncContext
+[346] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.test.TestUtils
+[362] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.FileService
+[362] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.impl.LocalRaftMetaStorage
+[362] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.impl.RocksDBLogStorage
+[363] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.impl.LogManagerImpl
+[364] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.snapshot.local.LocalSnapshot
+[364] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.snapshot.local.LocalSnapshotMetaTable
+[364] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.snapshot.local.LocalSnapshotWriter
+[364] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.snapshot.local.LocalSnapshotReader
+[364] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.snapshot.local.LocalSnapshotCopier
+[364] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.snapshot.local.SnapshotFileReader
+[366] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.snapshot.remote.CopySession
+[366] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.snapshot.SnapshotExecutorImpl
+[367] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.log.CheckpointFile
+[367] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.log.SegmentFile
+[367] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.log.RocksDBSegmentLogStorage
+[367] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.io.LocalDirReader
+[367] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.io.ProtoBufFile
+[368] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.option.RpcOptions
+[369] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.core.CliServiceImpl
+[370] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.core.ReadOnlyServiceImpl
+[370] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.core.FSMCallerImpl
+[371] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.core.NodeImpl
+[371] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.core.NodeMetrics
+[373] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.core.Replicator
+[374] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.AddPeerRequestProcessor
+[374] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.TransferLeaderRequestProcessor
+[375] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.AddLearnersRequestProcessor
+[375] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.CliClientServiceImpl
+[375] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.RemovePeerRequestProcessor
+[375] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.ResetLearnersRequestProcessor
+[375] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.GetPeersRequestProcessor
+[375] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.GetLeaderRequestProcessor
+[375] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.SnapshotRequestProcessor
+[375] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.ChangePeersRequestProcessor
+[376] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.RemoveLearnersRequestProcessor
+[376] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.ResetPeerRequestProcessor
+[376] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.core.RequestVoteRequestProcessor
+[376] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.core.AppendEntriesRequestProcessor
+[376] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.core.InstallSnapshotRequestProcessor
+[376] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.core.ReadIndexRequestProcessor
+[376] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.core.TimeoutNowRequestProcessor
+[376] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.core.DefaultRaftClientService
+[377] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.core.GetFileRequestProcessor
+[377] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.BoltRpcServer
+[377] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.PingRequestProcessor
+[377] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.BoltRaftRpcFactory
+[377] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.BoltRpcClient
+[378] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.RpcRequests
+[378] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.RpcRequestClosure
+[378] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.CliRequests
+[378] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.ProtobufMsgFactory
+[379] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.StorageOptionsFactory
+[379] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.Utils
+[379] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.MetricReporter
+[380] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.DisruptorBuilder
+[382] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.ThreadPoolMetricRegistry
+[384] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.AsciiStringUtil
+[385] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.error.RaftException
+[385] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.entity.LocalFileMetaOutter
+[385] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.entity.codec.v2.LogOutter
+[386] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.entity.codec.v2.V2Encoder
+[386] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.entity.codec.v2.V2Decoder
+[387] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.entity.ReadIndexStatus
+[387] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.entity.LogEntry
+[387] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.entity.LocalStorageOutter
+[387] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.entity.EnumOutter
+[388] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.entity.RaftOutter
+[388] WARN TestMethodFilter - NoClassDefFoundError: class com.google.protobuf.ZeroByteStringHelper
+[389] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.snapshot.local.LocalSnapshotWriterTest
+[389] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.snapshot.local.LocalSnapshotCopierTest
+[390] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.snapshot.local.SnapshotFileReaderTest
+[390] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.SnapshotExecutorTest
+[391] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.storage.io.ProtobufFileTest
+[392] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.core.ReplicatorTest
+[392] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.core.ReplicatorGroupTest
+[393] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.core.ReadOnlyServiceTest
+[394] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.ResetLearnersRequestProcessorTest
+[395] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.BaseCliRequestProcessorTest
+[395] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.ChangePeersRequestProcessorTest
+[395] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.AddLearnersRequestProcessorTest
+[395] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.ResetPeersRequestProcessorTest
+[395] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.AddPeerRequestProcessorTest
+[395] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.TransferLeadershipRequestProcessorTest
+[395] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.GetPeersRequestProcessorTest
+[395] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.RemovePeerRequestProcessorTest
+[395] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.RemoveLearnersRequestProcessorTest
+[396] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.cli.SnapshotRequestProcessorTest
+[396] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.core.InstallSnapshotRequestProcessorTest
+[396] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.core.RequestVoteRequestProcessorTest
+[396] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.core.NodeRequestProcessorTest
+[396] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.core.ReadIndexRequestProcessorTest
+[396] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.core.PreVoteRequestProcessorTest
+[397] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.core.AppendEntriesRequestProcessorTest
+[397] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.impl.core.TimeoutNowRequestProcessorTest
+[397] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.generated.AppendEntriesBenchmark_adaptiveAndPooled_jmhTest
+[397] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.generated.AppendEntriesBenchmark_zeroCopy_jmhTest
+[398] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.generated.AppendEntriesBenchmark_pooled_jmhTest
+[398] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.generated.AppendEntriesBenchmark_copy_jmhTest
+[398] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.ProtobufSerializerTest
+[398] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.AbstractClientServiceTest
+[399] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.rpc.AppendEntriesBenchmark
+[399] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.AsciiCodecBenchmark
+[400] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.Utf8CodecBenchmark
+[401] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.generated.Utf8CodecBenchmark_defaultToUtf8String_jmhTest
+[401] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.generated.Utf8CodecBenchmark_unsafeToUtf8String_jmhTest
+[401] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.generated.AsciiCodecBenchmark_normalpathDecode_jmhTest
+[401] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.generated.Utf8CodecBenchmark_unsafeToUtf8Bytes_jmhTest
+[401] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.generated.Utf8CodecBenchmark_defaultToUtf8Bytes_jmhTest
+[402] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.generated.AsciiCodecBenchmark_fastpathEncode_jmhTest
+[402] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.generated.AsciiCodecBenchmark_normalpathEncode_jmhTest
+[402] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.generated.AsciiCodecBenchmark_fastpathDecode_jmhTest
+[403] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.concurrent.SingleThreadExecutorBenchmark
+[403] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.concurrent.generated.SingleThreadExecutorBenchmark_mpscSingleThreadExecutorWithLinkedBlockingQueue_jmhTest
+[403] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.concurrent.generated.SingleThreadExecutorBenchmark_nettyDefaultEventExecutor_jmhTest
+[403] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.concurrent.generated.SingleThreadExecutorBenchmark_defaultSingleThreadPollExecutor_jmhTest
+[404] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.concurrent.generated.SingleThreadExecutorBenchmark_mpscSingleThreadExecutorWithConcurrentLinkedQueue_jmhTest
+[404] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.concurrent.generated.SingleThreadExecutorBenchmark_mpscSingleThreadExecutor_jmhTest
+[404] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.util.concurrent.generated.SingleThreadExecutorBenchmark_mpscSingleThreadExecutorWithLinkedTransferQueue_jmhTest
+[405] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.test.MockAsyncContext
+[405] WARN TestMethodFilter - NoClassDefFoundError: class com.alipay.sofa.jraft.test.TestUtils
+[26908] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.impl.LogManagerWithSegmentLogStorageTest#testEmptyState result was not reported by test-runner.
+[26908] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.impl.LogManagerWithSegmentLogStorageTest#testAppendOneEntry result was not reported by test-runner.
+[26908] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.impl.LogManagerWithSegmentLogStorageTest#testAppendEntries result was not reported by test-runner.
+[26908] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.impl.LogManagerWithSegmentLogStorageTest#testAppendEntriesBeforeAppliedIndex result was not reported by test-runner.
+[26908] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.impl.LogManagerWithSegmentLogStorageTest#testAppendEntresConflicts result was not reported by test-runner.
+[26908] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.impl.LogManagerWithSegmentLogStorageTest#testGetConfiguration result was not reported by test-runner.
+[26909] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.impl.LogManagerWithSegmentLogStorageTest#testSetAppliedId result was not reported by test-runner.
+[26909] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.impl.LogManagerWithSegmentLogStorageTest#testSetAppliedId2 result was not reported by test-runner.
+[26909] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.impl.LogManagerWithSegmentLogStorageTest#testSetSnapshot result was not reported by test-runner.
+[26909] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.impl.LogManagerWithSegmentLogStorageTest#testWaiter result was not reported by test-runner.
+[26909] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.impl.LogManagerWithSegmentLogStorageTest#testCheckAndSetConfiguration result was not reported by test-runner.
+[30401] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.impl.LocalRaftMetaStorageTest#testGetAndSetReload result was not reported by test-runner.
+[30401] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.impl.LocalRaftMetaStorageTest#testSaveFail result was not reported by test-runner.
+[30401] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.impl.LogManagerTest#testEmptyState result was not reported by test-runner.
+[30401] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.impl.LogManagerTest#testAppendOneEntry result was not reported by test-runner.
+[30401] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.impl.LogManagerTest#testAppendEntries result was not reported by test-runner.
+[30401] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.impl.LogManagerTest#testAppendEntriesBeforeAppliedIndex result was not reported by test-runner.
+[30401] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.impl.LogManagerTest#testAppendEntresConflicts result was not reported by test-runner.
+[30401] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.impl.LogManagerTest#testGetConfiguration result was not reported by test-runner.
+[30401] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.impl.LogManagerTest#testSetAppliedId result was not reported by test-runner.
+[30401] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.impl.LogManagerTest#testSetAppliedId2 result was not reported by test-runner.
+[30401] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.impl.LogManagerTest#testSetSnapshot result was not reported by test-runner.
+[30401] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.impl.LogManagerTest#testWaiter result was not reported by test-runner.
+[30401] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.impl.LogManagerTest#testCheckAndSetConfiguration result was not reported by test-runner.
+[30533] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.snapshot.local.SnapshotFileReaderTest#testReadMetaFile result was not reported by test-runner.
+[30533] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.snapshot.local.SnapshotFileReaderTest#testReadFile result was not reported by test-runner.
+[31226] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.snapshot.local.LocalSnapshotReaderTest#testListFiles result was not reported by test-runner.
+[31226] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.snapshot.local.LocalSnapshotReaderTest#testGenerateUriForCopy result was not reported by test-runner.
+[31226] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.snapshot.remote.CopySessionTest#testSendNextRpc result was not reported by test-runner.
+[31226] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.snapshot.remote.CopySessionTest#testSendNextRpcWithBuffer result was not reported by test-runner.
+[31226] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.snapshot.remote.CopySessionTest#testOnRpcReturnedEOF result was not reported by test-runner.
+[31226] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.snapshot.remote.CopySessionTest#testOnRpcReturnedOK result was not reported by test-runner.
+[31226] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.snapshot.remote.CopySessionTest#testOnRpcReturnedRetry result was not reported by test-runner.
+[31226] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.snapshot.remote.RemoteFileCopierTest#testInit result was not reported by test-runner.
+[31226] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.storage.snapshot.remote.RemoteFileCopierTest#testInitFail result was not reported by test-runner.
+[33624] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.IteratorTest#testPredicates result was not reported by test-runner.
+[33624] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.IteratorTest#testNext result was not reported by test-runner.
+[33624] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.IteratorTest#testSetErrorAndRollbackInvalid result was not reported by test-runner.
+[33624] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.IteratorTest#testSetErrorAndRollback result was not reported by test-runner.
+[33624] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.FSMCallerTest#testOnCommitted result was not reported by test-runner.
+[33624] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.FSMCallerTest#testOnSnapshotLoad result was not reported by test-runner.
+[33624] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.FSMCallerTest#testOnSnapshotLoadFSMError result was not reported by test-runner.
+[33624] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.FSMCallerTest#testShutdownJoin result was not reported by test-runner.
+[33624] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.FSMCallerTest#testOnCommittedError result was not reported by test-runner.
+[33624] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.FSMCallerTest#testOnSnapshotSaveEmptyConf result was not reported by test-runner.
+[33624] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.FSMCallerTest#testOnSnapshotSave result was not reported by test-runner.
+[33624] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.FSMCallerTest#testOnLeaderStartStop result was not reported by test-runner.
+[33624] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.FSMCallerTest#testOnStartStopFollowing result was not reported by test-runner.
+[33624] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.FSMCallerTest#testOnError result was not reported by test-runner.
+[33624] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.FSMCallerTest#testOnSnapshotLoadStale result was not reported by test-runner.
+[33624] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.BallotBoxTest#testResetPendingIndex result was not reported by test-runner.
+[33624] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.BallotBoxTest#testAppendPendingTask result was not reported by test-runner.
+[33624] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.BallotBoxTest#testClearPendingTasks result was not reported by test-runner.
+[33624] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.BallotBoxTest#testCommitAt result was not reported by test-runner.
+[33624] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.BallotBoxTest#testSetLastCommittedIndexHasPending result was not reported by test-runner.
+[33624] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.BallotBoxTest#testSetLastCommittedIndexLessThan result was not reported by test-runner.
+[33624] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.BallotBoxTest#testSetLastCommittedIndex result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.ReplicatorGroupTest#testAddReplicatorAndFailed result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.ReplicatorGroupTest#testAddLearnerFailure result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.ReplicatorGroupTest#testAddLearnerSuccess result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.ReplicatorGroupTest#testAddReplicatorSuccess result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.ReplicatorGroupTest#testStopReplicator result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.ReplicatorGroupTest#testStopAllReplicator result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.ReplicatorGroupTest#testReplicatorWithNoRepliactorStateListener result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.ReplicatorGroupTest#testTransferLeadershipToAndStop result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.ReplicatorGroupTest#testFindTheNextCandidateWithPriority1 result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.ReplicatorGroupTest#testFindTheNextCandidateWithPriority2 result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.IteratorImplTest#testRunTheRestClosureWithError result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.IteratorImplTest#testPredicates result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.IteratorImplTest#testNext result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.IteratorImplTest#testSetErrorAndRollbackInvalid result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.IteratorImplTest#testSetErrorAndRollback result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testInstallSnapshot result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testInitShutdown result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testNodeTaskOverload result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testRollbackStateMachineWithReadIndex_Issue317 result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testSingleNode result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testNoLeader result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testTripleNodesWithReplicatorStateListener result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testVoteTimedoutStepDown result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testLeaderTransferWithReplicatorStateListener result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testTripleNodes result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testSingleNodeWithLearner result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testResetLearners result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testTripleNodesWithStaticLearners result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testTripleNodesWithLearners result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testNodesWithPriorityElection result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testNodesWithPartPriorityElection result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testNodesWithSpecialPriorityElection result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testNodesWithZeroValPriorityElection result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testNoLeaderWithZeroValPriorityElection result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testLeaderStopAndReElectWithPriority result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testRemoveLeaderWithPriority result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testTripleNodesV1V2Codec result was not reported by test-runner.
+[35491] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testChecksum result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testReadIndex result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testReadIndexTimeout result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testReadIndexFromLearner result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testReadIndexChaos result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testNodeMetrics result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testLeaderFail result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testJoinNodes result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testRemoveFollower result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testRemoveLeader result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testPreVote result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testSetPeer1 result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testSetPeer2 result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testRestoreSnasphot result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testInstallSnapshotWithThrottle result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testInstallLargeSnapshotWithThrottle result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testInstallLargeSnapshot result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testNoSnapshot result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testAutoSnapshot result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testLeaderShouldNotChange result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testRecoverFollower result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testLeaderTransfer result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testLeaderTransferBeforeLogIsCompleted result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testLeaderTransferResumeOnFailure result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testShutdownAndJoinWorkAfterInitFails result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testShuttingDownLeaderTriggerTimeoutNow result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testRemovingLeaderTriggerTimeoutNow result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testTransferShouldWorkAfterInstallSnapshot result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testAppendEntriesWhenFollowerIsInErrorState result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testFollowerStartStopFollowing result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testBootStrapWithSnapshot result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testBootStrapWithoutSnapshot result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testChangePeersAddMultiNodes result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testChangePeersStepsDownInJointConsensus result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testChangePeersChaosWithSnapshot result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testChangePeersChaosWithoutSnapshot result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testChangePeersChaosApplyTasks result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#readCommittedUserLog result was not reported by test-runner.
+[35492] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.core.NodeTest#testChangePeers result was not reported by test-runner.
+[42252] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.rpc.impl.core.DefaultRaftClientServiceTest#testPreVote result was not reported by test-runner.
+[42469] WARN CoverageRunner - Test [Manual]TestMethod=com.alipay.sofa.jraft.rpc.ConnectionRefreshTest#simulation result was not reported by test-runner.
+[55142] INFO CoverageRunner - Tests found: 336
+[55142] INFO CoverageRunner - Tests executed: 201
+02:33:12.475 [main] INFO  fr.inria.jtravis.JTravis - GitHub ratelimit: Limit: 5000 Remaining: 2899 Reset hour: 00:12:34
+02:33:13.766 [main] WARN  f.i.s.r.p.s.p.PushFaultLocalizationSuggestionsOnExternalRepository - Flacoco has found 269 suspicious lines, but none were matched to the diff
+02:33:14.329 [main] INFO  f.i.s.r.p.s.f.FlacocoLocalization - 
+02:33:14.645 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:33:14.645 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE EXECUTION SUMMARY
+02:33:14.645 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:33:14.645 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneCheckoutGitPullRequest..........................SUCCESS [    6 s ]
+02:33:14.645 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject.........................................SUCCESS [  116 s ]
+02:33:14.645 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject..........................................SUCCESS [ 1099 s ]
+02:33:14.645 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath.....................................SUCCESS [    6 s ]
+02:33:14.645 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir.....................................SUCCESS [    0 s ]
+02:33:14.645 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir.......................................SUCCESS [    0 s ]
+02:33:14.645 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation................................SUCCESS [    0 s ]
+02:33:14.645 [main] INFO  f.i.s.r.p.i.ProjectInspector - FlacocoLocalization..................................SUCCESS [   55 s ]
+02:33:14.645 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushFaultLocalizationSuggestionsOnExternalRepository.SUCCESS           
+02:33:14.646 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:33:14.646 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE FINDING: TEST FAILURE
+02:33:14.646 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:33:14.646 [main] INFO  f.i.s.r.p.github.GithubMainProcess - Inspector is finished. The process will exit now.

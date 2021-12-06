@@ -1,0 +1,175 @@
+Execute pipeline with following supplementary args: --smtpPort 25 --listenerMode NOOP --launcherMode FAULT_LOCALIZATION  --gitrepourl https://github.com/tabulapdf/tabula-java --gitrepopullrequest 454
+java -cp /usr/local/openjdk-11/lib/tools.jar:repairnator-pipeline.jar -Dlogback.configurationFile=/root/logback.xml fr.inria.spirals.repairnator.pipeline.Launcher -d --runId null -o /var/log --ghOauth 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 --faultLocalization --flacocoThreshold 0.0 --flacocoTopK null --flacocoResultsRepository flacocobot/flacocobot-experiment-3 --ghOauth  --smtpPort 25 --listenerMode NOOP --launcherMode FAULT_LOCALIZATION  --gitrepourl https://github.com/tabulapdf/tabula-java --gitrepopullrequest 454
+
+02:11:46.096 [main] INFO  f.i.s.r.p.g.GithubInitSerializerEngines - Initialize file serializer engines.
+02:11:46.099 [main] INFO  f.i.s.r.p.g.GithubInitSerializerEngines - MongoDB won't be used for serialization.
+02:11:46.099 [main] INFO  f.i.s.r.p.github.GithubInitNotifiers - The email notifier engine won't be used.
+02:11:46.115 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:11:46.115 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE STEPS
+02:11:46.115 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:11:46.115 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneCheckoutGitPullRequest
+02:11:46.115 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject
+02:11:46.115 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject
+02:11:46.115 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath
+02:11:46.115 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir
+02:11:46.115 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir
+02:11:46.115 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation
+02:11:46.115 [main] INFO  f.i.s.r.p.i.ProjectInspector - FlacocoLocalization
+02:11:46.115 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushFaultLocalizationSuggestionsOnExternalRepository
+02:11:46.115 [main] INFO  f.i.s.r.p.s.CloneCheckoutGitPullRequest - Cloning repository https://github.com/tabulapdf/tabula-java.git in the following directory: ./workspace/tabulapdf-tabula-java-master-454_repo
+02:14:46.147 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Tests run: 67, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 105.422 s <<< FAILURE! - in technology.tabula.TestTableDetection
+02:14:46.148 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] testDetectionOfTables[22](technology.tabula.TestTableDetection)  Time elapsed: 1.361 s  <<< FAILURE!
+02:14:46.167 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] testDetectionOfTables[62](technology.tabula.TestTableDetection)  Time elapsed: 0.332 s  <<< FAILURE!
+02:14:46.473 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:46 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:46.473 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'Arial'
+02:14:46.843 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:46 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:46.843 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'Arial'
+02:14:47.454 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:47 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:47.454 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'Arial'
+02:14:49.022 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:49 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:49.022 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'Arial'
+02:14:49.024 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:49 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:49.024 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'Arial,Bold'
+02:14:49.025 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:49 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:49.031 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'Arial,Italic'
+02:14:49.033 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:49 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:49.033 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'TimesNewRoman'
+02:14:49.182 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:49 AM org.apache.pdfbox.pdmodel.graphics.color.PDICCBased ensureDisplayProfile
+02:14:49.182 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: ICC profile is Perceptual, ignoring, treating as Display class
+02:14:49.257 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:49 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:49.263 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'Arial-BoldMT'
+02:14:49.265 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:49 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:49.265 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'Tahoma-Bold'
+02:14:49.266 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:49 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:49.267 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'ArialMT'
+02:14:49.269 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:49 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:49.269 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'Tahoma'
+02:14:49.306 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:49 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:49.307 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'TimesNewRomanPS-BoldItalicMT'
+02:14:49.308 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:49 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:49.309 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'ArialNarrow-Bold'
+02:14:49.311 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:49 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:49.311 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'Arial-ItalicMT'
+02:14:49.675 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:49 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:49.675 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'ArialMT'
+02:14:49.756 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:49 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:49.757 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'Arial-BoldMT'
+02:14:49.758 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:49 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:49.759 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'Tahoma'
+02:14:50.011 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:50 AM org.apache.pdfbox.cos.COSDocument finalize
+02:14:50.012 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Warning: You did not close a PDF Document
+02:14:50.032 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:50 AM org.apache.pdfbox.pdmodel.font.PDFont loadUnicodeCmap
+02:14:50.033 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Invalid ToUnicode CMap in font GYAOBI+TimesNewRomanPSMT
+02:14:50.033 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:50 AM org.apache.pdfbox.pdmodel.font.PDFont loadUnicodeCmap
+02:14:50.033 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using predefined identity CMap instead
+02:14:51.174 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:51 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+02:14:51.175 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font LiberationSans for Times-Bold
+02:14:51.175 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:51 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+02:14:51.176 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font LiberationSans for Times-Roman
+02:14:51.385 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:51 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:51.386 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'Arial'
+02:14:51.386 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:51 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:51.386 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'Arial,Bold'
+02:14:51.764 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:51 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+02:14:51.764 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font LiberationSans for Courier
+02:14:51.781 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:51 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+02:14:51.781 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font LiberationSans for Times-Bold
+02:14:51.781 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:51 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+02:14:51.781 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font LiberationSans for Times-Roman
+02:14:51.781 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:51 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:51.781 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'LetterGothic12Pt-Bold'
+02:14:51.781 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:51 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:51.781 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'LetterGothic12Pt'
+02:14:52.115 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:52 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:52.116 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'CenturyGothic'
+02:14:52.117 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:52 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:52.117 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'CenturyGothic-Bold'
+02:14:52.118 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:52 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:52.118 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'Arial-BoldMT'
+02:14:52.134 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:52 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:52.135 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'CourierNewPSMT'
+02:14:52.135 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:52 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:52.135 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'ArialMT'
+02:14:52.136 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:52 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:52.137 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'Verdana-Bold'
+02:14:52.161 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:52 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:52.161 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'Arial-BoldItalicMT'
+02:14:52.703 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:52 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+02:14:52.711 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font LiberationSans for Helvetica-Bold
+02:14:52.712 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:52 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+02:14:52.712 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font LiberationSans for Helvetica
+02:14:53.133 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:53 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+02:14:53.139 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font LiberationSans for Helvetica-Bold
+02:14:53.141 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:53 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+02:14:53.142 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font LiberationSans for Helvetica
+02:14:53.225 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:53 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:53.226 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'Arial'
+02:14:53.236 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:53 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:53.239 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'Arial,Bold'
+02:14:54.231 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:54 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:54.235 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'ArialMT'
+02:14:54.236 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:54 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:54.237 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'Arial-BoldMT'
+02:14:54.896 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:54 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:54.903 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'ArialMT'
+02:14:54.905 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:54 AM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont <init>
+02:14:54.905 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font 'LiberationSans' for 'Arial-BoldMT'
+02:14:57.867 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:57 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+02:14:57.867 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font LiberationSans for Times-Roman
+02:14:57.870 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:14:57 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+02:14:57.871 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Using fallback font LiberationSans for Helvetica-Oblique
+02:14:58.449 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failures: 
+02:14:58.450 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   TestTableDetection.testDetectionOfTables:283 Table detection failed. Please see the error messages for more information.
+02:14:58.451 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   TestTableDetection.testDetectionOfTables:281 This test used to fail but now it passes! Hooray! Please update the test's JSON file accordingly.
+02:14:58.451 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Tests run: 210, Failures: 2, Errors: 0, Skipped: 2
+02:14:58.468 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project tabula: There are test failures.
+02:14:58.468 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+02:14:58.470 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/tabulapdf-tabula-java-master-454_repo/target/surefire-reports for the individual test results.
+02:14:58.476 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+02:14:58.479 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+02:14:58.554 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+02:14:58.564 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+02:14:58.572 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+02:14:58.573 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+02:14:58.574 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+02:15:16.749 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - 1 source dir was found:
+02:15:16.749 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/tabulapdf-tabula-java-master-454_repo/src/main/java
+02:15:16.899 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - 1 test dir was found:
+02:15:16.899 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/tabulapdf-tabula-java-master-454_repo/src/test/java
+02:15:17.218 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation - Get the following failing module path: /root/workspace/tabulapdf-tabula-java-master-454_repo
+02:15:17.242 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation - ---Test results---
+02:15:17.255 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Total tests: 210
+02:15:17.255 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Tests run: 208
+02:15:17.255 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Tests passing: 206
+02:15:17.255 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Failures: 2
+02:15:17.255 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Errors: 0
+02:15:17.255 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Skipped: 2
+[0] INFO Flacoco - Running Flacoco...
+[8371] WARN CoverageRunner - Test [Manual]TestMethod=technology.tabula.TestRectangle#testTransitiveComparison2 result was not reported by test-runner.
+[8371] WARN CoverageRunner - Test [Manual]TestMethod=technology.tabula.TestRectangle#testWellDefinedComparison1 result was not reported by test-runner.
+[8371] WARN CoverageRunner - Test [Manual]TestMethod=technology.tabula.TestTableDetection#testDetectionOfTables result was not reported by test-runner.
+[18907] WARN CoverageRunner - Test [Manual]TestMethod=technology.tabula.TestRectangle#testTransitiveComparison2 result was not reported by test-runner.
+[18907] WARN CoverageRunner - Test [Manual]TestMethod=technology.tabula.TestRectangle#testWellDefinedComparison1 result was not reported by test-runner.
+[18908] WARN CoverageRunner - Test [Manual]TestMethod=technology.tabula.TestTableDetection#testDetectionOfTables result was not reported by test-runner.
+[25438] INFO CoverageRunner - Tests found: 288
+[25438] INFO CoverageRunner - Tests executed: 282
+02:15:43.491 [main] INFO  fr.inria.jtravis.JTravis - GitHub ratelimit: Limit: 5000 Remaining: 4141 Reset hour: 00:12:34
+02:15:45.379 [main] WARN  f.i.s.r.p.s.p.PushFaultLocalizationSuggestionsOnExternalRepository - Flacoco has found 163 suspicious lines, but none were matched to the diff
+02:15:45.921 [main] INFO  f.i.s.r.p.s.f.FlacocoLocalization - 
+02:15:46.288 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:15:46.288 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE EXECUTION SUMMARY
+02:15:46.288 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:15:46.288 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneCheckoutGitPullRequest..........................SUCCESS [   8 s ]
+02:15:46.288 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject.........................................SUCCESS [  47 s ]
+02:15:46.288 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject..........................................SUCCESS [ 137 s ]
+02:15:46.288 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath.....................................SUCCESS [  18 s ]
+02:15:46.288 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir.....................................SUCCESS [   0 s ]
+02:15:46.288 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir.......................................SUCCESS [   0 s ]
+02:15:46.288 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation................................SUCCESS [   0 s ]
+02:15:46.288 [main] INFO  f.i.s.r.p.i.ProjectInspector - FlacocoLocalization..................................SUCCESS [  25 s ]
+02:15:46.289 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushFaultLocalizationSuggestionsOnExternalRepository.SUCCESS          
+02:15:46.289 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:15:46.289 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE FINDING: TEST FAILURE
+02:15:46.289 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:15:46.289 [main] INFO  f.i.s.r.p.github.GithubMainProcess - Inspector is finished. The process will exit now.
+ 
