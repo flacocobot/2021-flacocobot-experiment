@@ -1,0 +1,1086 @@
+Execute pipeline with following supplementary args: --smtpPort 25 --listenerMode NOOP --launcherMode FAULT_LOCALIZATION  --gitrepourl https://github.com/pentaho/pentaho-kettle --gitrepopullrequest 8154
+java -cp /usr/local/openjdk-11/lib/tools.jar:repairnator-pipeline.jar -Dlogback.configurationFile=/root/logback.xml fr.inria.spirals.repairnator.pipeline.Launcher -d --runId null -o /var/log --ghOauth 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 --faultLocalization --flacocoThreshold 0.0 --flacocoTopK null --flacocoResultsRepository flacocobot/flacocobot-experiment-3 --ghOauth  --smtpPort 25 --listenerMode NOOP --launcherMode FAULT_LOCALIZATION  --gitrepourl https://github.com/pentaho/pentaho-kettle --gitrepopullrequest 8154
+
+16:26:58.897 [main] INFO  f.i.s.r.p.g.GithubInitSerializerEngines - Initialize file serializer engines.
+16:26:58.899 [main] INFO  f.i.s.r.p.g.GithubInitSerializerEngines - MongoDB won't be used for serialization.
+16:26:58.899 [main] INFO  f.i.s.r.p.github.GithubInitNotifiers - The email notifier engine won't be used.
+16:26:58.911 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+16:26:58.911 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE STEPS
+16:26:58.912 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+16:26:58.912 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneCheckoutGitPullRequest
+16:26:58.912 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject
+16:26:58.912 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject
+16:26:58.912 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath
+16:26:58.912 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir
+16:26:58.912 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir
+16:26:58.912 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation
+16:26:58.912 [main] INFO  f.i.s.r.p.i.ProjectInspector - FlacocoLocalization
+16:26:58.912 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushFaultLocalizationSuggestionsOnExternalRepository
+16:26:58.912 [main] INFO  f.i.s.r.p.s.CloneCheckoutGitPullRequest - Cloning repository https://github.com/pentaho/pentaho-kettle.git in the following directory: ./workspace/pentaho-pentaho-kettle-master-8154_repo
+16:48:43.769 [Thread-5] ERROR f.i.s.r.p.m.output.MavenErrorHandler -      [move] Warning: Could not find file /root/workspace/pentaho-pentaho-kettle-master-8154_repo/assemblies/client/target/assembly/pdi-websocket-daemon to copy.
+16:49:38.943 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+16:49:38.943 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: Defaulting to no-operation (NOP) logger implementation
+16:49:38.943 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+16:49:45.008 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - [Fatal Error] :2:10: DOCTYPE is disallowed when the feature "http://apache.org/xml/features/disallow-doctype-decl" set to true.
+16:49:45.009 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - [Fatal Error] :2:10: DOCTYPE is disallowed when the feature "http://apache.org/xml/features/disallow-doctype-decl" set to true.
+16:49:45.014 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - [Fatal Error] :2:10: DOCTYPE is disallowed when the feature "http://apache.org/xml/features/disallow-doctype-decl" set to true.
+16:49:51.911 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Tests run: 25, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.144 s <<< FAILURE! - in org.pentaho.di.core.util.StringEvaluatorTest
+16:49:51.911 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] testNumberWithGroupAndPoint(org.pentaho.di.core.util.StringEvaluatorTest)  Time elapsed: 0.007 s  <<< FAILURE!
+16:49:51.912 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] testNumbers(org.pentaho.di.core.util.StringEvaluatorTest)  Time elapsed: 0.005 s  <<< FAILURE!
+16:49:52.892 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Tests run: 7, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 0.077 s <<< FAILURE! - in org.pentaho.di.core.row.value.timestamp.SimpleTimestampFormatTest
+16:49:52.893 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] testToPattern(org.pentaho.di.core.row.value.timestamp.SimpleTimestampFormatTest)  Time elapsed: 0 s  <<< FAILURE!
+16:49:52.893 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] testApplyPattern(org.pentaho.di.core.row.value.timestamp.SimpleTimestampFormatTest)  Time elapsed: 0 s  <<< FAILURE!
+16:49:52.893 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] testToLocalizedPattern(org.pentaho.di.core.row.value.timestamp.SimpleTimestampFormatTest)  Time elapsed: 0 s  <<< FAILURE!
+16:49:52.893 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] testFormat(org.pentaho.di.core.row.value.timestamp.SimpleTimestampFormatTest)  Time elapsed: 0.001 s  <<< FAILURE!
+16:49:53.673 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failures: 
+16:49:53.673 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   SimpleTimestampFormatTest.testApplyPattern:230 zh expected:<y[y-M-]d ah:mm> but was:<y[/M/]d ah:mm>
+16:49:53.673 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   SimpleTimestampFormatTest.testFormat:90->checkFormat:105 zh=locale localized pattern= y/M/d ah:mm expected:<[14-3-]15 下午3:30> but was:<[2014/3/]15 下午3:30>
+16:49:53.674 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   SimpleTimestampFormatTest.testToLocalizedPattern:216 zh expected:<y[y-M-]d ah:mm> but was:<y[/M/]d ah:mm>
+16:49:53.674 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   SimpleTimestampFormatTest.testToPattern:202 zh expected:<y[y-M-]d ah:mm> but was:<y[/M/]d ah:mm>
+16:49:53.674 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   StringEvaluatorTest.testNumberWithGroupAndPoint:165->testNumber:192
+16:49:53.674 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   StringEvaluatorTest.testNumbers:170->testNumber:192
+16:49:53.674 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Tests run: 1193, Failures: 6, Errors: 0, Skipped: 1
+16:49:53.684 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.21.0:test (default-test) on project kettle-core: There are test failures.
+16:49:53.685 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+16:49:53.685 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/pentaho-pentaho-kettle-master-8154_repo/core/target/surefire-reports for the individual test results.
+16:49:53.685 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to dump files (if any exist) [date]-jvmRun[N].dump, [date].dumpstream and [date]-jvmRun[N].dumpstream.
+16:49:53.685 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+16:49:53.688 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+16:49:53.688 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+16:49:53.688 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+16:49:53.688 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+16:49:53.688 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+16:49:53.688 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+16:49:53.689 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+16:49:53.689 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :kettle-core
+16:50:28.735 [main] ERROR f.i.s.r.p.s.paths.ComputeClasspath - The file does not exist: /root/./workspace/pentaho-pentaho-kettle-master-8154_repo/target/classes.
+16:50:28.735 [main] ERROR f.i.s.r.p.s.paths.ComputeClasspath - The file does not exist: /root/./workspace/pentaho-pentaho-kettle-master-8154_repo/target/test-classes.
+16:50:28.891 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:28.891 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:28.941 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:28.941 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:28.950 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:28.977 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:28.977 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.006 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.006 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.031 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.032 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.057 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.057 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.080 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.080 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.103 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.103 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.126 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.126 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.148 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.148 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.170 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.170 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.192 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.193 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.215 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.215 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.237 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.238 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.259 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.259 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.281 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.282 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.302 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.302 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.322 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.322 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.341 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.341 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.361 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.361 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.380 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.380 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.400 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.400 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.419 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.419 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.438 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.438 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.456 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.456 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.474 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.474 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.492 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.492 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.509 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.509 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.526 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.526 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.544 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.544 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.566 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.566 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.577 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.583 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.590 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.595 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.601 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.613 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.618 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.624 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.624 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.624 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.624 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - 45 source dirs were found:
+16:50:29.625 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/core/src/main/java
+16:50:29.625 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/dbdialog/src/main/java
+16:50:29.625 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/engine-ext/api/src/main/java
+16:50:29.625 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/engine/src/main/java
+16:50:29.625 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/aggregate-rows/core/src/main/java
+16:50:29.625 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/connections/ui/src/main/java
+16:50:29.625 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/core/impl/src/main/java
+16:50:29.625 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/core/ui/src/main/java
+16:50:29.625 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/drools/core/src/main/java
+16:50:29.625 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/dummy/core/src/main/java
+16:50:29.625 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/elasticsearch-bulk-insert/core/src/main/java
+16:50:29.625 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/engine-configuration/api/src/main/java
+16:50:29.625 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/engine-configuration/impl/src/main/java
+16:50:29.625 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/engine-configuration/ui/src/main/java
+16:50:29.625 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/file-open-save-new/api/src/main/java
+16:50:29.625 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/file-open-save-new/core/src/main/java
+16:50:29.625 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/file-open-save/core/src/main/java
+16:50:29.625 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/get-fields/core/src/main/java
+16:50:29.625 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/get-previous-row-field/core/src/main/java
+16:50:29.625 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/google-analytics/core/src/main/java
+16:50:29.625 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/gp-bulk-loader/core/src/main/java
+16:50:29.625 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/gpload/core/src/main/java
+16:50:29.625 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/hl7/core/src/main/java
+16:50:29.625 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/json/core/src/main/java
+16:50:29.625 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/log4j/core/src/main/java
+16:50:29.625 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/lucid-db-streaming-loader/core/src/main/java
+16:50:29.626 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/meta-inject/src/main/java
+16:50:29.626 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/ms-access/impl/src/main/java
+16:50:29.626 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/ms-access/ui/src/main/java
+16:50:29.626 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/openerp/core/src/main/java
+16:50:29.626 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/palo/core/src/main/java
+16:50:29.626 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/pentaho-googledrive-vfs/core/src/main/java
+16:50:29.626 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/pur/core/src/main/java
+16:50:29.626 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/pur/repository-proxy/src/main/java
+16:50:29.626 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/repositories/core/src/main/java
+16:50:29.626 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/s3csvinput/core/src/main/java
+16:50:29.626 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/salesforce/core/src/main/java
+16:50:29.626 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/sap/core/src/main/java
+16:50:29.626 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/shapefilereader/core/src/main/java
+16:50:29.626 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/streaming/impls/jms/src/main/java
+16:50:29.626 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/streaming/impls/mqtt/src/main/java
+16:50:29.626 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/version-checker/core/src/main/java
+16:50:29.626 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/xml/core/src/main/java
+16:50:29.626 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/ui/src/main/java
+16:50:29.626 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/utilities/pentaho-importer-utility/importer-utility/src/main/java
+16:50:29.680 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.681 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.686 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.686 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.686 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.717 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.718 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.728 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.734 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.744 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.755 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.755 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.755 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.765 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.814 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.814 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.836 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.836 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.853 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.854 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.871 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.871 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.882 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.898 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.898 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.906 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.917 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.917 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.917 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.933 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.933 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.949 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.949 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.963 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.963 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.975 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.975 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.984 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.984 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.993 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.999 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.999 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:29.999 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.010 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.010 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.026 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.026 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.039 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.039 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.053 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.053 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.066 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.066 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.079 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.079 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.092 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.092 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.098 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.105 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.105 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.105 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.111 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.117 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.117 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.117 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.123 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.129 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.129 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.129 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.135 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.141 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.141 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.141 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.150 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.150 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.167 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.167 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.181 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.188 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.188 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.204 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.204 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.224 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.225 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.232 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.236 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.239 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.243 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.246 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.253 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.256 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.259 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.259 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.259 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+16:50:30.259 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - 33 test dirs were found:
+16:50:30.259 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/core/src/test/java
+16:50:30.259 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/dbdialog/src/test/java
+16:50:30.259 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/engine-ext/api/src/test/java
+16:50:30.259 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/engine/src/test/java
+16:50:30.259 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/aggregate-rows/core/src/test/java
+16:50:30.259 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/connections/ui/src/test/java
+16:50:30.259 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/core/impl/src/test/java
+16:50:30.259 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/drools/core/src/test/java
+16:50:30.259 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/dummy/core/src/test/java
+16:50:30.259 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/elasticsearch-bulk-insert/core/src/test/java
+16:50:30.259 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/engine-configuration/impl/src/test/java
+16:50:30.259 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/engine-configuration/ui/src/test/java
+16:50:30.259 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/file-open-save-new/core/src/test/java
+16:50:30.259 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/get-fields/core/src/test/java
+16:50:30.259 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/google-analytics/core/src/test/java
+16:50:30.259 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/gp-bulk-loader/core/src/test/java
+16:50:30.259 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/gpload/core/src/test/java
+16:50:30.259 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/json/core/src/test/java
+16:50:30.259 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/log4j/core/src/test/java
+16:50:30.259 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/meta-inject/src/test/java
+16:50:30.259 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/ms-access/impl/src/test/java
+16:50:30.260 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/pentaho-googledrive-vfs/core/src/test/java
+16:50:30.260 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/pur/core/src/test/java
+16:50:30.260 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/pur/repository-proxy/src/test/java
+16:50:30.260 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/repositories/core/src/test/java
+16:50:30.260 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/s3csvinput/core/src/test/java
+16:50:30.260 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/salesforce/core/src/test/java
+16:50:30.260 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/sap/core/src/test/java
+16:50:30.260 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/shapefilereader/core/src/test/java
+16:50:30.260 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/streaming/impls/jms/src/test/java
+16:50:30.260 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/streaming/impls/mqtt/src/test/java
+16:50:30.260 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/plugins/xml/core/src/test/java
+16:50:30.260 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/pentaho-pentaho-kettle-master-8154_repo/ui/src/test/java
+16:50:31.371 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation - Get the following failing module path: /root/workspace/pentaho-pentaho-kettle-master-8154_repo/core
+16:50:31.374 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation - Get the following failing module path: /root/workspace/pentaho-pentaho-kettle-master-8154_repo/core
+16:50:31.374 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation - ---Test results---
+16:50:31.374 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Total tests: 1205
+16:50:31.374 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Tests run: 1204
+16:50:31.374 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Tests passing: 1198
+16:50:31.374 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Failures: 6
+16:50:31.374 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Errors: 0
+16:50:31.374 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Skipped: 1
+[0] INFO Flacoco - Running Flacoco...
+[36] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.config.PropertySetter
+[37] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.config.OgnlExpression
+[52] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.vfs.KettleVFS
+[55] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.ResultFile
+[58] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.encryption.TwoWayPasswordEncoderPluginType
+[58] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.encryption.Encr
+[59] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.fileinput.CharsetToolkit
+[60] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.fileinput.FileInputList
+[63] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.Const
+[69] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.plugins.JarFileCache
+[72] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.plugins.PluginRegistryPluginType
+[73] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.plugins.PluginFolder
+[77] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.plugins.DatabasePluginType
+[78] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.logging.FileLoggingEventListener
+[88] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.logging.LoggingPluginType
+[90] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.xml.XMLCheck
+[91] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.xml.XMLHandler
+[92] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.xml.XMLParserFactoryProducer
+[92] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.SwingUniversalImageSvg
+[141] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.extension.ExtensionPointPluginType
+[146] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.util.UUIDUtil
+[159] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.row.value.ValueMetaPluginType
+[167] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.metastore.MetaStoreConst
+[172] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.connections.ConnectionManager
+[173] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.connections.vfs.providers.other.OtherConnectionDetailsProvider
+[174] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.connections.vfs.VFSHelper
+[182] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.variables.VariablesTest
+[183] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.vfs.SftpFileObjectWithWindowsSupportTest
+[186] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.ResultFileTest
+[216] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.database.DatabaseMeta_AppendExtraParamsTest
+[222] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.database.MSSQLServerDatabaseMetaTest
+[223] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.database.MSAccessDatabaseMetaTest
+[225] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.database.MSSQLServerNativeDatabaseMetaTest
+[226] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.database.OracleDatabaseMetaTest
+[228] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.database.BaseDatabaseMetaTest
+[228] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.database.util.DecryptingDataSourceTest
+[256] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.connections.vfs.provider.ConnectionFileProviderTest
+[256] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.connections.ConnectionManagerTest
+[267] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.config.PropertySetter
+[267] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.config.OgnlExpression
+[269] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.vfs.KettleVFS
+[271] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.ResultFile
+[271] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.encryption.TwoWayPasswordEncoderPluginType
+[272] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.encryption.Encr
+[272] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.fileinput.CharsetToolkit
+[272] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.fileinput.FileInputList
+[273] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.Const
+[274] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.plugins.JarFileCache
+[275] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.plugins.PluginRegistryPluginType
+[275] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.plugins.PluginFolder
+[276] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.plugins.DatabasePluginType
+[276] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.svg.SvgSupport
+[276] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.logging.FileLoggingEventListener
+[278] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.logging.LoggingPluginType
+[279] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.xml.XMLCheck
+[279] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.xml.XMLHandler
+[279] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.xml.XMLParserFactoryProducer
+[280] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.SwingUniversalImageSvg
+[284] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.database.ConnectionPoolUtil
+[286] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.extension.ExtensionPointPluginType
+[287] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.util.UUIDUtil
+[288] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.row.ValueDataUtil
+[288] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.row.value.ValueMetaPluginType
+[291] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.metastore.MetaStoreConst
+[292] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.connections.ConnectionManager
+[293] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.connections.vfs.providers.other.OtherConnectionDetailsProvider
+[294] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.connections.vfs.VFSHelper
+[295] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.variables.VariablesTest
+[295] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.vfs.SftpFileObjectWithWindowsSupportTest
+[296] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.ResultFileTest
+[296] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.fileinput.FileInputListTest
+[297] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.plugins.PluginRegistryUnitTest
+[301] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.database.ConnectionPoolUtilTest
+[301] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.database.DatabaseMeta_AppendExtraParamsTest
+[302] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.database.MSSQLServerDatabaseMetaTest
+[303] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.database.MSAccessDatabaseMetaTest
+[303] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.database.MSSQLServerNativeDatabaseMetaTest
+[304] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.database.OracleDatabaseMetaTest
+[304] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.database.BaseDatabaseMetaTest
+[304] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.database.util.DecryptingDataSourceTest
+[308] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.core.row.value.ValueMetaTimestampTest
+[310] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.connections.vfs.provider.ConnectionFileProviderTest
+[311] WARN TestMethodFilter - NoClassDefFoundError: class org.pentaho.di.connections.ConnectionManagerTest
+[4389] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.i18n.GlobalMessagesTest#testGetBundleOldASCII result was not reported by test-runner.
+[4389] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.i18n.GlobalMessagesTest#testGetBundleNewUTF8 result was not reported by test-runner.
+[4389] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.i18n.GlobalMessagesTest#testUnmatchedString result was not reported by test-runner.
+[4389] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.i18n.GlobalMessageUtilTest#isMissingKey result was not reported by test-runner.
+[4390] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.i18n.GlobalMessageUtilTest#testGetLocaleString result was not reported by test-runner.
+[4390] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.i18n.GlobalMessageUtilTest#calculateString result was not reported by test-runner.
+[5722] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.cluster.HttpUtilTest#testDecodeBase64ZippedString result was not reported by test-runner.
+[5722] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.cluster.HttpUtilTest#testConstructUrl result was not reported by test-runner.
+[5722] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.cluster.HttpUtilTest#testEncodeBase64ZippedString result was not reported by test-runner.
+[5946] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.exception.IdNotFoundExceptionTest#testConstructor1 result was not reported by test-runner.
+[5946] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.exception.IdNotFoundExceptionTest#testConstructor2 result was not reported by test-runner.
+[5946] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.exception.IdNotFoundExceptionTest#testConstructor3 result was not reported by test-runner.
+[5946] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.exception.IdNotFoundExceptionTest#testConstructor4 result was not reported by test-runner.
+[9405] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.RowSetTest#testBasicCreation result was not reported by test-runner.
+[9406] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.RowSetTest#testFuntionality1 result was not reported by test-runner.
+[9406] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.RowSetTest#testNames result was not reported by test-runner.
+[10827] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.encryption.EncrTest#testEncryptPassword result was not reported by test-runner.
+[10827] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.encryption.EncrTest#testDecryptPassword result was not reported by test-runner.
+[10827] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.encryption.EncrTest#testEncryptPasswordIfNotUsingVariables result was not reported by test-runner.
+[10827] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.encryption.EncrTest#testDecryptPasswordIfNotUsingVariables result was not reported by test-runner.
+[10827] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.encryption.CertificateGenEncryptUtilTest#testRandomSessionKeyGeneration result was not reported by test-runner.
+[10827] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.encryption.CertificateGenEncryptUtilTest#testPrivatePublic result was not reported by test-runner.
+[10827] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.encryption.CertificateGenEncryptUtilTest#testPrivateAnotherPublic result was not reported by test-runner.
+[10827] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.encryption.CertificateGenEncryptUtilTest#testPublicPublic result was not reported by test-runner.
+[10827] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.encryption.CertificateGenEncryptUtilTest#testPrivatePrivate result was not reported by test-runner.
+[10827] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.encryption.CertificateGenEncryptUtilTest#testSessionKeyEncryptionDecryption result was not reported by test-runner.
+[10827] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.encryption.CertificateGenEncryptUtilTest#testSessionKeyEncryptionDecryption2 result was not reported by test-runner.
+[10827] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.encryption.CertificateGenEncryptUtilTest#testImproperSessionKeyEncryptionDecryption result was not reported by test-runner.
+[10827] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.encryption.CertificateGenEncryptUtilTest#testImproperSessionKeyEncryptionDecryption2 result was not reported by test-runner.
+[10827] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.encryption.CertificateGenEncryptUtilTest#testImproperSessionKeyEncryptionDecryption3 result was not reported by test-runner.
+[10827] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.encryption.CertificateGenEncryptUtilTest#testImproperSessionKeyEncryptionDecryption4 result was not reported by test-runner.
+[10827] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.encryption.CertificateGenEncryptUtilTest#testImproperSessionKeyEncryptionDecryption5 result was not reported by test-runner.
+[10827] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.encryption.CertificateGenEncryptUtilTest#testImproperSessionKeyEncryptionDecryption6 result was not reported by test-runner.
+[10827] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.encryption.CertificateGenEncryptUtilTest#testPublicPrivate result was not reported by test-runner.
+[10828] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.fileinput.FileInputListTest#testGetUrlStrings result was not reported by test-runner.
+[10828] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.fileinput.FileInputListTest#testSpecialCharsInFileNamesDefaultBehavior result was not reported by test-runner.
+[10828] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.fileinput.FileInputListTest#testSpecialCharsInFileNamesEscaped result was not reported by test-runner.
+[10828] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.fileinput.FileInputListTest#testCreateFolderList result was not reported by test-runner.
+[10828] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.date.DateCacheTest#testDateCache result was not reported by test-runner.
+[11436] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.plugins.BasePluginTypeTest#findAnnotatedClassFilesFailTest result was not reported by test-runner.
+[13006] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.plugins.PluginRegistryUnitTest#testSupplementalPluginMappings result was not reported by test-runner.
+[13006] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.plugins.PluginRegistryUnitTest#testPluginClassloaderGroup result was not reported by test-runner.
+[13006] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.plugins.PluginRegistryUnitTest#testClassloadingPluginNoClassRegistered result was not reported by test-runner.
+[13006] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.plugins.PluginRegistryUnitTest#testMergingPluginFragment result was not reported by test-runner.
+[13006] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.plugins.PluginRegistryUnitTest#getGetPluginInformation result was not reported by test-runner.
+[13006] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.BlockingBatchingRowSetTest#testBasicCreation result was not reported by test-runner.
+[13006] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.BlockingBatchingRowSetTest#testFuntionality1 result was not reported by test-runner.
+[14422] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.logging.LoggingRegistrySingltonTest#testLoggingRegistryConcurrentInitialization result was not reported by test-runner.
+[14422] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.logging.Slf4jLoggingEventListenerTest#testAddLogEventNoRegisteredLogObject result was not reported by test-runner.
+[14422] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.logging.Slf4jLoggingEventListenerTest#testAddLogEventTrans result was not reported by test-runner.
+[14422] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.logging.Slf4jLoggingEventListenerTest#testAddLogEventJob result was not reported by test-runner.
+[14422] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.logging.Slf4jLoggingEventListenerTest#testJobWithAndWithoutFilename result was not reported by test-runner.
+[14422] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.logging.Slf4jLoggingEventListenerTest#testTransWithAndWithoutFilename result was not reported by test-runner.
+[14422] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.logging.LogChannelTest#testPrintlnWithNullLogChannelFileWriterBuffer result was not reported by test-runner.
+[14422] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.logging.LogChannelTest#testPrintlnLogNotVisible result was not reported by test-runner.
+[14422] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.logging.LogChannelTest#testPrintMessageFiltered result was not reported by test-runner.
+[14422] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.logging.LogChannelTest#testGetHooks result was not reported by test-runner.
+[14422] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.logging.LogChannelTest#testLogChannelConstructorWithParentObject result was not reported by test-runner.
+[14422] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.logging.LogChannelTest#testPrintlnHooksCall result was not reported by test-runner.
+[15565] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.logging.MetricsRegistryTest#testConcurrencySnap result was not reported by test-runner.
+[15565] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.logging.LoggingRegistryTest#correctLogIdReturned_WhenLogObjectRegisteredAlready result was not reported by test-runner.
+[15565] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.logging.LoggingRegistryTest#testRegisterFileWriter result was not reported by test-runner.
+[15565] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.logging.LoggingRegistryTest#testFileWritersIds result was not reported by test-runner.
+[15565] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.logging.LoggingRegistryTest#testRemoveFileWriter result was not reported by test-runner.
+[15565] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.logging.LoggingRegistryTest#getLogChannelFileWriterBufferTest result was not reported by test-runner.
+[15565] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.logging.LoggingRegistryTest#getLogChannelFileWriterBufferOnlyOnePossibilityTest result was not reported by test-runner.
+[15565] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.logging.LoggingRegistryTest#getLogChannelFileWriterBufferNoPossibilityTest result was not reported by test-runner.
+[15565] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.logging.LoggingRegistryTest#testPurgeTimerReset result was not reported by test-runner.
+[15565] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.logging.LoggingRegistryTest#testSimplePurge result was not reported by test-runner.
+[15565] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.logging.LoggingRegistryTest#testPurgeErrorCase result was not reported by test-runner.
+[15565] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.logging.LoggingRegistryTest#testDump result was not reported by test-runner.
+[15565] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.logging.LoggingRegistryTest#testModificationTime result was not reported by test-runner.
+[15565] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.logging.LoggingRegistryTest#testFindWithComplexRegistry result was not reported by test-runner.
+[15565] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.DBCacheTest#readsDbCacheFile result was not reported by test-runner.
+[15565] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.DBCacheTest#savesCacheToDisk result was not reported by test-runner.
+[15566] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.xml.XMLHandlerUnitTest#openTagWithNotNull result was not reported by test-runner.
+[15566] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.xml.XMLHandlerUnitTest#openTagWithNull result was not reported by test-runner.
+[15566] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.xml.XMLHandlerUnitTest#openTagWithExternalBuilder result was not reported by test-runner.
+[15566] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.xml.XMLHandlerUnitTest#closeTagWithNotNull result was not reported by test-runner.
+[15566] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.xml.XMLHandlerUnitTest#closeTagWithNull result was not reported by test-runner.
+[15566] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.xml.XMLHandlerUnitTest#closeTagWithExternalBuilder result was not reported by test-runner.
+[15566] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.xml.XMLHandlerUnitTest#buildCdataWithNotNull result was not reported by test-runner.
+[15566] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.xml.XMLHandlerUnitTest#buildCdataWithNull result was not reported by test-runner.
+[15566] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.xml.XMLHandlerUnitTest#buildCdataWithExternalBuilder result was not reported by test-runner.
+[15566] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.xml.XMLHandlerUnitTest#timestamp2stringTest result was not reported by test-runner.
+[15566] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.xml.XMLHandlerUnitTest#date2stringTest result was not reported by test-runner.
+[15566] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.xml.XMLHandlerUnitTest#addTagValueBigDecimal result was not reported by test-runner.
+[15566] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.xml.XMLHandlerUnitTest#addTagValueBoolean result was not reported by test-runner.
+[15566] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.xml.XMLHandlerUnitTest#addTagValueDate result was not reported by test-runner.
+[15566] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.xml.XMLHandlerUnitTest#addTagValueLong result was not reported by test-runner.
+[15566] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.xml.XMLHandlerUnitTest#addTagValueInt result was not reported by test-runner.
+[15566] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.xml.XMLHandlerUnitTest#addTagValueDouble result was not reported by test-runner.
+[15566] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.xml.XMLHandlerUnitTest#addTagValueBinary result was not reported by test-runner.
+[15566] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.xml.XMLHandlerUnitTest#addTagValueWithSurrogateCharacters result was not reported by test-runner.
+[15566] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.xml.XMLHandlerUnitTest#testEscapingXmlBagCharacters result was not reported by test-runner.
+[15566] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.xml.XMLHandlerUnitTest#createdDocumentBuilderThrowsExceptionWhenParsingXmlWithABigAmountOfExternalEntities result was not reported by test-runner.
+[15566] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.xml.XMLHandlerUnitTest#loadingXmlFromStreamThrowsExceptionWhenParsingXmlWithBigAmountOfExternalEntities result was not reported by test-runner.
+[15566] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.xml.XMLHandlerUnitTest#loadingXmlFromURLThrowsExceptionWhenParsingXmlWithBigAmountOfExternalEntities result was not reported by test-runner.
+[15566] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.xml.XMLHandlerUnitTest#testGetSubNode result was not reported by test-runner.
+[15566] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.xml.XMLHandlerUnitTest#testGetLastSubNode result was not reported by test-runner.
+[15566] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.xml.XMLHandlerUnitTest#testGetSubNodeByNr_WithCache result was not reported by test-runner.
+[15566] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.xml.XMLHandlerUnitTest#testGetSubNodeByNr_WithoutCache result was not reported by test-runner.
+[15566] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.xml.XMLFormatterTest#test1 result was not reported by test-runner.
+[15566] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.xml.XMLFormatterTest#test2 result was not reported by test-runner.
+[15566] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.xml.XMLFormatterTest#test3 result was not reported by test-runner.
+[15566] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.xml.XMLFormatterTest#test4 result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testIsEmpty result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testInitCap result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSortStrings result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testIsEmptyStringArray result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testIsEmptyObjectArray result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testIsEmptyList result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testIsEmptyStringBuffer result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testIsEmptyStringBuilder result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testNVL result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testNullToEmpty_NVL result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testNrSpacesBefore result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testNrSpacesAfter result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testLtrim result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testRtrim result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testTrim result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testOnlySpaces result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitString result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitStringChar result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitStringWithMultipleCharacterDelimiterAndEnclosure result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitStringRemoveEnclosureNested1 result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitStringRemoveEnclosureNestedMultiChar1 result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitStringRemoveEnclosureNested2 result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitStringRemoveEnclosureNestedMultiChar2 result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitStringWithNestedEscapedEnclosure result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitPath result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testRound_BigDecimal result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testRound result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testRound_Long result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testToInt result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testToLong result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testToDouble result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testRightPad result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testReplace result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testRepl result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testGetOS result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testQuoteCharByOS result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testOptionallyQuoteStringByOS result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testIsWindows result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testIsLinux result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testIsOSX result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testIsKDE result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testGetHostName result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testGetHostnameReal result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testReplEnv result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testNullToEmpty result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testIndexOfString result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testIndexsOfStrings result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testIndexsOfFoundStrings result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testGetDistinctStrings result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testStackTracker result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testGetCustomStackTrace result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testCreateNewClassLoader result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testCreateByteArray result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testCreateFilename result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testCreateName result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testFilenameOnly result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testGetDateFormats result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testGetTimelessDateFormats result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testGetNumberFormats result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testGetConversionFormats result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testGetTransformationAndJobFilterNames result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testGetTransformationFilterNames result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testGetJobFilterNames result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testNanoTime result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testTrimToType result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testTrimDate result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSafeAppendDirectory result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testGetEmptyPaddedStrings result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testGetPercentageFreeMemory result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testRemoveDigits result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testGetDigitsOnly result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testRemoveTimeFromDate result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testEscapeUnescapeXML result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testEscapeUnescapeHtml result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testEscapeSQL result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testRemoveCRLF result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testRemoveCR result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testRemoveLF result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testRemoveTAB result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testAddTimeToDate result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testGetOccurenceString result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testGetAvailableFontNames result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testGetKettlePropertiesFileHeader result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testProtectXMLCDATA result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testGetOcuranceString result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testEscapeXml result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testLpad result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testRpad result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testClassIsOrExtends result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testReleaseType result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitStringNullWithDelimiterNullAndEnclosureNull result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitStringNullWithDelimiterNullAndEnclosureNullRemoveEnclosure result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitStringWithDelimiterNullAndEnclosureNull result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitStringWithDelimiterNullAndEnclosureNullRemoveEnclosure result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitStringWithDelimiterAndEnclosureNull result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitStringWithDelimiterAndEnclosureNullMultiChar result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitStringWithDelimiterAndEnclosureNullRemoveEnclosure result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitStringWithDelimiterAndEnclosureNullMultiCharRemoveEnclosure result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitStringWithDelimiterAndEmptyEnclosure result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitStringWithDelimiterAndEmptyEnclosureMultiChar result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitStringWithDelimiterAndEmptyEnclosureRemoveEnclosure result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitStringWithDelimiterAndEmptyEnclosureMultiCharRemoveEnclosure result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitStringWithDelimiterAndQuoteEnclosure1 result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitStringWithDelimiterAndQuoteEnclosureMultiChar1 result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitStringWithDelimiterAndQuoteEnclosureRemoveEnclosure1 result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitStringWithDelimiterAndQuoteEnclosureMultiCharRemoveEnclosure1 result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitStringWithDelimiterAndQuoteEnclosure2 result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitStringWithDelimiterAndQuoteEnclosureMultiChar2 result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitStringWithDelimiterAndQuoteEnclosureRemoveEnclosure2 result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitStringWithDelimiterAndQuoteEnclosureMultiCharRemoveEnclosure2 result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitStringWithDelimiterAndQuoteEnclosure3 result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitStringWithDelimiterAndQuoteEnclosureMultiChar3 result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitStringWithDelimiterAndQuoteEnclosureRemovesEnclosure3 result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitStringWithDelimiterAndQuoteEnclosureMultiCharRemovesEnclosure3 result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitStringWithDifferentDelimiterAndEnclosure result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConstTest#testSplitStringWithEscaping result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConditionTest#testPdi13227 result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConditionTest#testNegatedTrueFuncEvaluatesAsFalse result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.ConditionTest#testNullLessThanNumberEvaluatesAsFalse result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseMetaTest#testGetDatabaseInterfacesMapWontReturnNullIfCalledSimultaneouslyWithClear result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseMetaTest#testDatabaseAccessTypeCode result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseMetaTest#testApplyingDefaultOptions result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseMetaTest#testQuoteReservedWords result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseMetaTest#testModifyingName result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseMetaTest#testGetFeatureSummary result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseMetaTest#indexOfName_NullArray result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseMetaTest#indexOfName_NullName result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseMetaTest#indexOfName_ExactMatch result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseMetaTest#indexOfName_NonExactMatch result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseMetaTest#shouldCallNewMethodWhenDatabaseInterfaceIsOfANewType result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseMetaTest#shouldFallBackWhenDatabaseInterfaceIsOfAnOldType result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseMetaTest#databases_WithSameDbConnTypes_AreTheSame result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseMetaTest#databases_WithSameDbConnTypes_AreNotSame_IfPluginIdIsNull result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseMetaTest#databases_WithDifferentDbConnTypes_AreDifferent_IfNonOfThemIsSubsetOfAnother result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseMetaTest#databases_WithDifferentDbConnTypes_AreTheSame_IfOneConnTypeIsSubsetOfAnother_2LevelHierarchy result was not reported by test-runner.
+[16559] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseMetaTest#databases_WithDifferentDbConnTypes_AreTheSame_IfOneConnTypeIsSubsetOfAnother_3LevelHierarchy result was not reported by test-runner.
+[16560] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseMetaTest#testCheckParameters result was not reported by test-runner.
+[16560] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseMetaTest#setSQLServerInstanceTest result was not reported by test-runner.
+[16560] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseMetaTest#testAddOptionsMysql result was not reported by test-runner.
+[16560] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseMetaTest#testAddOptionsMariaDB result was not reported by test-runner.
+[16560] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseMetaTest#testAddOptionsInfobright result was not reported by test-runner.
+[16560] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseMetaTest#testAttributesVariable result was not reported by test-runner.
+[16560] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseMetaTest#supportsOptionalExtraOptions result was not reported by test-runner.
+[16560] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseMetaTest#testfindDatabase result was not reported by test-runner.
+[16560] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseMetaTest#testIsNeedUpdateTrue result was not reported by test-runner.
+[16560] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseMetaTest#testIsNeedUpdateFalse result was not reported by test-runner.
+[16560] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseMetaTest#testGetSQLListOfSchemas result was not reported by test-runner.
+[16560] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.AS400DatabaseMetaTest#testSettings result was not reported by test-runner.
+[16560] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.AS400DatabaseMetaTest#testSQLStatements result was not reported by test-runner.
+[16560] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.AS400DatabaseMetaTest#testGetFieldDefinition result was not reported by test-runner.
+[20600] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.ConnectionPoolUtilTest#testGetConnection result was not reported by test-runner.
+[20600] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.ConnectionPoolUtilTest#testGetConnectionEncrypted result was not reported by test-runner.
+[20600] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.ConnectionPoolUtilTest#testGetConnectionWithVariables result was not reported by test-runner.
+[20600] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.ConnectionPoolUtilTest#testGetConnectionName result was not reported by test-runner.
+[20600] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.ConnectionPoolUtilTest#testGetDataSourceName result was not reported by test-runner.
+[20600] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.ConnectionPoolUtilTest#testConfigureDataSource result was not reported by test-runner.
+[20600] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.ConnectionPoolUtilTest#testConfigureDataSourceWhenNoDatabaseInterface result was not reported by test-runner.
+[20600] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.OracleRDBDatabaseMetaTest#testOverriddenSettings result was not reported by test-runner.
+[20600] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseConnectingTest#connect_GroupIsNull result was not reported by test-runner.
+[20600] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseConnectingTest#connect_GroupIsEqual_Consequently result was not reported by test-runner.
+[20600] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseConnectingTest#connect_GroupIsEqual_InParallel result was not reported by test-runner.
+[20600] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseConnectingTest#connect_TwoGroups result was not reported by test-runner.
+[20600] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseConnectingTest#connect_ManyGroups_Simultaneously result was not reported by test-runner.
+[21136] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.RedshiftDatabaseMetaTest#testExtraOption result was not reported by test-runner.
+[21136] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.RedshiftDatabaseMetaTest#testGetDefaultDatabasePort result was not reported by test-runner.
+[21136] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.RedshiftDatabaseMetaTest#testGetDriverClass result was not reported by test-runner.
+[21136] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.RedshiftDatabaseMetaTest#testGetURL result was not reported by test-runner.
+[21136] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.RedshiftDatabaseMetaTest#testGetExtraOptionsHelpText result was not reported by test-runner.
+[21136] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.RedshiftDatabaseMetaTest#testIsFetchSizeSupported result was not reported by test-runner.
+[21136] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.RedshiftDatabaseMetaTest#testSupportsSetMaxRows result was not reported by test-runner.
+[21136] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.RedshiftDatabaseMetaTest#testGetUsedLibraries result was not reported by test-runner.
+[23444] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testConnectJNDI result was not reported by test-runner.
+[23444] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testGetQueryFieldsFromPreparedStatement result was not reported by test-runner.
+[23444] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testGetQueryFieldsFromDatabaseMetaData result was not reported by test-runner.
+[23444] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testGetQueryFieldsFallback result was not reported by test-runner.
+[23444] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testGetLookupMetaCalls result was not reported by test-runner.
+[23444] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testGetLookupCallPSpassed result was not reported by test-runner.
+[23444] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testCreateKettleDatabaseBatchExceptionNullUpdatesWhenSQLException result was not reported by test-runner.
+[23444] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testCreateKettleDatabaseBatchExceptionNotUpdatesWhenBatchUpdateException result was not reported by test-runner.
+[23444] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testCreateKettleDatabaseBatchExceptionConstructsExceptionList result was not reported by test-runner.
+[23444] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testInsertRowWithBatchAlwaysThrowsKettleBatchException result was not reported by test-runner.
+[23444] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testInsertRowWithoutBatchDoesntThrowKettleBatchException result was not reported by test-runner.
+[23444] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testEmptyAndCommitWithBatchAlwaysThrowsKettleBatchException result was not reported by test-runner.
+[23444] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testEmptyAndCommitWithoutBatchDoesntThrowKettleBatchException result was not reported by test-runner.
+[23444] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testInsertFinishedWithBatchAlwaysThrowsKettleBatchException result was not reported by test-runner.
+[23444] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testInsertFinishedWithoutBatchDoesntThrowKettleBatchException result was not reported by test-runner.
+[23444] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#insertRowAndExecuteBatchCauseNoErrors result was not reported by test-runner.
+[23444] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#insertRowWhenDbDoNotSupportBatchLeadsToCommit result was not reported by test-runner.
+[23444] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testGetCreateSequenceStatement result was not reported by test-runner.
+[23444] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testPrepareSQL result was not reported by test-runner.
+[23445] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testGetCreateTableStatement result was not reported by test-runner.
+[23445] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testCheckTableExistsByDbMeta_Success result was not reported by test-runner.
+[23445] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testCheckTableNotExistsByDbMeta result was not reported by test-runner.
+[23445] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testCheckTableExistsByDbMetaThrowsKettleDatabaseException result was not reported by test-runner.
+[23445] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testCheckTableExistsByDbMetaThrowsKettleDatabaseException_WhenDbMetaNull result was not reported by test-runner.
+[23445] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testCheckTableExistsByDbMetaThrowsKettleDatabaseException_WhenUnableToGetTableNames result was not reported by test-runner.
+[23445] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testCheckTableExistsByDbMetaThrowsKettleDatabaseException_WhenResultSetNull result was not reported by test-runner.
+[23445] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#mySqlVarBinaryIsConvertedToStringType result was not reported by test-runner.
+[23445] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#usesCustomDsProviderIfSet_Pooling result was not reported by test-runner.
+[23445] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#usesCustomDsProviderIfSet_Jndi result was not reported by test-runner.
+[23445] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#jndiAccessTypePrevailsPooled result was not reported by test-runner.
+[23445] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testNormalConnect_WhenTheProviderDoesNotReturnDataSourceWithPool result was not reported by test-runner.
+[23445] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testNormalConnectWhenDatasourceNeedsUpdate result was not reported by test-runner.
+[23445] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testNormalConnectWhenDatasourceDontNeedsUpdate result was not reported by test-runner.
+[23445] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testDisconnectPstmCloseFail result was not reported by test-runner.
+[23445] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testDisconnectCommitFail result was not reported by test-runner.
+[23445] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testDisconnectConnectionGroup result was not reported by test-runner.
+[23445] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testGetTablenames result was not reported by test-runner.
+[23445] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testCheckTableExistsNoProperty result was not reported by test-runner.
+[23445] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testCheckTableExistsFalseProperty result was not reported by test-runner.
+[23445] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testCheckTableExistsTrueProperty result was not reported by test-runner.
+[23445] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testCheckColumnExistsNoProperty result was not reported by test-runner.
+[23445] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testCheckColumnExistsFalseProperty result was not reported by test-runner.
+[23445] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testCheckColumnExistsTrueProperty result was not reported by test-runner.
+[23445] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testGetTableFieldsMetaNoProperty result was not reported by test-runner.
+[23445] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testGetTableFieldsMetaFalseProperty result was not reported by test-runner.
+[23445] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.DatabaseTest#testGetTableFieldsMetaTrueProperty result was not reported by test-runner.
+[23974] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.SqlCommentScrubberTest#testRemoveComments result was not reported by test-runner.
+[26775] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.GenericDatabaseMetaTest#testSettingDialect result was not reported by test-runner.
+[26775] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.GenericDatabaseMetaTest#testSettings result was not reported by test-runner.
+[26775] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.database.GenericDatabaseMetaTest#testSQLStatements result was not reported by test-runner.
+[35109] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.extension.ExtensionPointIntegrationTest#testExtensionPointMapConcurrency result was not reported by test-runner.
+[35109] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.extension.ExtensionPointIntegrationTest#test result was not reported by test-runner.
+[35109] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.extension.ExtensionPointMapTest#constructorTest result was not reported by test-runner.
+[35109] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.extension.ExtensionPointMapTest#addExtensionPointTest result was not reported by test-runner.
+[35109] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.extension.ExtensionPointHandlerTest#callExtensionPointTest result was not reported by test-runner.
+[35109] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.util.UtilsTest#testResolvePassword result was not reported by test-runner.
+[35109] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.util.UtilsTest#testResolvePasswordEncrypted result was not reported by test-runner.
+[35109] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.util.UtilsTest#testResolvePasswordNull result was not reported by test-runner.
+[35109] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.util.UtilsTest#testResolvePasswordVariable result was not reported by test-runner.
+[35109] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.util.UtilsTest#testNormalizeArraysMethods result was not reported by test-runner.
+[35109] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.util.UtilsTest#testIsEmpty result was not reported by test-runner.
+[35109] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.util.UtilsTest#testIsEmptyStringArray result was not reported by test-runner.
+[35109] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.util.UtilsTest#testIsEmptyObjectArray result was not reported by test-runner.
+[35109] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.util.UtilsTest#testIsEmptyList result was not reported by test-runner.
+[35109] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.util.UtilsTest#testIsEmptyStringBuffer result was not reported by test-runner.
+[35109] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.util.UtilsTest#testIsEmptyStringBuilder result was not reported by test-runner.
+[35109] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.util.EnvUtilTest#vfsUserDirIsRoot_IsPublishedOnInitialisation result was not reported by test-runner.
+[35110] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.util.EnvUtilTest#createLocale_Null result was not reported by test-runner.
+[35110] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.util.EnvUtilTest#createLocale_Empty result was not reported by test-runner.
+[35110] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.util.EnvUtilTest#createLocale_SingleCode result was not reported by test-runner.
+[35110] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.util.EnvUtilTest#createLocale_DoubleCode result was not reported by test-runner.
+[35110] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.util.EnvUtilTest#createLocale_DoubleCode_Variant result was not reported by test-runner.
+[35110] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.util.EnvUtilTest#testClearProperty result was not reported by test-runner.
+[35110] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.util.StringUtilTest#environmentSubstituteHexTest result was not reported by test-runner.
+[35110] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.util.StringUtilTest#environmentSubstituteHexEscapeTest result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaEsr7102IT#esr7201FailTest result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testCvtStringToBinaryString result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testCvtStringBinaryString result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testIntegerToStringToInteger result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testNumberToStringToNumber result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testBigNumberToStringToBigNumber result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testBigNumberToStringToBigNumberWithByteLimitValues result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testByteToStringToBigNumberWithByteLimitValues result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testBigNumberToStringToBigNumberWithShortLimitValues result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testShortToStringToBigNumberWithShortLimitValues result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testBigNumberToStringToBigNumberWithIntLimitValues result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testIntToStringToBigNumberWithIntLimitValues result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testBigNumberToStringToBigNumberWithLongLimitValues result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testLongToStringToBigNumberWithLongLimitValues result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testBigNumberToStringToBigNumberWithFloatLimitValues result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testFloatToStringToBigNumberWithFloatLimitValues result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testBigNumberToStringToBigNumberWithDoubleLimitValues result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testDoubleToStringToBigNumberWithDoubleLimitValues result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testBigNumberToStringToBigNumberWithNumberCloseToZero result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testToStringToBigNumberWithNumberCloseToZero result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testPDI17366Conversion result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testDateToStringToDate result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testDateStringDL8601 result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testDateStringUTC result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testDateStringOffset result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testDateString8601 result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testConvertDataDate result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testConvertDataInteger result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testConvertDataNumber result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testLazyConversionInteger result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testLazyConversionNumber result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testLazyConversionBigNumber result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testLazyConversionNullInteger result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testLazyConversionNullNumber result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testCompareIntegersNormalStorageData result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testCompareNumbersNormalStorageData result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testCompareBigNumberNormalStorageData result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testCompareDatesNormalStorageData result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testCompareBooleanNormalStorageData result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testCompareStringsNormalStorageData result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testValueMetaInheritance result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaTest#testGetNativeDataTypeClass result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowTest#testNormalStringConversion result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowTest#testIndexedStringConversion result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowTest#testExtractDataWithTimestampConversion result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseSerializationTest#restoresMetaData_storageTypeNormal result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseSerializationTest#restoresMetaData_storageTypeIndexed result was not reported by test-runner.
+[38475] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseSerializationTest#restoresMetaData_storageTypeBinaryString result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testGetNativeDataTypeClass result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testDefaultCtor result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testCtorName result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testCtorNameAndType result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#test4ArgCtor result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testGetValueFromSqlTypeNetezza result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testGetDataXML result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testGetBinaryWithLength_WhenBinarySqlTypesOfVertica result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testGetValueFromSQLTypeTypeOverride result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testVerticaTimeType result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testConvertStringToBoolean result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testConvertDataFromStringToString result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testConvertDataFromStringToDate result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testConvertDataFromStringForNullMeta result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testGetBigDecimalThrowsKettleValueException result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testGetIntegerThrowsKettleValueException result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testGetNumberThrowsKettleValueException result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testIsNumeric result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testGetAllTypes result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testGetTrimTypeByCode result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testGetTrimTypeCode result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testGetTrimTypeByDesc result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testGetTrimTypeDesc result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testOrigin result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testLength result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testPrecision result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testCompareIntegers result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testCompareIntegerToDouble result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testCompareDate result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testCompareDateWithStorageMask result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testCompareDateNoStorageMask result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testCompareBinary result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testDateParsing8601 result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testDateToStringParse result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testSetPreparedStatementStringValueDontLogTruncated result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testValueMetaBaseOnlyHasOneLogger result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testConvertDataUsingConversionMetaDataForCustomMeta result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testConvertDataUsingConversionMetaData result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testGetCompatibleString result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testReadDataInet result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testWriteDataInet result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testConvertBigNumberToBoolean result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testGetValueFromSQLTypeBinaryMysql result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testGetValueFromNode result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testGetValueUnknownType result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testConvertStringToTimestampType result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#test_PDI_17126_Postgres result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#test_Pdi_17126_postgres_DataLongerThanMetaLength result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#test_Pdi_17126_postgres_truncate result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#test_Pdi_17126_mysql result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testConvertNumberToString result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testNullHashCodes result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testHashCodes result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlCharToPentahoString result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlVarcharToPentahoString result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlNVarcharToPentahoString result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlLongVarcharToPentahoString result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlClobToPentahoString result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlNClobToPentahoString result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlBigIntToPentahoInteger result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlIntegerToPentahoInteger result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlSmallIntToPentahoInteger result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlTinyIntToPentahoInteger result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlDecimalToPentahoBigNumber result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlDecimalToPentahoInteger result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlDoubleToPentahoNumber result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlDoubleWithoutDecimalDigits result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlDoubleWithTooBigLengthAndPrecision result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlDoubleWithTooBigLengthAndPrecisionUsingPostgesSQL result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlDoubleWithPrecisionGreaterThanLengthUsingMySQLVariant result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlDoubleToPentahoBigNumber result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlFloatToPentahoNumber result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlRealToPentahoNumber result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlNumericWithUndefinedSizeUsingPostgesSQL result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlNumericWithUndefinedSizeUsingGreenplum result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlNumericWithStrictBigNumberInterpretationUsingOracle result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlNumericWithoutStrictBigNumberInterpretationUsingOracle result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlTimestampToPentahoDate result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewUnsupportedSqlTimestamp result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlDateToPentahoDateUsingTeradata result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlTimeToPentahoDate result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlTimeToPentahoIntegerUsingMySQLVariant result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlBooleanToPentahoBoolean result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlBitToPentahoBoolean result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlBinaryToPentahoBinary result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlBinaryToPentahoStringUsingSQLite result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlBlobToPentahoBinary result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlVarBinaryToPentahoBinary result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlVarBinaryToPentahoStringUsingOracle result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlVarBinaryToPentahoBinaryUsingMySQLVariant result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlLongVarBinaryToPentahoBinary result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlLongVarBinaryToPentahoStringUsingOracle result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testMetdataPreviewSqlDoubleToPentahoNumberUsingMySQL result was not reported by test-runner.
+[39212] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseTest#testName result was not reported by test-runner.
+[39313] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaStringTest#testGetNativeData_emptyIsNotNull result was not reported by test-runner.
+[39313] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaStringTest#testGetNativeData_emptyIsNull result was not reported by test-runner.
+[39313] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaStringTest#testIsNull_emptyIsNotNull result was not reported by test-runner.
+[39313] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaStringTest#testIsNull_emptyIsNull result was not reported by test-runner.
+[39313] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaStringTest#testGetString_emptyIsNotNull result was not reported by test-runner.
+[39313] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaStringTest#testGetString_emptyIsNull result was not reported by test-runner.
+[39313] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaStringTest#testCompare_emptyIsNotNull result was not reported by test-runner.
+[39313] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaStringTest#testCompare_emptyIsNull result was not reported by test-runner.
+[39313] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaStringTest#testCompare_collatorEnabled result was not reported by test-runner.
+[39313] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaStringTest#testGetIntegerWithoutConversionMask result was not reported by test-runner.
+[39313] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaStringTest#testGetNumberWithoutConversionMask result was not reported by test-runner.
+[39313] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaStringTest#testGetBigNumberWithoutConversionMask result was not reported by test-runner.
+[39313] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaStringTest#testGetDateWithoutConversionMask result was not reported by test-runner.
+[39313] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaFactoryTest#testGetNativeDataTypeClass result was not reported by test-runner.
+[39313] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaFactoryTest#testClone result was not reported by test-runner.
+[39313] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaFactoryTest#testCreateValueMeta result was not reported by test-runner.
+[39313] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaFactoryTest#testGetValueMetaNames result was not reported by test-runner.
+[39313] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaFactoryTest#testGetAllValueMetaNames result was not reported by test-runner.
+[39313] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaFactoryTest#testGetValueMetaName result was not reported by test-runner.
+[39313] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaFactoryTest#testGetIdForValueMeta result was not reported by test-runner.
+[39313] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaFactoryTest#testGetValueMetaPluginClasses result was not reported by test-runner.
+[39313] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaFactoryTest#testGuessValueMetaInterface result was not reported by test-runner.
+[39313] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseSetPreparedStmntValueTest#testXMLParsingWithNoDataFormatLocale result was not reported by test-runner.
+[39313] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseSetPreparedStmntValueTest#testDateRegular result was not reported by test-runner.
+[39313] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseSetPreparedStmntValueTest#testDateIgnoreTZ result was not reported by test-runner.
+[39313] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseSetPreparedStmntValueTest#testTimestampRegular result was not reported by test-runner.
+[39313] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseSetPreparedStmntValueTest#testTimestampIgnoreTZ result was not reported by test-runner.
+[39313] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseSetPreparedStmntValueTest#testConvertedTimestampRegular result was not reported by test-runner.
+[39313] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaBaseSetPreparedStmntValueTest#testConvertedTimestampIgnoreTZ result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.timestamp.SimpleTimestampFormatTest#testFormat result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.timestamp.SimpleTimestampFormatTest#testParse result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.timestamp.SimpleTimestampFormatTest#testToPattern result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.timestamp.SimpleTimestampFormatTest#testToLocalizedPattern result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.timestamp.SimpleTimestampFormatTest#testApplyPattern result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.timestamp.SimpleTimestampFormatTest#testApplyLocalizedPattern result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.timestamp.SimpleTimestampFormatTest#testParseMultiThread result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testSetPreparedStatementValue result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testCompare result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testConvertStringToTimestamp result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testConvertTimestampToString result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testConvertDateToTimestamp_Null result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testConvertDateToTimestamp result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testConvertTimestampToDate_Null result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testConvertTimestampToBoolean_Null result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testConvertIntegerToTimestamp_Null result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testConvertIntegerToTimestamp_DefaultMode result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testConvertIntegerToTimestamp_Milliseconds result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testConvertIntegerToTimestamp_Nanoseconds result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testConvertTimestampToInteger_Null result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testConvertTimestampToInteger_DefaultMode result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testConvertTimestampToInteger_Milliseconds result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testConvertTimestampToInteger_Nanoseconds result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testConvertNumberToTimestamp_Null result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testConvertNumberToTimestamp_DefaultMode result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testConvertNumberToTimestamp_Milliseconds result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testConvertNumberToTimestamp_Nanoseconds result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testConvertTimestampToNumber_Null result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testConvertTimestampToNumber_DefaultMode result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testConvertTimestampToNumber_Milliseconds result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testConvertTimestampToNumber_Nanoseconds result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testConvertBigNumberToTimestamp_Null result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testConvertBigNumberToTimestamp_DefaultMode result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testConvertBigNumberToTimestamp_Milliseconds result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testConvertBigNumberToTimestamp_Nanoseconds result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testConvertTimestampToBigNumber_Null result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testConvertTimestampToBigNumber_DefaultMode result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testConvertTimestampToBigNumber_Milliseconds result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testConvertTimestampToBigNumber_Nanoseconds result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testCloneValueData_Null result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.value.ValueMetaTimestampTest#testCloneValueData result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaAndDataTest#testConstructors result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueMetaAndDataTest#testLoadXML result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaTest#testRowMetaInitializingFromXmlNode result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaTest#testGetValueMetaList result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaTest#testSetValueMetaList result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaTest#testSetValueMetaListNullName result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaTest#testDeSynchronizationModifyingOriginalList result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaTest#testExists result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaTest#testAddValueMetaValueMetaInterface result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaTest#testAddValueMetaNullName result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaTest#testAddValueMetaIntValueMetaInterface result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaTest#testGetValueMeta result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaTest#testSetValueMeta result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaTest#testSetValueMetaDup result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaTest#testInsertValueMetaDup result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaTest#testRemoveValueMetaDup result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaTest#testSetValueMetaNullName result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaTest#testIndexOfValue result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaTest#testIndexOfNullValue result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaTest#testSearchValueMeta result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaTest#testAddRowMeta result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaTest#testMergeRowMeta result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaTest#testRemoveValueMetaString result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaTest#testRemoveValueMetaInt result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaTest#testLowerCaseNamesSearch result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaTest#testMultipleSameNameInserts result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaTest#testExternalValueMetaModification result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaTest#testSwapNames result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaTest#testCopyRowMetaCacheConstructor result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaTest#testNeedRealClone result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaTest#testMergeRowMetaWithOriginStep result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaTest#testGetFieldNames result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaTest#testHashCode result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaAddRemoveValueTest#testAddRemoveValue result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaAddRemoveValueTest#testAddRemoveRenameValue result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.RowMetaAddRemoveValueTest#testAddRemoveValueCaseInsensitive result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueDateUtilTest#shouldCalculateDateWorkingDiff_MAR result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueDateUtilTest#shouldCalculateDateWorkingDiff_APR result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueDateUtilTest#shouldCalculateDateWorkingDiff_MAY result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueDateUtilTest#shouldCalculateDateWorkingDiff_JUN result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueDateUtilTest#shouldCalculateDateWorkingDiff_JUL result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueDateUtilTest#shouldCalculateDateWorkingDiff_AUG result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueDateUtilTest#shouldCalculateDateWorkingDiff_SEP result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueDateUtilTest#shouldCalculateDateWorkingDiff_OCT result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueDateUtilTest#shouldCalculateDateWorkingDiff_NOV result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueDateUtilTest#shouldCalculateDateWorkingDiff_DEC result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueDateUtilTest#shouldCalculateHourOfDayUsingValueMetasTimeZoneByDefault result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueDateUtilTest#shouldCalculateHourOfDayUsingLocalTimeZoneIfPropertyIsSet result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueDateUtilTest#shouldCalculateDateWorkingDiff_JAN result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.row.ValueDateUtilTest#shouldCalculateDateWorkingDiff_FEB result was not reported by test-runner.
+[40048] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.core.metrics.MetricsDurationTest#test result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueTest#testIsNumeric result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueTest#testTrim result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueTest#testConstructor5 result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueTest#testToStringString result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueTest#testToStringNumber result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueTest#testToIntegerNumber result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueTest#testToStringBoolean result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueTest#testToStringDate result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueTest#testToStringMeta result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueTest#testClone1 result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueTest#testGetStringLength result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueTest#testGetXML result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueTest#testSetValue result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueTest#testIsEqualTo result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueTest#testBooleanOperators result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueTest#testBooleanOperators1 result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueTest#testComparators result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueTest#testHexToByteDecode result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueTest#testByteToHexEncode result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueTest#testHexByteRegression result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueTest#testHexCharTest result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueTest#testLike result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueTest#testLooseEnds result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueTest#testClone2 result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueTest#testValueMetaInterfaceEquality result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueTest#testConstructor1 result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueTest#testConstructor2 result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueTest#testConstructor3 result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueTest#testConstructor4 result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueIntegerTest#testGetters result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueIntegerTest#testSetters result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueIntegerTest#testConstructor1 result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueDateTest#testGetters result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueDateTest#testSetters result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueDateTest#testConstructor1 result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueNumberTest#testGetters result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueNumberTest#testSetters result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueNumberTest#testConstructor1 result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueStringTest#testGetNullValue result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueStringTest#testGetNumericValue1 result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueStringTest#testGetNumericValue2 result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueStringTest#testGetString result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueStringTest#testSetString result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueStringTest#testSetNumber result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueStringTest#testSetDate result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueStringTest#testSetBoolean result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueStringTest#testSetInteger result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueStringTest#testSetBigNumber result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueStringTest#testClone result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueStringTest#testConstructor1 result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueBigNumberTest#testGetters result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueBigNumberTest#testSetters result was not reported by test-runner.
+[40160] WARN CoverageRunner - Test [Manual]TestMethod=org.pentaho.di.compatibility.ValueBigNumberTest#testConstructor1 result was not reported by test-runner.
+[40297] INFO CoverageRunner - Tests found: 1135
+[40297] INFO CoverageRunner - Tests executed: 467
+16:51:12.223 [main] INFO  fr.inria.jtravis.JTravis - GitHub ratelimit: Limit: 5000 Remaining: 4742 Reset hour: 00:13:28
+16:51:13.406 [main] WARN  f.i.s.r.p.s.p.PushFaultLocalizationSuggestionsOnExternalRepository - Flacoco has found 318 suspicious lines, but none were matched to the diff
+16:51:14.122 [main] INFO  f.i.s.r.p.s.f.FlacocoLocalization - 
+16:51:16.447 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+16:51:16.448 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE EXECUTION SUMMARY
+16:51:16.448 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+16:51:16.448 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneCheckoutGitPullRequest.........................SUCCESS [   57 s ]
+16:51:16.448 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject........................................SUCCESS [ 1286 s ]
+16:51:16.448 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject.........................................SUCCESS [   32 s ]
+16:51:16.448 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath....................................SUCCESS [   34 s ]
+16:51:16.448 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir....................................SUCCESS [    0 s ]
+16:51:16.448 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir......................................SUCCESS [    0 s ]
+16:51:16.448 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation...............................SUCCESS [    1 s ]
+16:51:16.448 [main] INFO  f.i.s.r.p.i.ProjectInspector - FlacocoLocalization.................................SUCCESS [   40 s ]
+16:51:16.448 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushFaultLocalizationSuggestionsOnExternalRepositorySKIPPED           
+16:51:16.448 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+16:51:16.448 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE FINDING: TEST FAILURE
+16:51:16.448 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+16:51:16.448 [main] INFO  f.i.s.r.p.github.GithubMainProcess - Inspector is finished. The process will exit now.
