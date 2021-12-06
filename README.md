@@ -4,7 +4,7 @@ This directory contains the data related to the pull requests analyzed by Flacoc
 
 ## Shadow Experiment Mode
 
-The following table shows the pull requests analyzed by Flacocobot.
+The following table shows the pull requests analyzed by Flacocobot executed in the "shadow experiment" mode.
 
 - FL - Found Location: it indicates that Flacocobot found suspicious lines associated with the failure;
 - NF - Not Failing: it indicates that it has not been possible to reproduce the failure;
