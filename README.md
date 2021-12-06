@@ -51,4 +51,3 @@
 |[apache/shardingsphere](https://github.com/apache/shardingsphere)                    |                                                                    |   |   |   |   |[Link](data/apache_shardingsphere)          |
 |                                                                                     |[13925](https://github.com/apache/shardingsphere/pull/13925)        |   |x  |   |   |                                            |
 |                                                                                     |[13944](https://github.com/apache/shardingsphere/pull/13944)        |0  |   |   |   |                                            |
-
