@@ -35,7 +35,7 @@ Project;# Pull Request;FL;NF;NT;NC;Details
 [FluentLenium/FluentLenium](https://github.com/FluentLenium/FluentLenium);;;;;;[Link](data/FluentLenium_FluentLenium)
 ;[1368](https://github.com/FluentLenium/FluentLenium/pull/1368);0;;;;
 ;[1371](https://github.com/FluentLenium/FluentLenium/pull/1371);0;;;;
-;[1380](https://github.com/FluentLenium/FluentLenium/pull/1380);0;;;;
+;[1380](https://github.com/FluentLenium/FluentLenium/pull/1380);0*;;;;
 ;[1382](https://github.com/FluentLenium/FluentLenium/pull/1382);0;;;;
 [eclipse-vertx/vertx-sql-client](https://github.com/eclipse-vertx/vertx-sql-client);;;;;;[Link](data/eclipse-vertx_vertx-sql-client)
 ;[1091](https://github.com/eclipse-vertx/vertx-sql-client/pull/1091);;;x;;
@@ -45,4 +45,4 @@ Project;# Pull Request;FL;NF;NT;NC;Details
 ;[1082](https://github.com/jenkinsci/kubernetes-plugin/pull/1082);;x;;;
 [apache/shardingsphere](https://github.com/apache/shardingsphere);;;;;;[Link](data/apache_shardingsphere)
 ;[13925](https://github.com/apache/shardingsphere/pull/13925);;x;;;
-;[13944](https://github.com/apache/shardingsphere/pull/13944);0;;;;
+;[13944](https://github.com/apache/shardingsphere/pull/13944);0*;;;;
