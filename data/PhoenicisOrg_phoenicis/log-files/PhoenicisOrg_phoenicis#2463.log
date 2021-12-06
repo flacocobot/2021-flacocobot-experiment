@@ -1,0 +1,203 @@
+Execute pipeline with following supplementary args: --smtpPort 25 --listenerMode NOOP --launcherMode FAULT_LOCALIZATION  --gitrepourl https://github.com/PhoenicisOrg/phoenicis --gitrepopullrequest 2463
+java -cp /usr/local/openjdk-11/lib/tools.jar:repairnator-pipeline.jar -Dlogback.configurationFile=/root/logback.xml fr.inria.spirals.repairnator.pipeline.Launcher -d --runId null -o /var/log --ghOauth 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 --faultLocalization --flacocoThreshold 0.0 --flacocoTopK null --flacocoResultsRepository flacocobot/flacocobot-experiment-3 --ghOauth  --smtpPort 25 --listenerMode NOOP --launcherMode FAULT_LOCALIZATION  --gitrepourl https://github.com/PhoenicisOrg/phoenicis --gitrepopullrequest 2463
+
+02:15:57.486 [main] INFO  f.i.s.r.p.g.GithubInitSerializerEngines - Initialize file serializer engines.
+02:15:57.492 [main] INFO  f.i.s.r.p.g.GithubInitSerializerEngines - MongoDB won't be used for serialization.
+02:15:57.492 [main] INFO  f.i.s.r.p.github.GithubInitNotifiers - The email notifier engine won't be used.
+02:15:57.526 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:15:57.528 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE STEPS
+02:15:57.528 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:15:57.528 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneCheckoutGitPullRequest
+02:15:57.528 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject
+02:15:57.529 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject
+02:15:57.529 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath
+02:15:57.529 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir
+02:15:57.529 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir
+02:15:57.530 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation
+02:15:57.530 [main] INFO  f.i.s.r.p.i.ProjectInspector - FlacocoLocalization
+02:15:57.530 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushFaultLocalizationSuggestionsOnExternalRepository
+02:15:57.530 [main] INFO  f.i.s.r.p.s.CloneCheckoutGitPullRequest - Cloning repository https://github.com/PhoenicisOrg/phoenicis.git in the following directory: ./workspace/PhoenicisOrg-phoenicis-master-2463_repo
+02:16:38.467 [Thread-4] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:16:38.488 [Thread-4] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:16:38.539 [Thread-4] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:16:38.564 [Thread-4] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:16:38.582 [Thread-4] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:16:38.604 [Thread-4] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:16:38.633 [Thread-4] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:16:38.643 [Thread-4] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:16:38.660 [Thread-4] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:16:38.678 [Thread-4] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:16:38.719 [Thread-4] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:16:38.731 [Thread-4] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:16:38.746 [Thread-4] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:16:38.762 [Thread-4] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:16:38.779 [Thread-4] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:16:38.793 [Thread-4] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:16:38.799 [Thread-4] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:16:38.818 [Thread-4] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:16:38.819 [Thread-4] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:16:38.832 [Thread-4] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:16:38.843 [Thread-4] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:16:38.862 [Thread-4] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:16:38.886 [Thread-4] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:16:38.896 [Thread-4] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:16:38.908 [Thread-4] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:16:38.920 [Thread-4] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:16:38.932 [Thread-4] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:16:38.948 [Thread-4] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:16:38.963 [Thread-4] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:16:38.980 [Thread-4] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:18:42.708 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:18:42.971 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:18:43.152 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:18:43.323 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:18:43.382 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:18:43.430 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:18:43.480 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:18:43.545 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:18:43.604 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:18:43.637 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:18:43.668 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:18:43.748 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:18:43.796 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:18:43.852 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:18:43.920 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:18:43.976 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:18:44.031 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:18:44.112 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:18:44.172 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:18:44.224 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:18:44.308 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:18:44.362 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:18:44.424 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:18:44.475 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:18:44.520 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:18:44.556 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:18:44.583 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:18:44.664 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:18:44.715 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:18:44.740 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Could not execute msgcat.
+02:18:49.702 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] WARNING: Unknown module: javafx.graphics specified to --add-exports
+02:18:56.790 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] WARNING: An illegal reflective access operation has occurred
+02:18:56.791 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] WARNING: Illegal reflective access by org.powermock.reflect.internal.WhiteboxImpl (file:/root/workspace/PhoenicisOrg-phoenicis-master-2463_repo/.m2/org/powermock/powermock-reflect/2.0.9/powermock-reflect-2.0.9.jar) to method java.lang.Object.clone()
+02:18:56.791 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] WARNING: Please consider reporting this to the maintainers of org.powermock.reflect.internal.WhiteboxImpl
+02:18:56.791 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+02:18:56.791 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] WARNING: All illegal access operations will be denied in a future release
+02:18:57.060 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 6.502 s <<< FAILURE! - in org.phoenicis.configuration.localisation.LocalisationTest
+02:18:57.061 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] org.phoenicis.configuration.localisation.LocalisationTest.testTrWithAString  Time elapsed: 0.626 s  <<< ERROR!
+02:18:57.061 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] org.phoenicis.configuration.localisation.LocalisationTest  Time elapsed: 0.646 s  <<< ERROR!
+02:18:57.290 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Errors: 
+02:18:57.290 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   LocalisationTest » NoClassDefFound Could not initialize class org.mockito.Mock...
+02:18:57.291 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   LocalisationTest.setUp:28 » NoClassDefFound Could not initialize class org.moc...
+02:18:57.291 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Tests run: 2, Failures: 0, Errors: 2, Skipped: 0
+02:18:57.333 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M5:test (default-test) on project phoenicis-configuration: There are test failures.
+02:18:57.337 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+02:18:57.339 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/PhoenicisOrg-phoenicis-master-2463_repo/phoenicis-configuration/target/surefire-reports for the individual test results.
+02:18:57.348 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+02:18:57.351 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+02:18:57.366 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+02:18:57.367 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+02:18:57.367 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+02:18:57.367 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+02:18:57.367 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+02:18:57.367 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+02:18:57.367 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+02:18:57.367 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :phoenicis-configuration
+02:19:14.643 [main] ERROR f.i.s.r.p.s.paths.ComputeClasspath - The classpath file is empty.
+02:19:14.643 [main] ERROR f.i.s.r.p.s.paths.ComputeClasspath - The classpath seems not to contain JUnit, maybe this project does not use JUnit for testing.
+02:19:14.643 [main] ERROR f.i.s.r.p.s.paths.ComputeClasspath - The file does not exist: /root/./workspace/PhoenicisOrg-phoenicis-master-2463_repo/target/classes.
+02:19:14.643 [main] ERROR f.i.s.r.p.s.paths.ComputeClasspath - The file does not exist: /root/./workspace/PhoenicisOrg-phoenicis-master-2463_repo/target/test-classes.
+02:19:14.837 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+02:19:14.838 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - 14 source dirs were found:
+02:19:14.838 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/PhoenicisOrg-phoenicis-master-2463_repo/phoenicis-cli/src/main/java
+02:19:14.838 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/PhoenicisOrg-phoenicis-master-2463_repo/phoenicis-configuration/src/main/java
+02:19:14.838 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/PhoenicisOrg-phoenicis-master-2463_repo/phoenicis-containers/src/main/java
+02:19:14.838 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/PhoenicisOrg-phoenicis-master-2463_repo/phoenicis-engines/src/main/java
+02:19:14.838 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/PhoenicisOrg-phoenicis-master-2463_repo/phoenicis-entities/src/main/java
+02:19:14.843 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/PhoenicisOrg-phoenicis-master-2463_repo/phoenicis-javafx/src/main/java
+02:19:14.843 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/PhoenicisOrg-phoenicis-master-2463_repo/phoenicis-library/src/main/java
+02:19:14.849 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/PhoenicisOrg-phoenicis-master-2463_repo/phoenicis-multithreading/src/main/java
+02:19:14.849 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/PhoenicisOrg-phoenicis-master-2463_repo/phoenicis-repository/src/main/java
+02:19:14.851 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/PhoenicisOrg-phoenicis-master-2463_repo/phoenicis-scripts/src/main/java
+02:19:14.859 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/PhoenicisOrg-phoenicis-master-2463_repo/phoenicis-settings/src/main/java
+02:19:14.863 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/PhoenicisOrg-phoenicis-master-2463_repo/phoenicis-tests/src/main/java
+02:19:14.863 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/PhoenicisOrg-phoenicis-master-2463_repo/phoenicis-tools/src/main/java
+02:19:14.863 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/PhoenicisOrg-phoenicis-master-2463_repo/phoenicis-win32/src/main/java
+02:19:14.984 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+02:19:15.029 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+02:19:15.326 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+02:19:15.476 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+02:19:15.524 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+02:19:15.594 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+02:19:15.615 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - 9 test dirs were found:
+02:19:15.631 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/PhoenicisOrg-phoenicis-master-2463_repo/phoenicis-cli/src/test/java
+02:19:15.631 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/PhoenicisOrg-phoenicis-master-2463_repo/phoenicis-configuration/src/test/java
+02:19:15.631 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/PhoenicisOrg-phoenicis-master-2463_repo/phoenicis-entities/src/test/java
+02:19:15.631 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/PhoenicisOrg-phoenicis-master-2463_repo/phoenicis-javafx/src/test/java
+02:19:15.631 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/PhoenicisOrg-phoenicis-master-2463_repo/phoenicis-multithreading/src/test/java
+02:19:15.631 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/PhoenicisOrg-phoenicis-master-2463_repo/phoenicis-repository/src/test/java
+02:19:15.634 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/PhoenicisOrg-phoenicis-master-2463_repo/phoenicis-tests/src/test/java
+02:19:15.635 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/PhoenicisOrg-phoenicis-master-2463_repo/phoenicis-tools/src/test/java
+02:19:15.635 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/PhoenicisOrg-phoenicis-master-2463_repo/phoenicis-win32/src/test/java
+02:19:16.240 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation - Get the following failing module path: /root/workspace/PhoenicisOrg-phoenicis-master-2463_repo/phoenicis-configuration
+02:19:16.261 [main] ERROR f.i.s.r.p.s.g.GatherTestInformation - Error while parsing stack trace.
+exceptionparser.StackTraceParser$ParseException: Can't match exactly one stacktrace in given String. Matches: 0 stacktraces.
+	at exceptionparser.StackTraceParser.parse(StackTraceParser.java:243)
+	at fr.inria.spirals.repairnator.process.step.gatherinfo.GatherTestInformation.businessExecute(GatherTestInformation.java:180)
+	at fr.inria.spirals.repairnator.process.step.AbstractStep.execute(AbstractStep.java:361)
+	at fr.inria.spirals.repairnator.process.step.AbstractStep.executeNextStep(AbstractStep.java:213)
+	at fr.inria.spirals.repairnator.process.step.AbstractStep.execute(AbstractStep.java:378)
+	at fr.inria.spirals.repairnator.process.step.AbstractStep.executeNextStep(AbstractStep.java:213)
+	at fr.inria.spirals.repairnator.process.step.AbstractStep.execute(AbstractStep.java:378)
+	at fr.inria.spirals.repairnator.process.step.AbstractStep.executeNextStep(AbstractStep.java:213)
+	at fr.inria.spirals.repairnator.process.step.AbstractStep.execute(AbstractStep.java:378)
+	at fr.inria.spirals.repairnator.process.step.AbstractStep.executeNextStep(AbstractStep.java:213)
+	at fr.inria.spirals.repairnator.process.step.AbstractStep.execute(AbstractStep.java:378)
+	at fr.inria.spirals.repairnator.process.step.AbstractStep.executeNextStep(AbstractStep.java:213)
+	at fr.inria.spirals.repairnator.process.step.AbstractStep.execute(AbstractStep.java:378)
+	at fr.inria.spirals.repairnator.process.step.AbstractStep.executeNextStep(AbstractStep.java:213)
+	at fr.inria.spirals.repairnator.process.step.AbstractStep.execute(AbstractStep.java:378)
+	at fr.inria.spirals.repairnator.process.inspectors.components.RunInspector4FaultLocalization.run(RunInspector4FaultLocalization.java:52)
+	at fr.inria.spirals.repairnator.process.inspectors.ProjectInspector.run(ProjectInspector.java:307)
+	at fr.inria.spirals.repairnator.pipeline.github.GithubMainProcess.run(GithubMainProcess.java:112)
+	at fr.inria.spirals.repairnator.pipeline.BranchLauncher.main(BranchLauncher.java:92)
+	at fr.inria.spirals.repairnator.pipeline.BranchLauncher.launch(BranchLauncher.java:98)
+	at fr.inria.spirals.repairnator.pipeline.Launcher.main(Launcher.java:28)
+02:19:16.279 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation - ---Test results---
+02:19:16.279 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Total tests: 2
+02:19:16.279 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Tests run: 2
+02:19:16.279 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Tests passing: 0
+02:19:16.279 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Failures: 0
+02:19:16.279 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Errors: 2
+02:19:16.280 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Skipped: 0
+[0] INFO Flacoco - Running Flacoco...
+[165] WARN TestMethodFilter - NoClassDefFoundError: class org.phoenicis.configuration.PhoenicisGlobalConfiguration
+[196] WARN TestMethodFilter - NoClassDefFoundError: class org.phoenicis.configuration.PhoenicisGlobalConfiguration
+[200] WARN TestMethodFilter - NoClassDefFoundError: class org.phoenicis.configuration.localisation.Localisation
+[1388] WARN CoverageRunner - Test [Manual]TestMethod=org.phoenicis.configuration.localisation.LocalisationTest#testTrWithAString result was not reported by test-runner.
+[1391] WARN CoverageRunner - Test [Manual]TestMethod=org.phoenicis.configuration.localisation.LocalisationTest#testTrWithNull result was not reported by test-runner.
+[1392] WARN CoverageRunner - Test [Manual]TestMethod=org.phoenicis.configuration.localisation.LocalisationTest#testSimpleTranslatableObject result was not reported by test-runner.
+[1392] WARN CoverageRunner - Test [Manual]TestMethod=org.phoenicis.configuration.localisation.LocalisationTest#testSimpleTranslatableObjectWithBuilder result was not reported by test-runner.
+[1392] WARN CoverageRunner - Test [Manual]TestMethod=org.phoenicis.configuration.localisation.LocalisationTest#testTreeTranslatableObject result was not reported by test-runner.
+[1392] WARN CoverageRunner - Test [Manual]TestMethod=org.phoenicis.configuration.localisation.LocalisationTest#testTreeTranslatableCollectionObject result was not reported by test-runner.
+[1392] INFO CoverageRunner - Tests found: 6
+[1392] INFO CoverageRunner - Tests executed: 0
+02:19:18.661 [main] INFO  fr.inria.jtravis.JTravis - GitHub ratelimit: Limit: 5000 Remaining: 4121 Reset hour: 00:12:34
+02:19:20.419 [main] WARN  f.i.s.r.p.s.p.PushFaultLocalizationSuggestionsOnExternalRepository - Flacoco has found 0 suspicious lines, but none were matched to the diff
+02:19:20.420 [main] INFO  f.i.s.r.p.s.f.FlacocoLocalization - 
+02:19:21.303 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:19:21.303 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE EXECUTION SUMMARY
+02:19:21.303 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:19:21.304 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneCheckoutGitPullRequest..........................SUCCESS [  11 s ]
+02:19:21.304 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject.........................................SUCCESS [ 136 s ]
+02:19:21.304 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject..........................................SUCCESS [  32 s ]
+02:19:21.304 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath.....................................SUCCESS [  17 s ]
+02:19:21.304 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir.....................................SUCCESS [   0 s ]
+02:19:21.304 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir.......................................SUCCESS [   0 s ]
+02:19:21.304 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation................................SUCCESS [   0 s ]
+02:19:21.305 [main] INFO  f.i.s.r.p.i.ProjectInspector - FlacocoLocalization..................................SUCCESS [   1 s ]
+02:19:21.305 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushFaultLocalizationSuggestionsOnExternalRepository.SKIPPED          
+02:19:21.315 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:19:21.315 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE FINDING: TEST FAILURE
+02:19:21.315 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:19:21.315 [main] INFO  f.i.s.r.p.github.GithubMainProcess - Inspector is finished. The process will exit now.

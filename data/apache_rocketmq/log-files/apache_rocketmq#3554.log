@@ -1,0 +1,232 @@
+Execute pipeline with following supplementary args: --smtpPort 25 --listenerMode NOOP --launcherMode FAULT_LOCALIZATION  --gitrepourl https://github.com/apache/rocketmq --gitrepopullrequest 3554
+java -cp /usr/local/openjdk-11/lib/tools.jar:repairnator-pipeline.jar -Dlogback.configurationFile=/root/logback.xml fr.inria.spirals.repairnator.pipeline.Launcher -d --runId null -o /var/log --ghOauth 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 --faultLocalization --flacocoThreshold 0.0 --flacocoTopK null --flacocoResultsRepository flacocobot/flacocobot-experiment-3 --ghOauth  --smtpPort 25 --listenerMode NOOP --launcherMode FAULT_LOCALIZATION  --gitrepourl https://github.com/apache/rocketmq --gitrepopullrequest 3554
+
+02:15:47.231 [main] INFO  f.i.s.r.p.g.GithubInitSerializerEngines - Initialize file serializer engines.
+02:15:47.265 [main] INFO  f.i.s.r.p.g.GithubInitSerializerEngines - MongoDB won't be used for serialization.
+02:15:47.272 [main] INFO  f.i.s.r.p.github.GithubInitNotifiers - The email notifier engine won't be used.
+02:15:47.389 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:15:47.390 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE STEPS
+02:15:47.391 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:15:47.391 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneCheckoutGitPullRequest
+02:15:47.391 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject
+02:15:47.391 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject
+02:15:47.392 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath
+02:15:47.392 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir
+02:15:47.392 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir
+02:15:47.392 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation
+02:15:47.392 [main] INFO  f.i.s.r.p.i.ProjectInspector - FlacocoLocalization
+02:15:47.392 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushFaultLocalizationSuggestionsOnExternalRepository
+02:15:47.395 [main] INFO  f.i.s.r.p.s.CloneCheckoutGitPullRequest - Cloning repository https://github.com/apache/rocketmq.git in the following directory: ./workspace/apache-rocketmq-master-3554_repo
+02:17:01.187 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - RocketMQLog:ERROR Attempted to append to closed appender named [null].
+02:17:01.193 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - RocketMQLog:ERROR Attempted to append to closed appender named [null].
+02:17:01.193 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - RocketMQLog: setFile called: /root/logs/rocketmq-test/simple.log, true
+02:17:01.193 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - RocketMQLog: setFile ended
+02:17:01.193 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - RocketMQLog: setFile called: /root/logs/rocketmq-test/rolling_file.log, true
+02:17:01.193 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - RocketMQLog: setFile ended
+02:17:01.193 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - RocketMQLog:ERROR Attempted to append to closed appender named [null].
+02:17:01.194 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - RocketMQLog:ERROR Attempted to append to closed appender named [null].
+02:17:01.194 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - RocketMQLog:ERROR Attempted to append to closed appender named [null].
+02:17:01.194 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - RocketMQLog:ERROR Attempted to append to closed appender named [null].
+02:17:01.194 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - RocketMQLog:ERROR Attempted to append to closed appender named [null].
+02:17:01.194 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - RocketMQLog:ERROR Attempted to append to closed appender named [null].
+02:17:01.194 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - RocketMQLog:ERROR Attempted to append to closed appender named [null].
+02:17:01.194 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - RocketMQLog:ERROR Attempted to append to closed appender named [null].
+02:17:01.194 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - RocketMQLog:ERROR Attempted to append to closed appender named [null].
+02:17:01.194 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - RocketMQLog:ERROR Attempted to append to closed appender named [null].
+02:17:01.194 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - RocketMQLog:ERROR Attempted to append to closed appender named [null].
+02:17:01.194 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - RocketMQLog:ERROR Attempted to append to closed appender named [null].
+02:17:01.194 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - RocketMQLog:ERROR Attempted to append to closed appender named [null].
+02:17:01.194 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - RocketMQLog:ERROR Attempted to append to closed appender named [null].
+02:17:01.194 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - RocketMQLog:ERROR Attempted to append to closed appender named [null].
+02:17:03.365 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - RocketMQLog:WARN No appenders could be found for logger (io.netty.util.internal.InternalThreadLocalMap).
+02:17:03.366 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - RocketMQLog:WARN Please initialize the logger system properly.
+02:17:15.123 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - RocketMQLog:WARN No appenders could be found for logger (RocketmqCommon).
+02:17:15.125 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - RocketMQLog:WARN Please initialize the logger system properly.
+02:18:59.942 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - org.apache.rocketmq.client.exception.MQClientException: message's topic not equal mq's topic
+02:18:59.943 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - For more information, please visit the url, http://rocketmq.apache.org/docs/faq/
+02:18:59.943 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.apache.rocketmq.client.impl.producer.DefaultMQProducerImpl$6.run(DefaultMQProducerImpl.java:1068)
+02:18:59.943 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+02:18:59.943 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+02:18:59.943 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+02:18:59.943 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+02:18:59.943 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.lang.Thread.run(Thread.java:834)
+02:19:12.246 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - org.apache.rocketmq.client.exception.MQClientException: The specified topic is blank
+02:19:12.247 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - For more information, please visit the url, http://rocketmq.apache.org/docs/faq/
+02:19:12.248 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.apache.rocketmq.client.Validators.checkTopic(Validators.java:107)
+02:19:12.249 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.apache.rocketmq.client.Validators.checkMessage(Validators.java:87)
+02:19:12.250 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.apache.rocketmq.client.impl.producer.DefaultMQProducerImpl$6.run(DefaultMQProducerImpl.java:1065)
+02:19:12.250 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+02:19:12.250 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+02:19:12.250 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+02:19:12.250 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+02:19:12.250 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.lang.Thread.run(Thread.java:834)
+02:19:12.251 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - org.apache.rocketmq.client.exception.MQClientException: The specified topic is blank
+02:19:12.251 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - For more information, please visit the url, http://rocketmq.apache.org/docs/faq/
+02:19:12.251 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.apache.rocketmq.client.Validators.checkTopic(Validators.java:107)
+02:19:12.251 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.apache.rocketmq.client.Validators.checkMessage(Validators.java:87)
+02:19:12.251 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.apache.rocketmq.client.impl.producer.DefaultMQProducerImpl.sendDefaultImpl(DefaultMQProducerImpl.java:574)
+02:19:12.254 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.apache.rocketmq.client.impl.producer.DefaultMQProducerImpl.access$300(DefaultMQProducerImpl.java:98)
+02:19:12.255 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.apache.rocketmq.client.impl.producer.DefaultMQProducerImpl$5.run(DefaultMQProducerImpl.java:533)
+02:19:12.255 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+02:19:12.256 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+02:19:12.256 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+02:19:12.256 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+02:19:12.257 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.lang.Thread.run(Thread.java:834)
+02:19:12.257 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - org.apache.rocketmq.client.exception.MQClientException: message's topic not equal mq's topic
+02:19:12.257 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - For more information, please visit the url, http://rocketmq.apache.org/docs/faq/
+02:19:12.258 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.apache.rocketmq.client.impl.producer.DefaultMQProducerImpl$6.run(DefaultMQProducerImpl.java:1068)
+02:19:12.258 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+02:19:12.258 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+02:19:12.259 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+02:19:12.259 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+02:19:12.259 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.lang.Thread.run(Thread.java:834)
+02:19:12.280 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - org.apache.rocketmq.client.exception.MQClientException: select message queue return null.
+02:19:12.281 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - For more information, please visit the url, http://rocketmq.apache.org/docs/faq/
+02:19:12.281 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.apache.rocketmq.client.impl.producer.DefaultMQProducerImpl.sendSelectImpl(DefaultMQProducerImpl.java:1155)
+02:19:12.281 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.apache.rocketmq.client.impl.producer.DefaultMQProducerImpl.access$600(DefaultMQProducerImpl.java:98)
+02:19:12.281 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.apache.rocketmq.client.impl.producer.DefaultMQProducerImpl$7.run(DefaultMQProducerImpl.java:1198)
+02:19:12.281 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+02:19:12.281 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+02:19:12.281 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+02:19:12.281 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+02:19:12.281 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.lang.Thread.run(Thread.java:834)
+02:19:12.283 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - org.apache.rocketmq.client.exception.MQClientException: The specified topic is blank
+02:19:12.283 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - For more information, please visit the url, http://rocketmq.apache.org/docs/faq/
+02:19:12.284 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.apache.rocketmq.client.Validators.checkTopic(Validators.java:107)
+02:19:12.284 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.apache.rocketmq.client.Validators.checkMessage(Validators.java:87)
+02:19:12.284 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.apache.rocketmq.client.impl.producer.DefaultMQProducerImpl.sendSelectImpl(DefaultMQProducerImpl.java:1131)
+02:19:12.284 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.apache.rocketmq.client.impl.producer.DefaultMQProducerImpl.access$600(DefaultMQProducerImpl.java:98)
+02:19:12.284 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.apache.rocketmq.client.impl.producer.DefaultMQProducerImpl$7.run(DefaultMQProducerImpl.java:1198)
+02:19:12.284 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+02:19:12.284 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+02:19:12.284 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+02:19:12.284 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+02:19:12.284 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.lang.Thread.run(Thread.java:834)
+02:19:42.217 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.19.1:test (default-test) on project rocketmq-store: Execution default-test of goal org.apache.maven.plugins:maven-surefire-plugin:2.19.1:test failed: The forked VM terminated without properly saying goodbye. VM crash or System.exit called?
+02:19:42.229 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Command was /bin/sh -c cd /root/workspace/apache-rocketmq-master-3554_repo/store && /usr/local/openjdk-11/bin/java -javaagent:/root/./workspace/apache-rocketmq-master-3554_repo/.m2/org/jacoco/org.jacoco.agent/0.8.5/org.jacoco.agent-0.8.5-runtime.jar=destfile=/root/workspace/apache-rocketmq-master-3554_repo/store/target/jacoco.exec -jar /root/workspace/apache-rocketmq-master-3554_repo/store/target/surefire/surefirebooter780740669116014780.jar /root/workspace/apache-rocketmq-master-3554_repo/store/target/surefire/surefire13541897218254441388tmp /root/workspace/apache-rocketmq-master-3554_repo/store/target/surefire/surefire_416621491050258556261tmp
+02:19:42.229 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+02:19:42.266 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+02:19:42.267 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+02:19:42.267 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+02:19:42.267 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+02:19:42.271 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+02:19:42.271 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+02:19:42.272 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+02:19:42.272 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :rocketmq-store
+02:20:04.342 [main] ERROR f.i.s.r.p.s.paths.ComputeClasspath - The file does not exist: /root/./workspace/apache-rocketmq-master-3554_repo/target/classes.
+02:20:04.342 [main] ERROR f.i.s.r.p.s.paths.ComputeClasspath - The file does not exist: /root/./workspace/apache-rocketmq-master-3554_repo/target/test-classes.
+02:20:04.578 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for org.apache.rocketmq:rocketmq-all:4.9.3-SNAPSHOT
+[ERROR] Failed to determine Java version for profile jdk8 @ 
+
+02:20:04.690 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for org.apache.rocketmq:rocketmq-distribution:4.9.3-SNAPSHOT
+[ERROR] Failed to determine Java version for profile jdk8 @ org.apache.rocketmq:rocketmq-all:4.9.3-SNAPSHOT, /root/workspace/apache-rocketmq-master-3554_repo/pom.xml
+
+02:20:04.695 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+02:20:04.708 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - 15 source dirs were found:
+02:20:04.708 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/apache-rocketmq-master-3554_repo/acl/src/main/java
+02:20:04.708 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/apache-rocketmq-master-3554_repo/broker/src/main/java
+02:20:04.708 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/apache-rocketmq-master-3554_repo/client/src/main/java
+02:20:04.709 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/apache-rocketmq-master-3554_repo/common/src/main/java
+02:20:04.711 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/apache-rocketmq-master-3554_repo/example/src/main/java
+02:20:04.713 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/apache-rocketmq-master-3554_repo/filter/src/main/java
+02:20:04.713 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/apache-rocketmq-master-3554_repo/logappender/src/main/java
+02:20:04.713 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/apache-rocketmq-master-3554_repo/logging/src/main/java
+02:20:04.715 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/apache-rocketmq-master-3554_repo/namesrv/src/main/java
+02:20:04.716 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/apache-rocketmq-master-3554_repo/openmessaging/src/main/java
+02:20:04.729 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/apache-rocketmq-master-3554_repo/remoting/src/main/java
+02:20:04.729 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/apache-rocketmq-master-3554_repo/srvutil/src/main/java
+02:20:04.729 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/apache-rocketmq-master-3554_repo/store/src/main/java
+02:20:04.729 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/apache-rocketmq-master-3554_repo/test/src/main/java
+02:20:04.729 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/apache-rocketmq-master-3554_repo/tools/src/main/java
+02:20:04.789 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for org.apache.rocketmq:rocketmq-all:4.9.3-SNAPSHOT
+[ERROR] Failed to determine Java version for profile jdk8 @ 
+
+02:20:04.859 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for org.apache.rocketmq:rocketmq-client:4.9.3-SNAPSHOT
+[ERROR] Failed to determine Java version for profile jdk8 @ org.apache.rocketmq:rocketmq-all:4.9.3-SNAPSHOT, /root/workspace/apache-rocketmq-master-3554_repo/pom.xml
+
+02:20:04.902 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for org.apache.rocketmq:rocketmq-common:4.9.3-SNAPSHOT
+[ERROR] Failed to determine Java version for profile jdk8 @ org.apache.rocketmq:rocketmq-all:4.9.3-SNAPSHOT, /root/workspace/apache-rocketmq-master-3554_repo/pom.xml
+
+02:20:04.930 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for org.apache.rocketmq:rocketmq-broker:4.9.3-SNAPSHOT
+[ERROR] Failed to determine Java version for profile jdk8 @ org.apache.rocketmq:rocketmq-all:4.9.3-SNAPSHOT, /root/workspace/apache-rocketmq-master-3554_repo/pom.xml
+
+02:20:04.968 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for org.apache.rocketmq:rocketmq-tools:4.9.3-SNAPSHOT
+[ERROR] Failed to determine Java version for profile jdk8 @ org.apache.rocketmq:rocketmq-all:4.9.3-SNAPSHOT, /root/workspace/apache-rocketmq-master-3554_repo/pom.xml
+
+02:20:04.989 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for org.apache.rocketmq:rocketmq-store:4.9.3-SNAPSHOT
+[ERROR] Failed to determine Java version for profile jdk8 @ org.apache.rocketmq:rocketmq-all:4.9.3-SNAPSHOT, /root/workspace/apache-rocketmq-master-3554_repo/pom.xml
+
+02:20:05.008 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for org.apache.rocketmq:rocketmq-namesrv:4.9.3-SNAPSHOT
+[ERROR] Failed to determine Java version for profile jdk8 @ org.apache.rocketmq:rocketmq-all:4.9.3-SNAPSHOT, /root/workspace/apache-rocketmq-master-3554_repo/pom.xml
+
+02:20:05.035 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for org.apache.rocketmq:rocketmq-remoting:4.9.3-SNAPSHOT
+[ERROR] Failed to determine Java version for profile jdk8 @ org.apache.rocketmq:rocketmq-all:4.9.3-SNAPSHOT, /root/workspace/apache-rocketmq-master-3554_repo/pom.xml
+
+02:20:05.053 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for org.apache.rocketmq:rocketmq-logappender:4.9.3-SNAPSHOT
+[ERROR] Failed to determine Java version for profile jdk8 @ org.apache.rocketmq:rocketmq-all:4.9.3-SNAPSHOT, /root/workspace/apache-rocketmq-master-3554_repo/pom.xml
+
+02:20:05.074 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for org.apache.rocketmq:rocketmq-srvutil:4.9.3-SNAPSHOT
+[ERROR] Failed to determine Java version for profile jdk8 @ org.apache.rocketmq:rocketmq-all:4.9.3-SNAPSHOT, /root/workspace/apache-rocketmq-master-3554_repo/pom.xml
+
+02:20:05.076 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+02:20:05.091 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for org.apache.rocketmq:rocketmq-filter:4.9.3-SNAPSHOT
+[ERROR] Failed to determine Java version for profile jdk8 @ org.apache.rocketmq:rocketmq-all:4.9.3-SNAPSHOT, /root/workspace/apache-rocketmq-master-3554_repo/pom.xml
+
+02:20:05.105 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for org.apache.rocketmq:rocketmq-test:4.9.3-SNAPSHOT
+[ERROR] Failed to determine Java version for profile jdk8 @ org.apache.rocketmq:rocketmq-all:4.9.3-SNAPSHOT, /root/workspace/apache-rocketmq-master-3554_repo/pom.xml
+
+02:20:05.121 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for org.apache.rocketmq:rocketmq-distribution:4.9.3-SNAPSHOT
+[ERROR] Failed to determine Java version for profile jdk8 @ org.apache.rocketmq:rocketmq-all:4.9.3-SNAPSHOT, /root/workspace/apache-rocketmq-master-3554_repo/pom.xml
+
+02:20:05.123 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+02:20:05.130 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for org.apache.rocketmq:rocketmq-openmessaging:4.9.3-SNAPSHOT
+[ERROR] Failed to determine Java version for profile jdk8 @ org.apache.rocketmq:rocketmq-all:4.9.3-SNAPSHOT, /root/workspace/apache-rocketmq-master-3554_repo/pom.xml
+
+02:20:05.151 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for org.apache.rocketmq:rocketmq-logging:4.9.3-SNAPSHOT
+[ERROR] Failed to determine Java version for profile jdk8 @ org.apache.rocketmq:rocketmq-all:4.9.3-SNAPSHOT, /root/workspace/apache-rocketmq-master-3554_repo/pom.xml
+
+02:20:05.183 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for org.apache.rocketmq:rocketmq-acl:4.9.3-SNAPSHOT
+[ERROR] Failed to determine Java version for profile jdk8 @ org.apache.rocketmq:rocketmq-all:4.9.3-SNAPSHOT, /root/workspace/apache-rocketmq-master-3554_repo/pom.xml
+
+02:20:05.199 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for org.apache.rocketmq:rocketmq-example:4.9.3-SNAPSHOT
+[ERROR] Failed to determine Java version for profile jdk8 @ org.apache.rocketmq:rocketmq-all:4.9.3-SNAPSHOT, /root/workspace/apache-rocketmq-master-3554_repo/pom.xml
+
+02:20:05.201 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+02:20:05.201 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - 13 test dirs were found:
+02:20:05.202 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/apache-rocketmq-master-3554_repo/acl/src/test/java
+02:20:05.202 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/apache-rocketmq-master-3554_repo/broker/src/test/java
+02:20:05.202 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/apache-rocketmq-master-3554_repo/client/src/test/java
+02:20:05.202 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/apache-rocketmq-master-3554_repo/common/src/test/java
+02:20:05.202 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/apache-rocketmq-master-3554_repo/filter/src/test/java
+02:20:05.202 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/apache-rocketmq-master-3554_repo/logappender/src/test/java
+02:20:05.202 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/apache-rocketmq-master-3554_repo/logging/src/test/java
+02:20:05.203 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/apache-rocketmq-master-3554_repo/namesrv/src/test/java
+02:20:05.204 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/apache-rocketmq-master-3554_repo/openmessaging/src/test/java
+02:20:05.204 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/apache-rocketmq-master-3554_repo/remoting/src/test/java
+02:20:05.204 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/apache-rocketmq-master-3554_repo/store/src/test/java
+02:20:05.205 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/apache-rocketmq-master-3554_repo/test/src/test/java
+02:20:05.205 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/apache-rocketmq-master-3554_repo/tools/src/test/java
+02:20:06.620 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation - ---Test results---
+02:20:06.620 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Total tests: 326
+02:20:06.620 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Tests run: 325
+02:20:06.620 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Tests passing: 325
+02:20:06.620 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Failures: 0
+02:20:06.621 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Errors: 0
+02:20:06.623 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Skipped: 1
+02:20:06.623 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation - 
+02:20:07.334 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:20:07.334 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE EXECUTION SUMMARY
+02:20:07.335 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:20:07.335 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneCheckoutGitPullRequest..........................SUCCESS [  12 s ]
+02:20:07.335 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject.........................................SUCCESS [  52 s ]
+02:20:07.335 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject..........................................SUCCESS [ 171 s ]
+02:20:07.335 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath.....................................SUCCESS [  21 s ]
+02:20:07.335 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir.....................................SUCCESS [   0 s ]
+02:20:07.335 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir.......................................SUCCESS [   0 s ]
+02:20:07.335 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation................................FAILURE [   1 s ]
+02:20:07.336 [main] INFO  f.i.s.r.p.i.ProjectInspector - FlacocoLocalization..................................NOT RUN          
+02:20:07.336 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushFaultLocalizationSuggestionsOnExternalRepository.NOT RUN          
+02:20:07.336 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:20:07.336 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE FINDING: NOTFAILING
+02:20:07.336 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:20:07.336 [main] INFO  f.i.s.r.p.github.GithubMainProcess - Inspector is finished. The process will exit now.

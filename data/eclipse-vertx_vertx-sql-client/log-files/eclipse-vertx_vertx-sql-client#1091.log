@@ -1,0 +1,281 @@
+Execute pipeline with following supplementary args: --smtpPort 25 --listenerMode NOOP --launcherMode FAULT_LOCALIZATION  --gitrepourl https://github.com/eclipse-vertx/vertx-sql-client --gitrepopullrequest 1091
+java -cp /usr/local/openjdk-11/lib/tools.jar:repairnator-pipeline.jar -Dlogback.configurationFile=/root/logback.xml fr.inria.spirals.repairnator.pipeline.Launcher -d --runId null -o /var/log --ghOauth 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 --faultLocalization --flacocoThreshold 0.0 --flacocoTopK null --flacocoResultsRepository flacocobot/flacocobot-experiment-3 --ghOauth  --smtpPort 25 --listenerMode NOOP --launcherMode FAULT_LOCALIZATION  --gitrepourl https://github.com/eclipse-vertx/vertx-sql-client --gitrepopullrequest 1091
+
+02:25:39.603 [main] INFO  f.i.s.r.p.g.GithubInitSerializerEngines - Initialize file serializer engines.
+02:25:39.609 [main] INFO  f.i.s.r.p.g.GithubInitSerializerEngines - MongoDB won't be used for serialization.
+02:25:39.610 [main] INFO  f.i.s.r.p.github.GithubInitNotifiers - The email notifier engine won't be used.
+02:25:39.673 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:25:39.673 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE STEPS
+02:25:39.673 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:25:39.673 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneCheckoutGitPullRequest
+02:25:39.673 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject
+02:25:39.673 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject
+02:25:39.673 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath
+02:25:39.673 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir
+02:25:39.673 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir
+02:25:39.673 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation
+02:25:39.674 [main] INFO  f.i.s.r.p.i.ProjectInspector - FlacocoLocalization
+02:25:39.674 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushFaultLocalizationSuggestionsOnExternalRepository
+02:25:39.674 [main] INFO  f.i.s.r.p.s.CloneCheckoutGitPullRequest - Cloning repository https://github.com/eclipse-vertx/vertx-sql-client.git in the following directory: ./workspace/eclipse-vertx-vertx-sql-client-master-1091_repo
+02:26:22.485 [Thread-5] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: io.vertx.codegen.ClassModel - Interface io.vertx.pgclient.pubsub.PgChannel does not redeclare the @Fluent return type  of method fetch(long) declared by io.vertx.core.streams.ReadStream 
+02:27:10.568 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: io.vertx.codegen.ClassModel - Interface io.vertx.pgclient.pubsub.PgChannel does not redeclare the @Fluent return type  of method fetch(long) declared by io.vertx.core.streams.ReadStream 
+02:28:06.176 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:28:06 AM io.vertx.sqlclient.impl.SocketConnectionBase
+02:28:06.177 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Backend notice: severity='NOTICE', code='42622', message='identifier "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbb" will be truncated to "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"', detail='null', hint='null', position='null', internalPosition='null', internalQuery='null', where='null', file='scansup.c', line='205', routine='truncate_identifier', schema='null', table='null', column='null', dataType='null', constraint='null'
+02:32:40.666 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:32:40 AM io.vertx.sqlclient.tck.ConnectionAutoRetryTestBase.UnstableProxyServer
+02:32:40.667 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - INFO: Proxy: frontend socket connected
+02:32:40.672 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:32:40 AM io.vertx.sqlclient.tck.ConnectionAutoRetryTestBase.UnstableProxyServer
+02:32:40.672 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - INFO: Proxy: backend socket connected
+02:32:40.859 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:32:40 AM io.vertx.sqlclient.tck.ConnectionAutoRetryTestBase.UnstableProxyServer
+02:32:40.859 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - INFO: Proxy: frontend socket connected
+02:32:40.859 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:32:40 AM io.vertx.sqlclient.tck.ConnectionAutoRetryTestBase.UnstableProxyServer
+02:32:40.860 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - INFO: Proxy: backend socket connected
+02:32:41.036 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:32:41 AM io.vertx.sqlclient.tck.ConnectionAutoRetryTestBase.UnstableProxyServer
+02:32:41.037 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - INFO: Proxy: frontend socket connected
+02:32:41.037 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:32:41 AM io.vertx.sqlclient.tck.ConnectionAutoRetryTestBase.UnstableProxyServer
+02:32:41.038 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - INFO: Proxy: frontend socket closed by proxy
+02:32:42.041 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:32:42 AM io.vertx.sqlclient.tck.ConnectionAutoRetryTestBase.UnstableProxyServer
+02:32:42.041 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - INFO: Proxy: frontend socket connected
+02:32:42.041 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:32:42 AM io.vertx.sqlclient.tck.ConnectionAutoRetryTestBase.UnstableProxyServer
+02:32:42.041 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - INFO: Proxy: frontend socket closed by proxy
+02:32:42.271 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:32:42 AM io.vertx.sqlclient.tck.ConnectionAutoRetryTestBase.UnstableProxyServer
+02:32:42.271 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - INFO: Proxy: frontend socket connected
+02:32:42.271 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:32:42 AM io.vertx.sqlclient.tck.ConnectionAutoRetryTestBase.UnstableProxyServer
+02:32:42.271 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - INFO: Proxy: frontend socket closed by proxy
+02:32:43.272 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:32:43 AM io.vertx.sqlclient.tck.ConnectionAutoRetryTestBase.UnstableProxyServer
+02:32:43.272 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - INFO: Proxy: frontend socket connected
+02:32:43.272 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:32:43 AM io.vertx.sqlclient.tck.ConnectionAutoRetryTestBase.UnstableProxyServer
+02:32:43.272 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - INFO: Proxy: frontend socket closed by proxy
+02:32:43.406 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:32:43 AM io.vertx.sqlclient.tck.ConnectionAutoRetryTestBase.UnstableProxyServer
+02:32:43.406 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - INFO: Proxy: frontend socket connected
+02:32:43.406 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:32:43 AM io.vertx.sqlclient.tck.ConnectionAutoRetryTestBase.UnstableProxyServer
+02:32:43.406 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - INFO: Proxy: frontend socket closed by proxy
+02:32:44.410 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:32:44 AM io.vertx.sqlclient.tck.ConnectionAutoRetryTestBase.UnstableProxyServer
+02:32:44.412 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - INFO: Proxy: frontend socket connected
+02:32:44.415 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:32:44 AM io.vertx.sqlclient.tck.ConnectionAutoRetryTestBase.UnstableProxyServer
+02:32:44.416 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - INFO: Proxy: backend socket connected
+02:32:44.507 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:32:44 AM io.vertx.sqlclient.tck.ConnectionAutoRetryTestBase.UnstableProxyServer
+02:32:44.507 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - INFO: Proxy: frontend socket connected
+02:32:44.507 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:32:44 AM io.vertx.sqlclient.tck.ConnectionAutoRetryTestBase.UnstableProxyServer
+02:32:44.507 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - INFO: Proxy: frontend socket closed by proxy
+02:32:45.509 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:32:45 AM io.vertx.sqlclient.tck.ConnectionAutoRetryTestBase.UnstableProxyServer
+02:32:45.510 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - INFO: Proxy: frontend socket connected
+02:32:45.510 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:32:45 AM io.vertx.sqlclient.tck.ConnectionAutoRetryTestBase.UnstableProxyServer
+02:32:45.510 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - INFO: Proxy: backend socket connected
+02:33:28.867 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - io.vertx.pgclient.PgException: FATAL: terminating connection due to administrator command (57P01)
+02:33:28.868 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.vertx.pgclient.impl.codec.ErrorResponse.toException(ErrorResponse.java:31)
+02:33:28.869 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.vertx.pgclient.impl.codec.PgDecoder.decodeError(PgDecoder.java:253)
+02:33:28.869 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.vertx.pgclient.impl.codec.PgDecoder.decodeMessage(PgDecoder.java:132)
+02:33:28.869 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.vertx.pgclient.impl.codec.PgDecoder.channelRead(PgDecoder.java:112)
+02:33:28.869 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+02:33:28.869 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+02:33:28.869 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+02:33:28.869 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+02:33:28.869 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+02:33:28.869 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+02:33:28.870 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+02:33:28.870 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+02:33:28.870 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+02:33:28.870 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+02:33:28.870 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+02:33:28.870 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+02:33:28.870 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+02:33:28.870 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+02:33:28.870 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+02:33:28.870 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+02:33:28.870 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.lang.Thread.run(Thread.java:834)
+02:33:45.808 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:33:45 AM io.netty.util.concurrent.DefaultPromise safeExecute
+02:33:45.809 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SEVERE: Failed to submit a listener notification task. Event loop shut down?
+02:33:45.809 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - java.util.concurrent.RejectedExecutionException: event executor terminated
+02:33:45.809 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.SingleThreadEventExecutor.reject(SingleThreadEventExecutor.java:923)
+02:33:45.809 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.SingleThreadEventExecutor.offerTask(SingleThreadEventExecutor.java:350)
+02:33:45.809 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.SingleThreadEventExecutor.addTask(SingleThreadEventExecutor.java:343)
+02:33:45.809 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.SingleThreadEventExecutor.execute(SingleThreadEventExecutor.java:825)
+02:33:45.809 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.SingleThreadEventExecutor.execute(SingleThreadEventExecutor.java:815)
+02:33:45.809 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.DefaultPromise.safeExecute(DefaultPromise.java:841)
+02:33:45.809 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:499)
+02:33:45.809 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.DefaultPromise.addListener(DefaultPromise.java:184)
+02:33:45.809 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.channel.group.DefaultChannelGroupFuture.addListener(DefaultChannelGroupFuture.java:147)
+02:33:45.810 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.channel.group.DefaultChannelGroupFuture.addListener(DefaultChannelGroupFuture.java:41)
+02:33:45.810 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.vertx.core.net.impl.NetClientImpl.close(NetClientImpl.java:166)
+02:33:45.810 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.vertx.core.impl.CloseFuture.close(CloseFuture.java:117)
+02:33:45.810 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.vertx.core.net.impl.NetClientImpl.finalize(NetClientImpl.java:298)
+02:33:45.810 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.lang.System$2.invokeFinalize(System.java:2117)
+02:33:45.810 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.lang.ref.Finalizer.runFinalizer(Finalizer.java:87)
+02:33:45.810 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:171)
+02:33:45.810 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 
+02:33:45.810 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:33:45 AM io.netty.util.concurrent.DefaultPromise safeExecute
+02:33:45.810 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SEVERE: Failed to submit a listener notification task. Event loop shut down?
+02:33:45.810 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - java.util.concurrent.RejectedExecutionException: event executor terminated
+02:33:45.810 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.SingleThreadEventExecutor.reject(SingleThreadEventExecutor.java:923)
+02:33:45.810 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.SingleThreadEventExecutor.offerTask(SingleThreadEventExecutor.java:350)
+02:33:45.810 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.SingleThreadEventExecutor.addTask(SingleThreadEventExecutor.java:343)
+02:33:45.810 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.SingleThreadEventExecutor.execute(SingleThreadEventExecutor.java:825)
+02:33:45.810 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.SingleThreadEventExecutor.execute(SingleThreadEventExecutor.java:815)
+02:33:45.810 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.DefaultPromise.safeExecute(DefaultPromise.java:841)
+02:33:45.810 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:499)
+02:33:45.810 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.DefaultPromise.addListener(DefaultPromise.java:184)
+02:33:45.810 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.channel.group.DefaultChannelGroupFuture.addListener(DefaultChannelGroupFuture.java:147)
+02:33:45.811 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.channel.group.DefaultChannelGroupFuture.addListener(DefaultChannelGroupFuture.java:41)
+02:33:45.811 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.vertx.core.net.impl.NetClientImpl.close(NetClientImpl.java:166)
+02:33:45.811 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.vertx.core.impl.CloseFuture.close(CloseFuture.java:117)
+02:33:45.811 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.vertx.core.net.impl.NetClientImpl.finalize(NetClientImpl.java:298)
+02:33:45.811 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.lang.System$2.invokeFinalize(System.java:2117)
+02:33:45.811 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.lang.ref.Finalizer.runFinalizer(Finalizer.java:87)
+02:33:45.811 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:171)
+02:33:45.811 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 
+02:33:46.164 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - java.lang.NoSuchFieldException: handle
+02:33:46.164 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.lang.Class.getDeclaredField(Class.java:2411)
+02:33:46.164 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at de.flapdoodle.embed.process.runtime.Processes.windowsProcessId(Processes.java:109)
+02:33:46.164 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at de.flapdoodle.embed.process.runtime.Processes.access$200(Processes.java:51)
+02:33:46.164 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at de.flapdoodle.embed.process.runtime.Processes$PidHelper$2.getPid(Processes.java:209)
+02:33:46.164 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at de.flapdoodle.embed.process.runtime.Processes.processId(Processes.java:72)
+02:33:46.164 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at de.flapdoodle.embed.process.runtime.ProcessControl.<init>(ProcessControl.java:64)
+02:33:46.164 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at de.flapdoodle.embed.process.runtime.ProcessControl.start(ProcessControl.java:205)
+02:33:46.164 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at de.flapdoodle.embed.process.runtime.AbstractProcess.<init>(AbstractProcess.java:99)
+02:33:46.165 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at ru.yandex.qatools.embed.postgresql.AbstractPGProcess.<init>(AbstractPGProcess.java:19)
+02:33:46.165 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at ru.yandex.qatools.embed.postgresql.InitDbProcess.<init>(InitDbProcess.java:56)
+02:33:46.165 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at ru.yandex.qatools.embed.postgresql.InitDbExecutable.start(InitDbExecutable.java:23)
+02:33:46.165 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at ru.yandex.qatools.embed.postgresql.InitDbExecutable.start(InitDbExecutable.java:14)
+02:33:46.165 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at de.flapdoodle.embed.process.runtime.Executable.start(Executable.java:108)
+02:33:46.165 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at ru.yandex.qatools.embed.postgresql.PostgresProcess.runCmd(PostgresProcess.java:119)
+02:33:46.165 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at ru.yandex.qatools.embed.postgresql.PostgresProcess.runCmd(PostgresProcess.java:74)
+02:33:46.165 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at ru.yandex.qatools.embed.postgresql.PostgresProcess.onBeforeProcess(PostgresProcess.java:196)
+02:33:46.165 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at de.flapdoodle.embed.process.runtime.AbstractProcess.<init>(AbstractProcess.java:83)
+02:33:46.165 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at ru.yandex.qatools.embed.postgresql.AbstractPGProcess.<init>(AbstractPGProcess.java:19)
+02:33:46.165 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at ru.yandex.qatools.embed.postgresql.PostgresProcess.<init>(PostgresProcess.java:68)
+02:33:46.165 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at ru.yandex.qatools.embed.postgresql.PostgresExecutable.start(PostgresExecutable.java:25)
+02:33:46.166 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at ru.yandex.qatools.embed.postgresql.PostgresExecutable.start(PostgresExecutable.java:13)
+02:33:46.166 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at de.flapdoodle.embed.process.runtime.Executable.start(Executable.java:108)
+02:33:46.166 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at ru.yandex.qatools.embed.postgresql.EmbeddedPostgres.start(EmbeddedPostgres.java:194)
+02:33:46.166 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at ru.yandex.qatools.embed.postgresql.EmbeddedPostgres.start(EmbeddedPostgres.java:165)
+02:33:46.166 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.vertx.pgclient.junit.PgRule.startPg(PgRule.java:112)
+02:33:46.166 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.vertx.pgclient.junit.PgRule.before(PgRule.java:244)
+02:33:46.166 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.vertx.pgclient.junit.PgRule$2.evaluate(PgRule.java:270)
+02:33:46.166 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+02:33:46.167 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+02:33:46.167 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+02:33:46.167 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283)
+02:33:46.167 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173)
+02:33:46.167 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+02:33:46.167 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128)
+02:33:46.167 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+02:33:46.167 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+02:33:46.167 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+02:34:03.178 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - java.lang.NoSuchFieldException: handle
+02:34:03.179 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.lang.Class.getDeclaredField(Class.java:2411)
+02:34:03.179 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at de.flapdoodle.embed.process.runtime.Processes.windowsProcessId(Processes.java:109)
+02:34:03.179 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at de.flapdoodle.embed.process.runtime.Processes.access$200(Processes.java:51)
+02:34:03.179 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at de.flapdoodle.embed.process.runtime.Processes$PidHelper$2.getPid(Processes.java:209)
+02:34:03.179 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at de.flapdoodle.embed.process.runtime.Processes.processId(Processes.java:72)
+02:34:03.179 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at de.flapdoodle.embed.process.runtime.ProcessControl.<init>(ProcessControl.java:64)
+02:34:03.179 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at de.flapdoodle.embed.process.runtime.ProcessControl.start(ProcessControl.java:205)
+02:34:03.179 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at de.flapdoodle.embed.process.runtime.AbstractProcess.<init>(AbstractProcess.java:99)
+02:34:03.179 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at ru.yandex.qatools.embed.postgresql.AbstractPGProcess.<init>(AbstractPGProcess.java:19)
+02:34:03.179 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at ru.yandex.qatools.embed.postgresql.PostgresProcess.<init>(PostgresProcess.java:68)
+02:34:03.179 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at ru.yandex.qatools.embed.postgresql.PostgresExecutable.start(PostgresExecutable.java:25)
+02:34:03.179 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at ru.yandex.qatools.embed.postgresql.PostgresExecutable.start(PostgresExecutable.java:13)
+02:34:03.179 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at de.flapdoodle.embed.process.runtime.Executable.start(Executable.java:108)
+02:34:03.179 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at ru.yandex.qatools.embed.postgresql.EmbeddedPostgres.start(EmbeddedPostgres.java:194)
+02:34:03.179 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at ru.yandex.qatools.embed.postgresql.EmbeddedPostgres.start(EmbeddedPostgres.java:165)
+02:34:03.179 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.vertx.pgclient.junit.PgRule.startPg(PgRule.java:112)
+02:34:03.179 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.vertx.pgclient.junit.PgRule.before(PgRule.java:244)
+02:34:03.180 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.vertx.pgclient.junit.PgRule$2.evaluate(PgRule.java:270)
+02:34:03.180 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+02:34:03.180 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+02:34:03.180 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+02:34:03.180 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283)
+02:34:03.180 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173)
+02:34:03.180 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+02:34:03.180 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128)
+02:34:03.181 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+02:34:03.181 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+02:34:03.181 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+02:34:41.144 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:34:41 AM io.netty.util.concurrent.DefaultPromise safeExecute
+02:34:41.144 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SEVERE: Failed to submit a listener notification task. Event loop shut down?
+02:34:41.144 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - java.util.concurrent.RejectedExecutionException: event executor terminated
+02:34:41.144 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.SingleThreadEventExecutor.reject(SingleThreadEventExecutor.java:923)
+02:34:41.144 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.SingleThreadEventExecutor.offerTask(SingleThreadEventExecutor.java:350)
+02:34:41.144 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.SingleThreadEventExecutor.addTask(SingleThreadEventExecutor.java:343)
+02:34:41.144 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.SingleThreadEventExecutor.execute(SingleThreadEventExecutor.java:825)
+02:34:41.144 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.SingleThreadEventExecutor.execute(SingleThreadEventExecutor.java:815)
+02:34:41.144 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.DefaultPromise.safeExecute(DefaultPromise.java:841)
+02:34:41.144 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:499)
+02:34:41.144 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.DefaultPromise.addListener(DefaultPromise.java:184)
+02:34:41.144 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.channel.group.DefaultChannelGroupFuture.addListener(DefaultChannelGroupFuture.java:147)
+02:34:41.144 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.channel.group.DefaultChannelGroupFuture.addListener(DefaultChannelGroupFuture.java:41)
+02:34:41.144 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.vertx.core.net.impl.NetClientImpl.close(NetClientImpl.java:166)
+02:34:41.144 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.vertx.core.impl.CloseFuture.close(CloseFuture.java:117)
+02:34:41.144 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.vertx.core.net.impl.NetClientImpl.finalize(NetClientImpl.java:298)
+02:34:41.144 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.lang.System$2.invokeFinalize(System.java:2117)
+02:34:41.144 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.lang.ref.Finalizer.runFinalizer(Finalizer.java:87)
+02:34:41.144 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:171)
+02:34:41.144 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 
+02:34:41.144 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 2:34:41 AM io.netty.util.concurrent.DefaultPromise safeExecute
+02:34:41.145 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - SEVERE: Failed to submit a listener notification task. Event loop shut down?
+02:34:41.145 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - java.util.concurrent.RejectedExecutionException: event executor terminated
+02:34:41.145 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.SingleThreadEventExecutor.reject(SingleThreadEventExecutor.java:923)
+02:34:41.145 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.SingleThreadEventExecutor.offerTask(SingleThreadEventExecutor.java:350)
+02:34:41.145 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.SingleThreadEventExecutor.addTask(SingleThreadEventExecutor.java:343)
+02:34:41.145 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.SingleThreadEventExecutor.execute(SingleThreadEventExecutor.java:825)
+02:34:41.145 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.SingleThreadEventExecutor.execute(SingleThreadEventExecutor.java:815)
+02:34:41.145 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.DefaultPromise.safeExecute(DefaultPromise.java:841)
+02:34:41.145 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:499)
+02:34:41.145 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.util.concurrent.DefaultPromise.addListener(DefaultPromise.java:184)
+02:34:41.145 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.channel.group.DefaultChannelGroupFuture.addListener(DefaultChannelGroupFuture.java:147)
+02:34:41.145 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.netty.channel.group.DefaultChannelGroupFuture.addListener(DefaultChannelGroupFuture.java:41)
+02:34:41.145 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.vertx.core.net.impl.NetClientImpl.close(NetClientImpl.java:166)
+02:34:41.145 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.vertx.core.impl.CloseFuture.close(CloseFuture.java:117)
+02:34:41.145 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at io.vertx.core.net.impl.NetClientImpl.finalize(NetClientImpl.java:298)
+02:34:41.145 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.lang.System$2.invokeFinalize(System.java:2117)
+02:34:41.145 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.lang.ref.Finalizer.runFinalizer(Finalizer.java:87)
+02:34:41.145 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 	at java.base/java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:171)
+02:34:41.145 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - 
+02:35:13.524 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.18.1:test (default-test) on project vertx-pg-client: There are test failures.
+02:35:13.524 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+02:35:13.525 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/eclipse-vertx-vertx-sql-client-master-1091_repo/vertx-pg-client/target/surefire-reports for the individual test results.
+02:35:13.525 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+02:35:13.529 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+02:35:13.529 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+02:35:13.529 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+02:35:13.529 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+02:35:13.529 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+02:35:13.529 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+02:35:13.529 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+02:35:13.529 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :vertx-pg-client
+02:35:20.048 [main] ERROR f.i.s.r.p.s.paths.ComputeClasspath - The file does not exist: /root/./workspace/eclipse-vertx-vertx-sql-client-master-1091_repo/target/classes.
+02:35:20.049 [main] ERROR f.i.s.r.p.s.paths.ComputeClasspath - The file does not exist: /root/./workspace/eclipse-vertx-vertx-sql-client-master-1091_repo/target/test-classes.
+02:35:20.140 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 5 problems were encountered while building the effective model for io.vertx:vertx-sql-client-parent:4.2.2-SNAPSHOT
+[ERROR] Failed to determine Java version for profile java-9 @ io.vertx:vertx-parent:19
+[ERROR] Failed to determine Java version for profile java-9 @ io.vertx:vertx-parent:19
+[ERROR] 'dependencies.dependency.version' for io.vertx:vertx-unit:jar is missing. @ 
+[ERROR] 'dependencies.dependency.version' for io.netty:netty-transport-native-epoll:jar:linux-x86_64 is missing. @ 
+[ERROR] 'dependencies.dependency.version' for io.netty:netty-transport-native-kqueue:jar:osx-x86_64 is missing. @ 
+
+02:35:20.151 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+02:35:20.152 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - Fail to find source directories.
+02:35:20.173 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 5 problems were encountered while building the effective model for io.vertx:vertx-sql-client-parent:4.2.2-SNAPSHOT
+[ERROR] Failed to determine Java version for profile java-9 @ io.vertx:vertx-parent:19
+[ERROR] Failed to determine Java version for profile java-9 @ io.vertx:vertx-parent:19
+[ERROR] 'dependencies.dependency.version' for io.vertx:vertx-unit:jar is missing. @ 
+[ERROR] 'dependencies.dependency.version' for io.netty:netty-transport-native-epoll:jar:linux-x86_64 is missing. @ 
+[ERROR] 'dependencies.dependency.version' for io.netty:netty-transport-native-kqueue:jar:osx-x86_64 is missing. @ 
+
+02:35:20.174 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+02:35:20.174 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - Fail to find test directories.
+02:35:20.174 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - 
+02:35:20.654 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:35:20.654 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE EXECUTION SUMMARY
+02:35:20.654 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:35:20.654 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneCheckoutGitPullRequest..........................SUCCESS [  11 s ]
+02:35:20.654 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject.........................................SUCCESS [  58 s ]
+02:35:20.655 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject..........................................SUCCESS [ 504 s ]
+02:35:20.655 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath.....................................SUCCESS [   6 s ]
+02:35:20.655 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir.....................................FAILURE [   0 s ]
+02:35:20.655 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir.......................................FAILURE [   0 s ]
+02:35:20.655 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation................................NOT RUN          
+02:35:20.655 [main] INFO  f.i.s.r.p.i.ProjectInspector - FlacocoLocalization..................................NOT RUN          
+02:35:20.655 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushFaultLocalizationSuggestionsOnExternalRepository.NOT RUN          
+02:35:20.656 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:35:20.656 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE FINDING: TESTDIRNOTCOMPUTED
+02:35:20.656 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:35:20.656 [main] INFO  f.i.s.r.p.github.GithubMainProcess - Inspector is finished. The process will exit now.

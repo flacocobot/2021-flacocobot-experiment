@@ -1,0 +1,47 @@
+Execute pipeline with following supplementary args: --smtpPort 25 --listenerMode NOOP --launcherMode FAULT_LOCALIZATION  --gitrepourl https://github.com/jagrosh/MusicBot --gitrepopullrequest 1067
+java -cp /usr/local/openjdk-11/lib/tools.jar:repairnator-pipeline.jar -Dlogback.configurationFile=/root/logback.xml fr.inria.spirals.repairnator.pipeline.Launcher -d --runId null -o /var/log --ghOauth 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 --faultLocalization --flacocoThreshold 0.0 --flacocoTopK null --flacocoResultsRepository flacocobot/flacocobot-experiment-3 --ghOauth  --smtpPort 25 --listenerMode NOOP --launcherMode FAULT_LOCALIZATION  --gitrepourl https://github.com/jagrosh/MusicBot --gitrepopullrequest 1067
+
+03:04:05.303 [main] INFO  f.i.s.r.p.g.GithubInitSerializerEngines - Initialize file serializer engines.
+03:04:05.304 [main] INFO  f.i.s.r.p.g.GithubInitSerializerEngines - MongoDB won't be used for serialization.
+03:04:05.304 [main] INFO  f.i.s.r.p.github.GithubInitNotifiers - The email notifier engine won't be used.
+03:04:05.320 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+03:04:05.320 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE STEPS
+03:04:05.320 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+03:04:05.320 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneCheckoutGitPullRequest
+03:04:05.320 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject
+03:04:05.320 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject
+03:04:05.320 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath
+03:04:05.320 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir
+03:04:05.320 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir
+03:04:05.320 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation
+03:04:05.320 [main] INFO  f.i.s.r.p.i.ProjectInspector - FlacocoLocalization
+03:04:05.320 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushFaultLocalizationSuggestionsOnExternalRepository
+03:04:05.320 [main] INFO  f.i.s.r.p.s.CloneCheckoutGitPullRequest - Cloning repository https://github.com/jagrosh/MusicBot.git in the following directory: ./workspace/jagrosh-MusicBot-master-1067_repo
+03:04:52.429 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - 1 source dir was found:
+03:04:52.429 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/jagrosh-MusicBot-master-1067_repo/src/main/java
+03:04:52.466 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - 1 test dir was found:
+03:04:52.466 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/jagrosh-MusicBot-master-1067_repo/src/test/java
+03:04:52.492 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation - ---Test results---
+03:04:52.492 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Total tests: 2
+03:04:52.492 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Tests run: 2
+03:04:52.492 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Tests passing: 2
+03:04:52.492 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Failures: 0
+03:04:52.492 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Errors: 0
+03:04:52.492 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Skipped: 0
+03:04:52.493 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation - 
+03:04:52.564 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+03:04:52.564 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE EXECUTION SUMMARY
+03:04:52.564 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+03:04:52.564 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneCheckoutGitPullRequest...........................SUCCESS [  6 s ]
+03:04:52.564 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject..........................................SUCCESS [ 36 s ]
+03:04:52.564 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject...........................................SUCCESS [  2 s ]
+03:04:52.564 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath......................................SUCCESS [  3 s ]
+03:04:52.564 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir......................................SUCCESS [  0 s ]
+03:04:52.565 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir........................................SUCCESS [  0 s ]
+03:04:52.565 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation.................................FAILURE [  0 s ]
+03:04:52.565 [main] INFO  f.i.s.r.p.i.ProjectInspector - FlacocoLocalization...................................NOT RUN         
+03:04:52.565 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushFaultLocalizationSuggestionsOnExternalRepository..NOT RUN         
+03:04:52.565 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+03:04:52.565 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE FINDING: NOTFAILING
+03:04:52.565 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+03:04:52.565 [main] INFO  f.i.s.r.p.github.GithubMainProcess - Inspector is finished. The process will exit now.

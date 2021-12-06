@@ -1,0 +1,66 @@
+Execute pipeline with following supplementary args: --smtpPort 25 --listenerMode NOOP --launcherMode FAULT_LOCALIZATION  --gitrepourl https://github.com/apache/systemds --gitrepopullrequest 1472
+java -cp /usr/local/openjdk-11/lib/tools.jar:repairnator-pipeline.jar -Dlogback.configurationFile=/root/logback.xml fr.inria.spirals.repairnator.pipeline.Launcher -d --runId null -o /var/log --ghOauth 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 --faultLocalization --flacocoThreshold 0.0 --flacocoTopK null --flacocoResultsRepository flacocobot/flacocobot-experiment-3 --ghOauth  --smtpPort 25 --listenerMode NOOP --launcherMode FAULT_LOCALIZATION  --gitrepourl https://github.com/apache/systemds --gitrepopullrequest 1472
+
+02:22:09.865 [main] INFO  f.i.s.r.p.g.GithubInitSerializerEngines - Initialize file serializer engines.
+02:22:09.876 [main] INFO  f.i.s.r.p.g.GithubInitSerializerEngines - MongoDB won't be used for serialization.
+02:22:09.877 [main] INFO  f.i.s.r.p.github.GithubInitNotifiers - The email notifier engine won't be used.
+02:22:09.923 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:22:09.927 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE STEPS
+02:22:09.927 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:22:09.927 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneCheckoutGitPullRequest
+02:22:09.927 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject
+02:22:09.927 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject
+02:22:09.928 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath
+02:22:09.928 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir
+02:22:09.928 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir
+02:22:09.928 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation
+02:22:09.928 [main] INFO  f.i.s.r.p.i.ProjectInspector - FlacocoLocalization
+02:22:09.928 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushFaultLocalizationSuggestionsOnExternalRepository
+02:22:09.928 [main] INFO  f.i.s.r.p.s.CloneCheckoutGitPullRequest - Cloning repository https://github.com/apache/systemds.git in the following directory: ./workspace/apache-systemds-master-1472_repo
+02:23:09.512 [main] ERROR f.i.s.r.p.s.CloneCheckoutGitPullRequest - Repository https://github.com/apache/systemds.git cannot be cloned.
+org.eclipse.jgit.api.errors.TransportException: git@github.com:corepointer/jitify.git: remote hung up unexpectedly
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:224)
+	at org.eclipse.jgit.api.CloneCommand.fetch(CloneCommand.java:311)
+	at org.eclipse.jgit.api.CloneCommand.call(CloneCommand.java:182)
+	at org.eclipse.jgit.api.SubmoduleUpdateCommand.getOrCloneSubmodule(SubmoduleUpdateCommand.java:136)
+	at org.eclipse.jgit.api.SubmoduleUpdateCommand.call(SubmoduleUpdateCommand.java:177)
+	at org.eclipse.jgit.api.CloneCommand.cloneSubmodules(CloneCommand.java:406)
+	at org.eclipse.jgit.api.CloneCommand.checkout(CloneCommand.java:387)
+	at org.eclipse.jgit.api.CloneCommand.call(CloneCommand.java:212)
+	at fr.inria.spirals.repairnator.process.step.CloneCheckoutGitPullRequest.businessExecute(CloneCheckoutGitPullRequest.java:48)
+	at fr.inria.spirals.repairnator.process.step.AbstractStep.execute(AbstractStep.java:361)
+	at fr.inria.spirals.repairnator.process.inspectors.components.RunInspector4FaultLocalization.run(RunInspector4FaultLocalization.java:52)
+	at fr.inria.spirals.repairnator.process.inspectors.ProjectInspector.run(ProjectInspector.java:307)
+	at fr.inria.spirals.repairnator.pipeline.github.GithubMainProcess.run(GithubMainProcess.java:112)
+	at fr.inria.spirals.repairnator.pipeline.BranchLauncher.main(BranchLauncher.java:92)
+	at fr.inria.spirals.repairnator.pipeline.BranchLauncher.launch(BranchLauncher.java:98)
+	at fr.inria.spirals.repairnator.pipeline.Launcher.main(Launcher.java:28)
+Caused by: org.eclipse.jgit.errors.TransportException: git@github.com:corepointer/jitify.git: remote hung up unexpectedly
+	at org.eclipse.jgit.transport.TransportGitSsh$SshFetchConnection.<init>(TransportGitSsh.java:313)
+	at org.eclipse.jgit.transport.TransportGitSsh.openFetch(TransportGitSsh.java:153)
+	at org.eclipse.jgit.transport.FetchProcess.executeImp(FetchProcess.java:142)
+	at org.eclipse.jgit.transport.FetchProcess.execute(FetchProcess.java:94)
+	at org.eclipse.jgit.transport.Transport.fetch(Transport.java:1309)
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:213)
+	... 15 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at org.eclipse.jgit.transport.SshTransport.getSession(SshTransport.java:107)
+	at org.eclipse.jgit.transport.TransportGitSsh$SshFetchConnection.<init>(TransportGitSsh.java:281)
+	... 20 common frames omitted
+02:23:09.515 [main] INFO  f.i.s.r.p.s.CloneCheckoutGitPullRequest - 
+02:23:10.239 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:23:10.240 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE EXECUTION SUMMARY
+02:23:10.240 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:23:10.240 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneCheckoutGitPullRequest...........................FAILURE [ 59 s ]
+02:23:10.240 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject..........................................NOT RUN         
+02:23:10.240 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject...........................................NOT RUN         
+02:23:10.240 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath......................................NOT RUN         
+02:23:10.240 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir......................................NOT RUN         
+02:23:10.240 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir........................................NOT RUN         
+02:23:10.240 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation.................................NOT RUN         
+02:23:10.240 [main] INFO  f.i.s.r.p.i.ProjectInspector - FlacocoLocalization...................................NOT RUN         
+02:23:10.240 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushFaultLocalizationSuggestionsOnExternalRepository..NOT RUN         
+02:23:10.241 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:23:10.241 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE FINDING: NOTCLONABLE
+02:23:10.241 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:23:10.241 [main] INFO  f.i.s.r.p.github.GithubMainProcess - Inspector is finished. The process will exit now.

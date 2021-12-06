@@ -1,0 +1,198 @@
+Execute pipeline with following supplementary args: --smtpPort 25 --listenerMode NOOP --launcherMode FAULT_LOCALIZATION  --gitrepourl https://github.com/FluentLenium/FluentLenium --gitrepopullrequest 1382
+java -cp /usr/local/openjdk-11/lib/tools.jar:repairnator-pipeline.jar -Dlogback.configurationFile=/root/logback.xml fr.inria.spirals.repairnator.pipeline.Launcher -d --runId null -o /var/log --ghOauth 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 --faultLocalization --flacocoThreshold 0.0 --flacocoTopK null --flacocoResultsRepository flacocobot/flacocobot-experiment-3 --ghOauth  --smtpPort 25 --listenerMode NOOP --launcherMode FAULT_LOCALIZATION  --gitrepourl https://github.com/FluentLenium/FluentLenium --gitrepopullrequest 1382
+
+11:24:49.678 [main] INFO  f.i.s.r.p.g.GithubInitSerializerEngines - Initialize file serializer engines.
+11:24:49.679 [main] INFO  f.i.s.r.p.g.GithubInitSerializerEngines - MongoDB won't be used for serialization.
+11:24:49.680 [main] INFO  f.i.s.r.p.github.GithubInitNotifiers - The email notifier engine won't be used.
+11:24:49.693 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+11:24:49.693 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE STEPS
+11:24:49.693 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+11:24:49.693 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneCheckoutGitPullRequest
+11:24:49.693 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject
+11:24:49.693 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject
+11:24:49.693 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath
+11:24:49.693 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir
+11:24:49.693 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir
+11:24:49.693 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation
+11:24:49.693 [main] INFO  f.i.s.r.p.i.ProjectInspector - FlacocoLocalization
+11:24:49.693 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushFaultLocalizationSuggestionsOnExternalRepository
+11:24:49.693 [main] INFO  f.i.s.r.p.s.CloneCheckoutGitPullRequest - Cloning repository https://github.com/FluentLenium/FluentLenium.git in the following directory: ./workspace/FluentLenium-FluentLenium-master-1382_repo
+11:25:17.202 [Thread-5] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 11:25:17 AM java.util.prefs.FileSystemPreferences$1 run
+11:25:17.203 [Thread-5] ERROR f.i.s.r.p.m.output.MavenErrorHandler - INFO: Created user preferences directory.
+11:25:20.780 [Thread-5] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: An illegal reflective access operation has occurred
+11:25:20.780 [Thread-5] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Illegal reflective access by org.jetbrains.kotlin.com.intellij.util.ReflectionUtil (file:/root/./workspace/FluentLenium-FluentLenium-master-1382_repo/.m2/org/jetbrains/kotlin/kotlin-compiler-embeddable/1.4.31/kotlin-compiler-embeddable-1.4.31.jar) to method java.util.ResourceBundle.setParent(java.util.ResourceBundle)
+11:25:20.780 [Thread-5] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Please consider reporting this to the maintainers of org.jetbrains.kotlin.com.intellij.util.ReflectionUtil
+11:25:20.780 [Thread-5] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+11:25:20.780 [Thread-5] ERROR f.i.s.r.p.m.output.MavenErrorHandler - WARNING: All illegal access operations will be denied in a future release
+11:26:06.435 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] WARNING: An illegal reflective access operation has occurred
+11:26:06.435 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] WARNING: Illegal reflective access by org.mockito.internal.util.reflection.ReflectionMemberAccessor (file:/root/workspace/FluentLenium-FluentLenium-master-1382_repo/.m2/org/mockito/mockito-core/3.11.1/mockito-core-3.11.1.jar) to field java.util.Arrays$ArrayList.a
+11:26:06.436 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] WARNING: Please consider reporting this to the maintainers of org.mockito.internal.util.reflection.ReflectionMemberAccessor
+11:26:06.436 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+11:26:06.436 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] WARNING: All illegal access operations will be denied in a future release
+11:26:06.533 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 11:26:06 AM org.openqa.selenium.interactions.Actions moveToElement
+11:26:06.533 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - INFO: When using the W3C Action commands, offsets are from the element's in-view center point
+11:26:06.533 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 11:26:06 AM org.openqa.selenium.interactions.Actions moveToElement
+11:26:06.533 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - INFO: When using the W3C Action commands, offsets are from the element's in-view center point
+11:26:06.533 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - Dec 06, 2021 11:26:06 AM org.openqa.selenium.interactions.Actions moveToElement
+11:26:06.533 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - INFO: When using the W3C Action commands, offsets are from the element's in-view center point
+11:26:13.955 [Thread-8] ERROR f.i.s.r.p.m.output.MavenErrorHandler - /root/.cache/selenium/chromedriver/linux64/96.0.4664.45/chromedriver: error while loading shared libraries: libgobject-2.0.so.0: cannot open shared object file: No such file or directory
+11:26:14.081 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Tests run: 4, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 2.575 s <<< FAILURE! - in org.fluentlenium.adapter.junit.jupiter.FluentJUnitJupiterTest
+11:26:14.081 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] org.fluentlenium.adapter.junit.jupiter.FluentJUnitJupiterTest.testBeforeEach  Time elapsed: 0.486 s  <<< ERROR!
+11:26:14.142 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Errors: 
+11:26:14.142 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   FluentJUnitJupiterTest.testBeforeEach:49 » WebDriver Browser failed to start, ...
+11:26:14.142 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Tests run: 4, Failures: 0, Errors: 1, Skipped: 0
+11:26:14.145 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M5:test (default-test) on project fluentlenium-junit-jupiter: There are test failures.
+11:26:14.145 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:26:14.145 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/FluentLenium-FluentLenium-master-1382_repo/fluentlenium-junit-jupiter/target/surefire-reports for the individual test results.
+11:26:14.145 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+11:26:14.145 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:26:14.150 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:26:14.150 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:26:14.150 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:26:14.150 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:26:14.150 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:26:14.150 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:26:14.151 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+11:26:14.151 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :fluentlenium-junit-jupiter
+11:26:18.024 [main] ERROR f.i.s.r.p.s.paths.ComputeClasspath - The classpath file is empty.
+11:26:18.024 [main] ERROR f.i.s.r.p.s.paths.ComputeClasspath - The classpath seems not to contain JUnit, maybe this project does not use JUnit for testing.
+11:26:18.024 [main] ERROR f.i.s.r.p.s.paths.ComputeClasspath - The file does not exist: /root/./workspace/FluentLenium-FluentLenium-master-1382_repo/target/classes.
+11:26:18.024 [main] ERROR f.i.s.r.p.s.paths.ComputeClasspath - The file does not exist: /root/./workspace/FluentLenium-FluentLenium-master-1382_repo/target/test-classes.
+11:26:18.067 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 2 problems were encountered while building the effective model for org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT
+[ERROR] Failed to determine Java version for profile java8 @ 
+[ERROR] Failed to determine Java version for profile java11 @ 
+
+11:26:18.079 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 2 problems were encountered while building the effective model for org.fluentlenium:fluentlenium-integration-tests:4.8.1-SNAPSHOT
+[ERROR] Failed to determine Java version for profile java8 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+[ERROR] Failed to determine Java version for profile java11 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+
+11:26:18.079 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+11:26:18.083 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 2 problems were encountered while building the effective model for org.fluentlenium:fluentlenium-spock:4.8.1-SNAPSHOT
+[ERROR] Failed to determine Java version for profile java8 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+[ERROR] Failed to determine Java version for profile java11 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+
+11:26:18.083 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+11:26:18.089 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 2 problems were encountered while building the effective model for org.fluentlenium:fluentlenium-kotest:4.8.1-SNAPSHOT
+[ERROR] Failed to determine Java version for profile java8 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+[ERROR] Failed to determine Java version for profile java11 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+
+11:26:18.089 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+11:26:18.094 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 2 problems were encountered while building the effective model for org.fluentlenium:fluentlenium-kotest-assertions:4.8.1-SNAPSHOT
+[ERROR] Failed to determine Java version for profile java8 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+[ERROR] Failed to determine Java version for profile java11 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+
+11:26:18.094 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+11:26:18.097 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 2 problems were encountered while building the effective model for org.fluentlenium:fluentlenium-coverage-report:4.8.1-SNAPSHOT
+[ERROR] Failed to determine Java version for profile java8 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+[ERROR] Failed to determine Java version for profile java11 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+
+11:26:18.097 [main] ERROR f.i.s.r.p.s.paths.ComputeSourceDir - The source directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+11:26:18.097 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - 7 source dirs were found:
+11:26:18.097 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/FluentLenium-FluentLenium-master-1382_repo/fluentlenium-assertj/src/main/java
+11:26:18.097 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/FluentLenium-FluentLenium-master-1382_repo/fluentlenium-core/src/main/java
+11:26:18.098 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/FluentLenium-FluentLenium-master-1382_repo/fluentlenium-cucumber/src/main/java
+11:26:18.098 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/FluentLenium-FluentLenium-master-1382_repo/fluentlenium-junit-jupiter/src/main/java
+11:26:18.098 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/FluentLenium-FluentLenium-master-1382_repo/fluentlenium-junit/src/main/java
+11:26:18.098 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/FluentLenium-FluentLenium-master-1382_repo/fluentlenium-spring-testng/src/main/java
+11:26:18.098 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/FluentLenium-FluentLenium-master-1382_repo/fluentlenium-testng/src/main/java
+11:26:18.100 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 2 problems were encountered while building the effective model for org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT
+[ERROR] Failed to determine Java version for profile java8 @ 
+[ERROR] Failed to determine Java version for profile java11 @ 
+
+11:26:18.103 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 2 problems were encountered while building the effective model for org.fluentlenium:fluentlenium-core:4.8.1-SNAPSHOT
+[ERROR] Failed to determine Java version for profile java8 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+[ERROR] Failed to determine Java version for profile java11 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+
+11:26:18.106 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 2 problems were encountered while building the effective model for org.fluentlenium:fluentlenium-integration-tests:4.8.1-SNAPSHOT
+[ERROR] Failed to determine Java version for profile java8 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+[ERROR] Failed to determine Java version for profile java11 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+
+11:26:18.108 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 2 problems were encountered while building the effective model for org.fluentlenium:fluentlenium-assertj:4.8.1-SNAPSHOT
+[ERROR] Failed to determine Java version for profile java8 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+[ERROR] Failed to determine Java version for profile java11 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+
+11:26:18.110 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 2 problems were encountered while building the effective model for org.fluentlenium:fluentlenium-junit:4.8.1-SNAPSHOT
+[ERROR] Failed to determine Java version for profile java8 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+[ERROR] Failed to determine Java version for profile java11 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+
+11:26:18.113 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 2 problems were encountered while building the effective model for org.fluentlenium:fluentlenium-junit-jupiter:4.8.1-SNAPSHOT
+[ERROR] Failed to determine Java version for profile java8 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+[ERROR] Failed to determine Java version for profile java11 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+
+11:26:18.115 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 2 problems were encountered while building the effective model for org.fluentlenium:fluentlenium-testng:4.8.1-SNAPSHOT
+[ERROR] Failed to determine Java version for profile java8 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+[ERROR] Failed to determine Java version for profile java11 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+
+11:26:18.117 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 2 problems were encountered while building the effective model for org.fluentlenium:fluentlenium-spring-testng:4.8.1-SNAPSHOT
+[ERROR] Failed to determine Java version for profile java8 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+[ERROR] Failed to determine Java version for profile java11 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+
+11:26:18.119 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 2 problems were encountered while building the effective model for org.fluentlenium:fluentlenium-cucumber:4.8.1-SNAPSHOT
+[ERROR] Failed to determine Java version for profile java8 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+[ERROR] Failed to determine Java version for profile java11 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+
+11:26:18.122 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 2 problems were encountered while building the effective model for org.fluentlenium:fluentlenium-spock:4.8.1-SNAPSHOT
+[ERROR] Failed to determine Java version for profile java8 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+[ERROR] Failed to determine Java version for profile java11 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+
+11:26:18.122 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+11:26:18.125 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 2 problems were encountered while building the effective model for org.fluentlenium:fluentlenium-kotest:4.8.1-SNAPSHOT
+[ERROR] Failed to determine Java version for profile java8 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+[ERROR] Failed to determine Java version for profile java11 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+
+11:26:18.125 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+11:26:18.128 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 2 problems were encountered while building the effective model for org.fluentlenium:fluentlenium-kotest-assertions:4.8.1-SNAPSHOT
+[ERROR] Failed to determine Java version for profile java8 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+[ERROR] Failed to determine Java version for profile java11 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+
+11:26:18.129 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+11:26:18.130 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 2 problems were encountered while building the effective model for org.fluentlenium:fluentlenium-coverage-report:4.8.1-SNAPSHOT
+[ERROR] Failed to determine Java version for profile java8 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+[ERROR] Failed to determine Java version for profile java11 @ org.fluentlenium:fluentlenium-parent:4.8.1-SNAPSHOT, /root/workspace/FluentLenium-FluentLenium-master-1382_repo/pom.xml
+
+11:26:18.131 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+11:26:18.131 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - 8 test dirs were found:
+11:26:18.131 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/FluentLenium-FluentLenium-master-1382_repo/fluentlenium-assertj/src/test/java
+11:26:18.131 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/FluentLenium-FluentLenium-master-1382_repo/fluentlenium-core/src/test/java
+11:26:18.131 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/FluentLenium-FluentLenium-master-1382_repo/fluentlenium-cucumber/src/test/java
+11:26:18.131 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/FluentLenium-FluentLenium-master-1382_repo/fluentlenium-integration-tests/src/test/java
+11:26:18.131 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/FluentLenium-FluentLenium-master-1382_repo/fluentlenium-junit-jupiter/src/test/java
+11:26:18.131 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/FluentLenium-FluentLenium-master-1382_repo/fluentlenium-junit/src/test/java
+11:26:18.131 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/FluentLenium-FluentLenium-master-1382_repo/fluentlenium-spring-testng/src/test/java
+11:26:18.131 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/FluentLenium-FluentLenium-master-1382_repo/fluentlenium-testng/src/test/java
+11:26:18.208 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation - Get the following failing module path: /root/workspace/FluentLenium-FluentLenium-master-1382_repo/fluentlenium-junit-jupiter
+11:26:18.312 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation - ---Test results---
+11:26:18.312 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Total tests: 1153
+11:26:18.312 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Tests run: 1146
+11:26:18.312 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Tests passing: 1145
+11:26:18.312 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Failures: 0
+11:26:18.312 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Errors: 1
+11:26:18.312 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Skipped: 7
+[0] INFO Flacoco - Running Flacoco...
+[16] WARN TestMethodFilter - NoClassDefFoundError: class org.fluentlenium.adapter.junit.jupiter.FluentJUnitJupiter
+[21] WARN TestMethodFilter - NoClassDefFoundError: class org.fluentlenium.adapter.junit.jupiter.integration.FluentTestTest
+[420] WARN CoverageRunner - Test [Manual]TestMethod=org.fluentlenium.adapter.junit.jupiter.FluentJUnitJupiterTest#testBeforeEach result was not reported by test-runner.
+[420] WARN CoverageRunner - Test [Manual]TestMethod=org.fluentlenium.adapter.junit.jupiter.FluentJUnitJupiterTest#testAfterEachSuccessful result was not reported by test-runner.
+[420] WARN CoverageRunner - Test [Manual]TestMethod=org.fluentlenium.adapter.junit.jupiter.FluentJUnitJupiterTest#testAfterEachFailure result was not reported by test-runner.
+[420] WARN CoverageRunner - Test [Manual]TestMethod=org.fluentlenium.adapter.junit.jupiter.FluentJUnitJupiterTest#badInstance result was not reported by test-runner.
+[420] INFO CoverageRunner - Tests found: 4
+[420] INFO CoverageRunner - Tests executed: 0
+11:35:28.631 [main] INFO  fr.inria.jtravis.JTravis - GitHub ratelimit: Limit: 5000 Remaining: 4998 Reset hour: 00:13:10
+11:35:29.723 [main] WARN  f.i.s.r.p.s.p.PushFaultLocalizationSuggestionsOnExternalRepository - Flacoco has found 0 suspicious lines, but none were matched to the diff
+11:35:29.723 [main] INFO  f.i.s.r.p.s.f.FlacocoLocalization - 
+11:35:30.081 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+11:35:30.081 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE EXECUTION SUMMARY
+11:35:30.081 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+11:35:30.081 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneCheckoutGitPullRequest..........................SUCCESS [   9 s ]
+11:35:30.081 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject.........................................SUCCESS [  40 s ]
+11:35:30.081 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject..........................................SUCCESS [  36 s ]
+11:35:30.081 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath.....................................SUCCESS [   3 s ]
+11:35:30.081 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir.....................................SUCCESS [   0 s ]
+11:35:30.081 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir.......................................SUCCESS [   0 s ]
+11:35:30.081 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation................................SUCCESS [   0 s ]
+11:35:30.081 [main] INFO  f.i.s.r.p.i.ProjectInspector - FlacocoLocalization..................................SUCCESS [   0 s ]
+11:35:30.081 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushFaultLocalizationSuggestionsOnExternalRepository.SKIPPED          
+11:35:30.082 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+11:35:30.082 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE FINDING: TEST FAILURE
+11:35:30.082 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+11:35:30.082 [main] INFO  f.i.s.r.p.github.GithubMainProcess - Inspector is finished. The process will exit now.
