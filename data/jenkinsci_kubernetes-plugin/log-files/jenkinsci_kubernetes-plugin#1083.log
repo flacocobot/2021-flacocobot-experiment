@@ -1,0 +1,294 @@
+Execute pipeline with following supplementary args: --smtpPort 25 --listenerMode NOOP --launcherMode FAULT_LOCALIZATION  --gitrepourl https://github.com/jenkinsci/kubernetes-plugin --gitrepopullrequest 1083
+java -cp /usr/local/openjdk-11/lib/tools.jar:repairnator-pipeline.jar -Dlogback.configurationFile=/root/logback.xml fr.inria.spirals.repairnator.pipeline.Launcher -d --runId null -o /var/log --ghOauth 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 --faultLocalization --flacocoThreshold 0.0 --flacocoTopK null --flacocoResultsRepository flacocobot/flacocobot-experiment-3 --ghOauth  --smtpPort 25 --listenerMode NOOP --launcherMode FAULT_LOCALIZATION  --gitrepourl https://github.com/jenkinsci/kubernetes-plugin --gitrepopullrequest 1083
+
+01:35:55.549 [main] INFO  f.i.s.r.p.g.GithubInitSerializerEngines - Initialize file serializer engines.
+01:35:55.553 [main] INFO  f.i.s.r.p.g.GithubInitSerializerEngines - MongoDB won't be used for serialization.
+01:35:55.553 [main] INFO  f.i.s.r.p.github.GithubInitNotifiers - The email notifier engine won't be used.
+01:35:55.628 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+01:35:55.629 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE STEPS
+01:35:55.629 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+01:35:55.629 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneCheckoutGitPullRequest
+01:35:55.629 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject
+01:35:55.629 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject
+01:35:55.629 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath
+01:35:55.629 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir
+01:35:55.630 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir
+01:35:55.635 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation
+01:35:55.636 [main] INFO  f.i.s.r.p.i.ProjectInspector - FlacocoLocalization
+01:35:55.636 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushFaultLocalizationSuggestionsOnExternalRepository
+01:35:55.636 [main] INFO  f.i.s.r.p.s.CloneCheckoutGitPullRequest - Cloning repository https://github.com/jenkinsci/kubernetes-plugin.git in the following directory: ./workspace/jenkinsci-kubernetes-plugin-master-1083_repo
+02:00:45.971 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 47.211 s <<< FAILURE! - in org.csanchez.jenkins.plugins.kubernetes.pod.decorator.PodDecoratorTest
+02:00:45.975 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] org.csanchez.jenkins.plugins.kubernetes.pod.decorator.PodDecoratorTest.activeDecorator  Time elapsed: 47.021 s  <<< ERROR!
+02:00:48.906 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Errors: 
+02:00:48.907 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   PodDecoratorTest.activeDecorator » IllegalState Could not initialize plugin: i...
+02:00:48.907 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Tests run: 235, Failures: 0, Errors: 1, Skipped: 12
+02:00:48.952 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M4:test (default-test) on project kubernetes: There are test failures.
+02:00:48.955 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+02:00:48.956 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/jenkinsci-kubernetes-plugin-master-1083_repo/target/surefire-reports for the individual test results.
+02:00:48.958 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+02:00:48.959 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+02:00:49.000 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+02:00:49.000 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+02:00:49.000 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+02:00:49.000 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+02:00:49.000 [Thread-7] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+02:01:15.814 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - 1 source dir was found:
+02:01:15.814 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/jenkinsci-kubernetes-plugin-master-1083_repo/src/main/java
+02:01:15.997 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for org.csanchez.jenkins.plugins:kubernetes:1.30.12-SNAPSHOT
+[ERROR] Failed to determine Java version for profile jdk-above-9 @ org.jenkins-ci.plugins:plugin:4.31
+
+02:01:16.048 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for org.csanchez.jenkins.plugins:kubernetes:1.30.12-SNAPSHOT
+[ERROR] Failed to determine Java version for profile jdk-above-9 @ org.jenkins-ci.plugins:plugin:4.31
+
+02:01:16.049 [main] ERROR f.i.s.r.p.step.paths.ComputeTestDir - The test directory is not at default location or specified in build section from pom.xml, and no parent can be found.
+02:01:16.049 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - 1 test dir was found:
+02:01:16.050 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/jenkinsci-kubernetes-plugin-master-1083_repo/src/test/java
+02:01:16.574 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation - Get the following failing module path: /root/workspace/jenkinsci-kubernetes-plugin-master-1083_repo
+02:01:16.622 [main] ERROR f.i.s.r.p.s.g.GatherTestInformation - Error while parsing stack trace.
+exceptionparser.StackTraceParser$ParseException: Can't match exactly one stacktrace in given String. Matches: 2 stacktraces.
+	at exceptionparser.StackTraceParser.parse(StackTraceParser.java:243)
+	at fr.inria.spirals.repairnator.process.step.gatherinfo.GatherTestInformation.businessExecute(GatherTestInformation.java:180)
+	at fr.inria.spirals.repairnator.process.step.AbstractStep.execute(AbstractStep.java:361)
+	at fr.inria.spirals.repairnator.process.step.AbstractStep.executeNextStep(AbstractStep.java:213)
+	at fr.inria.spirals.repairnator.process.step.AbstractStep.execute(AbstractStep.java:378)
+	at fr.inria.spirals.repairnator.process.step.AbstractStep.executeNextStep(AbstractStep.java:213)
+	at fr.inria.spirals.repairnator.process.step.AbstractStep.execute(AbstractStep.java:378)
+	at fr.inria.spirals.repairnator.process.step.AbstractStep.executeNextStep(AbstractStep.java:213)
+	at fr.inria.spirals.repairnator.process.step.AbstractStep.execute(AbstractStep.java:378)
+	at fr.inria.spirals.repairnator.process.step.AbstractStep.executeNextStep(AbstractStep.java:213)
+	at fr.inria.spirals.repairnator.process.step.AbstractStep.execute(AbstractStep.java:378)
+	at fr.inria.spirals.repairnator.process.step.AbstractStep.executeNextStep(AbstractStep.java:213)
+	at fr.inria.spirals.repairnator.process.step.AbstractStep.execute(AbstractStep.java:378)
+	at fr.inria.spirals.repairnator.process.step.AbstractStep.executeNextStep(AbstractStep.java:213)
+	at fr.inria.spirals.repairnator.process.step.AbstractStep.execute(AbstractStep.java:378)
+	at fr.inria.spirals.repairnator.process.inspectors.components.RunInspector4FaultLocalization.run(RunInspector4FaultLocalization.java:52)
+	at fr.inria.spirals.repairnator.process.inspectors.ProjectInspector.run(ProjectInspector.java:307)
+	at fr.inria.spirals.repairnator.pipeline.github.GithubMainProcess.run(GithubMainProcess.java:112)
+	at fr.inria.spirals.repairnator.pipeline.BranchLauncher.main(BranchLauncher.java:92)
+	at fr.inria.spirals.repairnator.pipeline.BranchLauncher.launch(BranchLauncher.java:98)
+	at fr.inria.spirals.repairnator.pipeline.Launcher.main(Launcher.java:28)
+02:01:16.625 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation - ---Test results---
+02:01:16.626 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Total tests: 235
+02:01:16.626 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Tests run: 223
+02:01:16.626 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Tests passing: 222
+02:01:16.626 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Failures: 0
+02:01:16.626 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Errors: 1
+02:01:16.626 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Skipped: 12
+[0] INFO Flacoco - Running Flacoco...
+[314225] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.KubectlBuildWrapperTest#kubectlBuildWrapper_missingCredentials result was not reported by test-runner.
+[314225] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.KubectlBuildWrapperTest#kubectlBuildWrapper_invalidCredentials result was not reported by test-runner.
+[314241] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.PodTemplateBuilderTest#testOverridesContainerSpec result was not reported by test-runner.
+[314242] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.PodTemplateBuilderTest#testBuildFromYaml result was not reported by test-runner.
+[314242] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.PodTemplateBuilderTest#testValidateDockerRegistryPrefixOverride result was not reported by test-runner.
+[314242] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.PodTemplateBuilderTest#testValidateDockerRegistryPrefixOverrideWithSlashSuffix result was not reported by test-runner.
+[314243] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.PodTemplateBuilderTest#testBuildFromTemplate result was not reported by test-runner.
+[314244] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.PodTemplateBuilderTest#testOverridesFromYaml result was not reported by test-runner.
+[314244] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.PodTemplateBuilderTest#testInheritsFromWithYaml result was not reported by test-runner.
+[314248] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.casc.VolumeCasCTest#roundTripTest result was not reported by test-runner.
+[314256] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.casc.WorkspaceVolumeCasCTest#roundTripTest result was not reported by test-runner.
+[314256] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.casc.EnvVarCasCTest#roundTripTest result was not reported by test-runner.
+[314256] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#substituteEnv result was not reported by test-runner.
+[314256] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#inheritFrom result was not reported by test-runner.
+[314257] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runInPod result was not reported by test-runner.
+[314257] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runIn2Pods result was not reported by test-runner.
+[314257] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runInPodFromYaml result was not reported by test-runner.
+[314257] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runInPodWithDifferentShell result was not reported by test-runner.
+[314257] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#bourneShellElsewhereInPath result was not reported by test-runner.
+[314257] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runInPodWithMultipleContainers result was not reported by test-runner.
+[314257] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runInPodNested result was not reported by test-runner.
+[314257] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runInPodNestedExplicitInherit result was not reported by test-runner.
+[314257] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runInPodWithExistingTemplate result was not reported by test-runner.
+[314257] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runWithEnvVariables result was not reported by test-runner.
+[314257] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runWithEnvVariablesInContext result was not reported by test-runner.
+[314257] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runWithOverriddenEnvVariables result was not reported by test-runner.
+[314257] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#supportComputerEnvVars result was not reported by test-runner.
+[314257] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runDirContext result was not reported by test-runner.
+[314257] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runInPodWithLivenessProbe result was not reported by test-runner.
+[314257] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#podTemplateWithMultipleLabels result was not reported by test-runner.
+[314257] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runWithActiveDeadlineSeconds result was not reported by test-runner.
+[314258] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runInPodWithRetention result was not reported by test-runner.
+[314258] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#terminatedPod result was not reported by test-runner.
+[314258] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#containerTerminated result was not reported by test-runner.
+[314258] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#errorPod result was not reported by test-runner.
+[314258] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#podDeadlineExceeded result was not reported by test-runner.
+[314258] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#interruptedPod result was not reported by test-runner.
+[314258] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#cascadingDelete result was not reported by test-runner.
+[314258] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#computerCantBeConfigured result was not reported by test-runner.
+[314258] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runInPodWithShowRawYamlFalse result was not reported by test-runner.
+[314258] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#showRawYamlFalseInherited result was not reported by test-runner.
+[314258] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#overrideYaml result was not reported by test-runner.
+[314258] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#mergeYaml result was not reported by test-runner.
+[314258] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#jenkinsSecretHidden result was not reported by test-runner.
+[314258] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#dynamicPVC result was not reported by test-runner.
+[314258] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#jnlpWorkingDir result was not reported by test-runner.
+[314258] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#sidecarWorkingDir result was not reported by test-runner.
+[314258] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runInDynamicallyCreatedContainer result was not reported by test-runner.
+[314258] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#basicWindows result was not reported by test-runner.
+[314259] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#windowsContainer result was not reported by test-runner.
+[314259] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#interruptedPodWindows result was not reported by test-runner.
+[314259] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#secretMaskingWindows result was not reported by test-runner.
+[314259] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#invalidPodGetsCancelled result was not reported by test-runner.
+[314259] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#octalPermissions result was not reported by test-runner.
+[314259] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineOverridenNamespaceTest#runWithStepOverriddenNamespace result was not reported by test-runner.
+[314259] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineOverridenNamespaceTest#runWithCloudOverriddenNamespace result was not reported by test-runner.
+[314259] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.WebSocketTest#webSocketAgent result was not reported by test-runner.
+[314260] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.NoDelayProvisionerStrategyTest#noDelayProvisionerCallsListener result was not reported by test-runner.
+[314260] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesDeclarativeAgentTest#declarative result was not reported by test-runner.
+[314260] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesDeclarativeAgentTest#declarativeSCMVars result was not reported by test-runner.
+[314260] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesDeclarativeAgentTest#declarativeFromYaml result was not reported by test-runner.
+[314260] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesDeclarativeAgentTest#declarativeWithNamespaceFromYaml result was not reported by test-runner.
+[314260] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesDeclarativeAgentTest#declarativeFromYamlFile result was not reported by test-runner.
+[314260] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesDeclarativeAgentTest#declarativeCustomWorkspace result was not reported by test-runner.
+[314260] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesDeclarativeAgentTest#declarativeCustomWorkingDir result was not reported by test-runner.
+[314260] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesDeclarativeAgentTest#declarativeWithNestedExplicitInheritance result was not reported by test-runner.
+[314260] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesDeclarativeAgentTest#declarativeWithNonexistentDockerImage result was not reported by test-runner.
+[314260] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesDeclarativeAgentTest#declarativeShowRawYamlFalse result was not reported by test-runner.
+[314260] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesSamplesTest#smokes result was not reported by test-runner.
+[314260] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.PodNameTest#multipleDots result was not reported by test-runner.
+[314261] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorPipelineTest#sshagent result was not reported by test-runner.
+[314261] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorPipelineTest#closedWebSocketExit result was not reported by test-runner.
+[314261] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorPipelineTest#envVarDollarSignEscaping result was not reported by test-runner.
+[314261] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorPipelineTest#docker result was not reported by test-runner.
+[314261] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.RestartPipelineTest#windowsRestart result was not reported by test-runner.
+[314261] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.RestartPipelineTest#nullLabelSupportsRestart result was not reported by test-runner.
+[314261] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.RestartPipelineTest#runInPodWithRestartWithMultipleContainerCalls result was not reported by test-runner.
+[314261] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.RestartPipelineTest#runInPodWithRestartWithLongSleep result was not reported by test-runner.
+[314261] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.RestartPipelineTest#terminatedPodAfterRestart result was not reported by test-runner.
+[314261] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.RestartPipelineTest#taskListenerAfterRestart result was not reported by test-runner.
+[314261] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.RestartPipelineTest#taskListenerAfterRestart_multipleLabels result was not reported by test-runner.
+[314261] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.RestartPipelineTest#getContainerLogWithRestart result was not reported by test-runner.
+[314261] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerLogStepTest#getContainerLog result was not reported by test-runner.
+[314262] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorTest#testCommandExecution result was not reported by test-runner.
+[314262] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorTest#testCommandExecutionFailure result was not reported by test-runner.
+[314262] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorTest#testCommandExecutionFailureHighError result was not reported by test-runner.
+[314262] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorTest#testQuietCommandExecution result was not reported by test-runner.
+[314262] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorTest#testCommandExecutionWithNohup result was not reported by test-runner.
+[314262] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorTest#commandsEscaping result was not reported by test-runner.
+[314262] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorTest#testCommandExecutionWithEscaping result was not reported by test-runner.
+[314262] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorTest#testCommandExecutionEscapingDoubleQuotes result was not reported by test-runner.
+[314262] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorTest#testCommandExecutionOutput result was not reported by test-runner.
+[314262] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorTest#testCommandExecutionWithNohupAndError result was not reported by test-runner.
+[314263] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorTest#testContainerDoesNotExist result was not reported by test-runner.
+[314263] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorTest#testRejectedExecutionException result was not reported by test-runner.
+[314263] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorTest#testContainerExecPerformance result was not reported by test-runner.
+[314263] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorTest#testContainerExecOnCustomWorkingDir result was not reported by test-runner.
+[314263] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorTest#testContainerExecOnCustomWorkingDirWithComputeEnvVars result was not reported by test-runner.
+[314533] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.KubectlBuildWrapperTest#kubectlBuildWrapper_missingCredentials result was not reported by test-runner.
+[314533] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.KubectlBuildWrapperTest#kubectlBuildWrapper_invalidCredentials result was not reported by test-runner.
+[314540] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.PodTemplateBuilderTest#testOverridesContainerSpec result was not reported by test-runner.
+[314540] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.PodTemplateBuilderTest#testBuildFromYaml result was not reported by test-runner.
+[314540] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.PodTemplateBuilderTest#testValidateDockerRegistryPrefixOverride result was not reported by test-runner.
+[314540] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.PodTemplateBuilderTest#testValidateDockerRegistryPrefixOverrideWithSlashSuffix result was not reported by test-runner.
+[314540] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.PodTemplateBuilderTest#testBuildFromTemplate result was not reported by test-runner.
+[314540] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.PodTemplateBuilderTest#testOverridesFromYaml result was not reported by test-runner.
+[314540] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.PodTemplateBuilderTest#testInheritsFromWithYaml result was not reported by test-runner.
+[314541] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.casc.VolumeCasCTest#roundTripTest result was not reported by test-runner.
+[314541] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.casc.WorkspaceVolumeCasCTest#roundTripTest result was not reported by test-runner.
+[314541] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.casc.EnvVarCasCTest#roundTripTest result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#substituteEnv result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#inheritFrom result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runInPod result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runIn2Pods result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runInPodFromYaml result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runInPodWithDifferentShell result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#bourneShellElsewhereInPath result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runInPodWithMultipleContainers result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runInPodNested result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runInPodNestedExplicitInherit result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runInPodWithExistingTemplate result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runWithEnvVariables result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runWithEnvVariablesInContext result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runWithOverriddenEnvVariables result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#supportComputerEnvVars result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runDirContext result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runInPodWithLivenessProbe result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#podTemplateWithMultipleLabels result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runWithActiveDeadlineSeconds result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runInPodWithRetention result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#terminatedPod result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#containerTerminated result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#errorPod result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#podDeadlineExceeded result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#interruptedPod result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#cascadingDelete result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#computerCantBeConfigured result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runInPodWithShowRawYamlFalse result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#showRawYamlFalseInherited result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#overrideYaml result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#mergeYaml result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#jenkinsSecretHidden result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#dynamicPVC result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#jnlpWorkingDir result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#sidecarWorkingDir result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#runInDynamicallyCreatedContainer result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#basicWindows result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#windowsContainer result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#interruptedPodWindows result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#secretMaskingWindows result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#invalidPodGetsCancelled result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineTest#octalPermissions result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineOverridenNamespaceTest#runWithStepOverriddenNamespace result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesPipelineOverridenNamespaceTest#runWithCloudOverriddenNamespace result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.WebSocketTest#webSocketAgent result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.NoDelayProvisionerStrategyTest#noDelayProvisionerCallsListener result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesDeclarativeAgentTest#declarative result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesDeclarativeAgentTest#declarativeSCMVars result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesDeclarativeAgentTest#declarativeFromYaml result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesDeclarativeAgentTest#declarativeWithNamespaceFromYaml result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesDeclarativeAgentTest#declarativeFromYamlFile result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesDeclarativeAgentTest#declarativeCustomWorkspace result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesDeclarativeAgentTest#declarativeCustomWorkingDir result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesDeclarativeAgentTest#declarativeWithNestedExplicitInheritance result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesDeclarativeAgentTest#declarativeWithNonexistentDockerImage result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesDeclarativeAgentTest#declarativeShowRawYamlFalse result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.KubernetesSamplesTest#smokes result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.PodNameTest#multipleDots result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorPipelineTest#sshagent result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorPipelineTest#closedWebSocketExit result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorPipelineTest#envVarDollarSignEscaping result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorPipelineTest#docker result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.RestartPipelineTest#windowsRestart result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.RestartPipelineTest#nullLabelSupportsRestart result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.RestartPipelineTest#runInPodWithRestartWithMultipleContainerCalls result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.RestartPipelineTest#runInPodWithRestartWithLongSleep result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.RestartPipelineTest#terminatedPodAfterRestart result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.RestartPipelineTest#taskListenerAfterRestart result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.RestartPipelineTest#taskListenerAfterRestart_multipleLabels result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.RestartPipelineTest#getContainerLogWithRestart result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerLogStepTest#getContainerLog result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorTest#testCommandExecution result was not reported by test-runner.
+[314542] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorTest#testCommandExecutionFailure result was not reported by test-runner.
+[314543] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorTest#testCommandExecutionFailureHighError result was not reported by test-runner.
+[314543] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorTest#testQuietCommandExecution result was not reported by test-runner.
+[314543] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorTest#testCommandExecutionWithNohup result was not reported by test-runner.
+[314543] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorTest#commandsEscaping result was not reported by test-runner.
+[314543] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorTest#testCommandExecutionWithEscaping result was not reported by test-runner.
+[314543] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorTest#testCommandExecutionEscapingDoubleQuotes result was not reported by test-runner.
+[314543] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorTest#testCommandExecutionOutput result was not reported by test-runner.
+[314543] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorTest#testCommandExecutionWithNohupAndError result was not reported by test-runner.
+[314543] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorTest#testContainerDoesNotExist result was not reported by test-runner.
+[314543] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorTest#testRejectedExecutionException result was not reported by test-runner.
+[314543] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorTest#testContainerExecPerformance result was not reported by test-runner.
+[314543] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorTest#testContainerExecOnCustomWorkingDir result was not reported by test-runner.
+[314543] WARN CoverageRunner - Test [Manual]TestMethod=org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecoratorTest#testContainerExecOnCustomWorkingDirWithComputeEnvVars result was not reported by test-runner.
+[314674] INFO CoverageRunner - Tests found: 450
+[314674] INFO CoverageRunner - Tests executed: 254
+02:06:32.051 [main] INFO  fr.inria.jtravis.JTravis - GitHub ratelimit: Limit: 5000 Remaining: 2085 Reset hour: 00:14:00
+02:06:33.217 [main] WARN  f.i.s.r.p.s.p.PushFaultLocalizationSuggestionsOnExternalRepository - Flacoco has found 36 suspicious lines, but none were matched to the diff
+02:06:33.748 [main] INFO  f.i.s.r.p.s.f.FlacocoLocalization - 
+02:06:34.565 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:06:34.566 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE EXECUTION SUMMARY
+02:06:34.566 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:06:34.566 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneCheckoutGitPullRequest..........................SUCCESS [  15 s ]
+02:06:34.566 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject.........................................SUCCESS [ 597 s ]
+02:06:34.566 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject..........................................SUCCESS [ 880 s ]
+02:06:34.566 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath.....................................SUCCESS [  26 s ]
+02:06:34.566 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir.....................................SUCCESS [   0 s ]
+02:06:34.566 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir.......................................SUCCESS [   0 s ]
+02:06:34.566 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation................................SUCCESS [   0 s ]
+02:06:34.566 [main] INFO  f.i.s.r.p.i.ProjectInspector - FlacocoLocalization..................................SUCCESS [ 314 s ]
+02:06:34.566 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushFaultLocalizationSuggestionsOnExternalRepository.SUCCESS          
+02:06:34.567 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:06:34.567 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE FINDING: TEST FAILURE
+02:06:34.567 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+02:06:34.567 [main] INFO  f.i.s.r.p.github.GithubMainProcess - Inspector is finished. The process will exit now.
