@@ -6,7 +6,7 @@ This directory contains the data related to the pull requests analyzed by Flacoc
 
 The following table shows the pull requests analyzed by Flacocobot executed in the "shadow experiment" mode.
 
-- FL - Found Location: it indicates that Flacocobot found suspicious lines associated with the failure;
+- FSL - Found Suspicious Lines: it indicates that Flacocobot found suspicious lines associated with the failure;
 - NF - Not Failing: it indicates that it has not been possible to reproduce the failure;
 - NT - Not Testable: it indicates that it has not been possible to execute the test cases (e.g., it has not been possible to detect the test cases);
 - NC - Not Clonable: it indicates that it has not been possible to clone the repository;
