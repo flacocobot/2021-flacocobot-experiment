@@ -42,7 +42,7 @@ Project;# Pull Request;FSL;NF;NT;NC;NB;Suggested Lines;Details
 ;[1371](https://github.com/FluentLenium/FluentLenium/pull/1371);[0](data/FluentLenium_FluentLenium/log-files/FluentLenium_FluentLenium_pull1371.log);;;;;;
 ;[1380](https://github.com/FluentLenium/FluentLenium/pull/1380);[0*](data/FluentLenium_FluentLenium/log-files/FluentLenium_FluentLenium_pull1380.log);;;;;;
 ;[1382](https://github.com/FluentLenium/FluentLenium/pull/1382);[0*](data/FluentLenium_FluentLenium/log-files/FluentLenium_FluentLenium_pull1382.log);;;;;;
-;[1388](https://github.com/FluentLenium/FluentLenium/pull/1382);[0](data/FluentLenium_FluentLenium/log-files/FluentLenium_FluentLenium_pull1388.log);;;;;;
+;[1388](https://github.com/FluentLenium/FluentLenium/pull/1388);[0](data/FluentLenium_FluentLenium/log-files/FluentLenium_FluentLenium_pull1388.log);;;;;;
 ;[1389](https://github.com/FluentLenium/FluentLenium/pull/1389);[0](data/FluentLenium_FluentLenium/log-files/FluentLenium_FluentLenium_pull1389.log);;;;;;
 ;[1390](https://github.com/FluentLenium/FluentLenium/pull/1390);[0](data/FluentLenium_FluentLenium/log-files/FluentLenium_FluentLenium_pull1390.log);;;;;;
 ;[1391](https://github.com/FluentLenium/FluentLenium/pull/1391);[0](data/FluentLenium_FluentLenium/log-files/FluentLenium_FluentLenium_pull1391.log);;;;;;
@@ -53,7 +53,7 @@ Project;# Pull Request;FSL;NF;NT;NC;NB;Suggested Lines;Details
 ;[1079](https://github.com/jenkinsci/kubernetes-plugin/pull/1079);;[x](data/jenkinsci_kubernetes-plugin/log-files/jenkinsci_kubernetes-plugin_pull1079.log);;;;;
 ;[1080](https://github.com/jenkinsci/kubernetes-plugin/pull/1080);;[x](data/jenkinsci_kubernetes-plugin/log-files/jenkinsci_kubernetes-plugin_pull1080.log);;;;;
 ;[1082](https://github.com/jenkinsci/kubernetes-plugin/pull/1082);;[x](data/jenkinsci_kubernetes-plugin/log-files/jenkinsci_kubernetes-plugin_pull1082.log);;;;;
-;[1083](https://github.com/jenkinsci/kubernetes-plugin/pull/1083);[x](data/jenkinsci_kubernetes-plugin/log-files/jenkinsci_kubernetes-plugin_pull1083.log);;;;;;[Link](data/jenkinsci_kubernetes-plugin/suspicious-lines/1083)
+;[1083](https://github.com/jenkinsci/kubernetes-plugin/pull/1083);[x](data/jenkinsci_kubernetes-plugin/log-files/jenkinsci_kubernetes-plugin_pull1083.log);;;;;[Link](data/jenkinsci_kubernetes-plugin/suspicious-lines/1083);
 [apache/shardingsphere](https://github.com/apache/shardingsphere);;;;;;;;[Link](data/apache_shardingsphere)
 ;[13889](https://github.com/apache/shardingsphere/pull/13889);;[x](data/apache_shardingsphere/log-files/apache_shardingsphere_pull13889.log);;;;;
 ;[13894](https://github.com/apache/shardingsphere/pull/13894);;;;;[x](data/apache_shardingsphere/log-files/apache_shardingsphere_pull13894.log);;
