@@ -23,8 +23,7 @@ Project;# Pull Request;FSL;NF;NT;NC;NB;Suggested Lines;Details
 ;[2250](https://github.com/liquibase/liquibase/pull/2250);[x](data/liquibase_liquibase/log-files/liquibase_liquibase_pull2250.log);;;;;[Link](data/liquibase_liquibase/suspicious-lines/2250);
 ;[2252](https://github.com/liquibase/liquibase/pull/2252);[x](data/liquibase_liquibase/log-files/liquibase_liquibase_pull2252.log);;;;;[Link](data/liquibase_liquibase/suspicious-lines/2252);
 [pentaho/pentaho-kettle](https://github.com/pentaho/pentaho-kettle);;;;;;;;[Link](data/pentaho_pentaho-kettle)
-;[8154](https://github.com/pentaho/pentaho-kettle/pull/8154);[x](data/pentaho_pentaho-kettle/log-files/pentaho_pentaho-kettle_pull8154-1.log);;;;;[Update 1](data/pentaho_pentaho-kettle/suspicious-lines/8154/01);
-;;[x](data/pentaho_pentaho-kettle/log-files/pentaho_pentaho-kettle_pull8154-2.log);;;;;[Update 2](data/pentaho_pentaho-kettle/suspicious-lines/8154/02);
+;[8154](https://github.com/pentaho/pentaho-kettle/pull/8154);[x](data/pentaho_pentaho-kettle/log-files/pentaho_pentaho-kettle_pull8154.log);;;;;[Link](data/pentaho_pentaho-kettle/suspicious-lines/8154);
 [sofastack/sofa-jraft](https://github.com/sofastack/sofa-jraft);;;;;;;;[Link](data/sofastack_sofa-jraft)
 ;[729](https://github.com/sofastack/sofa-jraft/pull/729);[x](data/sofastack_sofa-jraft/log-files/sofastack_sofa-jraft_pull729.log);;;;;[Link](data/sofastack_sofa-jraft/suspicious-lines/729);
 [tabulapdf/tabula-java](https://github.com/tabulapdf/tabula-java);;;;;;;;[Link](data/tabulapdf_tabula-java)
