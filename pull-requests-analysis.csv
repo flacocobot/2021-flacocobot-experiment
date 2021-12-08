@@ -2,18 +2,11 @@ Project;# Pull Request;FSL;NF;NT;NC;NB;Suggested Lines;Details
 [apache/rocketmq](https://github.com/apache/rocketmq);;;;;;;;[Link](data/apache_rocketmq)
 ;[3554](https://github.com/apache/rocketmq/pull/3554);;[x](data/apache_rocketmq/log-files/apache_rocketmq_pull3554-1.log);;;;;
 ;;[x](data/apache_rocketmq/log-files/apache_rocketmq_pull3554-2.log);;;;;[Link](data/apache_rocketmq/suspicious-lines/3554);
-;[3555](https://github.com/apache/rocketmq/pull/3555);[x](data/apache_rocketmq/log-files/apache_rocketmq_pull3555-1.log);;;;;[Update 1](data/apache_rocketmq/suspicious-lines/3555/01);
-;;[x](data/apache_rocketmq/log-files/apache_rocketmq_pull3555-2.log);;;;;[Update 2](data/apache_rocketmq/suspicious-lines/3555/02);
-;;[x](data/apache_rocketmq/log-files/apache_rocketmq_pull3555-3.log);;;;;[Update 3](data/apache_rocketmq/suspicious-lines/3555/03);
-;;[x](data/apache_rocketmq/log-files/apache_rocketmq_pull3555-4.log);;;;;[Update 4](data/apache_rocketmq/suspicious-lines/3555/04);
+;[3555](https://github.com/apache/rocketmq/pull/3555);[x](data/apache_rocketmq/log-files/apache_rocketmq_pull3555.log);;;;;[Link](data/apache_rocketmq/suspicious-lines/3555);
 ;[3570](https://github.com/apache/rocketmq/pull/3570);[x](data/apache_rocketmq/log-files/apache_rocketmq_pull3570.log);;;;;[Link](data/apache_rocketmq/suspicious-lines/3570);
-;[3581](https://github.com/apache/rocketmq/pull/3581);[x](data/apache_rocketmq/log-files/apache_rocketmq_pull3581-1.log);;;;;[Update 1](data/apache_rocketmq/suspicious-lines/3581/01);
-;;[x](data/apache_rocketmq/log-files/apache_rocketmq_pull3581-2.log);;;;;[Update 2](data/apache_rocketmq/suspicious-lines/3581/02);
-;;[x](data/apache_rocketmq/log-files/apache_rocketmq_pull3581-3.log);;;;;[Update 3](data/apache_rocketmq/suspicious-lines/3581/03);
-;;[x](data/apache_rocketmq/log-files/apache_rocketmq_pull3581-4.log);;;;;[Update 4](data/apache_rocketmq/suspicious-lines/3581/04);
+;[3581](https://github.com/apache/rocketmq/pull/3581);[x](data/apache_rocketmq/log-files/apache_rocketmq_pull3581.log);;;;;[Link](data/apache_rocketmq/suspicious-lines/3581);
 ;[3586](https://github.com/apache/rocketmq/pull/3586);[x](data/apache_rocketmq/log-files/apache_rocketmq_pull3586.log);;;;;[Link](data/apache_rocketmq/suspicious-lines/3586);
-;[3591](https://github.com/apache/rocketmq/pull/3591);[x](data/apache_rocketmq/log-files/apache_rocketmq_pull3591-1.log);;;;;[Update 1](data/apache_rocketmq/suspicious-lines/3591/01);
-;;[x](data/apache_rocketmq/log-files/apache_rocketmq_pull3591-2.log);;;;;[Update 2](data/apache_rocketmq/suspicious-lines/3591/02);
+;[3591](https://github.com/apache/rocketmq/pull/3591);[x](data/apache_rocketmq/log-files/apache_rocketmq_pull3591.log);;;;;[Link](data/apache_rocketmq/suspicious-lines/3591);
 ;[3595](https://github.com/apache/rocketmq/pull/3595);[x](data/apache_rocketmq/log-files/apache_rocketmq_pull3595-1.log);;;;;[Update 1](data/apache_rocketmq/suspicious-lines/3595/01);
 ;;[x](data/apache_rocketmq/log-files/apache_rocketmq_pull3595-2.log);;;;;[Update 2](data/apache_rocketmq/suspicious-lines/3595/02);
 [confluentinc/kafka-connect-jdbc](https://github.com/confluentinc/kafka-connect-jdbc);;;;;;;;[Link](data/confluentinc_kafka-connect-jdbc)
