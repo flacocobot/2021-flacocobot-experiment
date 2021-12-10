@@ -1,0 +1,48 @@
+Execute pipeline with following supplementary args: --smtpPort 25 --listenerMode NOOP --launcherMode FAULT_LOCALIZATION  --gitrepourl https://github.com/INRIA/spoon --gitrepopullrequest 4344
+java -cp /usr/local/openjdk-11/lib/tools.jar:repairnator-pipeline.jar -Dlogback.configurationFile=/root/logback.xml fr.inria.spirals.repairnator.pipeline.Launcher -d --runId null -o /var/log --ghOauth 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 --faultLocalization --flacocoThreshold 0.0 --flacocoTopK null --ghOauth  --smtpPort 25 --listenerMode NOOP --launcherMode FAULT_LOCALIZATION  --gitrepourl https://github.com/INRIA/spoon --gitrepopullrequest 4344
+
+10:36:40.509 [main] INFO  f.i.s.r.p.g.GithubInitSerializerEngines - Initialize file serializer engines.
+10:36:40.511 [main] INFO  f.i.s.r.p.g.GithubInitSerializerEngines - MongoDB won't be used for serialization.
+10:36:40.511 [main] INFO  f.i.s.r.p.github.GithubInitNotifiers - The email notifier engine won't be used.
+10:36:40.523 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+10:36:40.523 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE STEPS
+10:36:40.523 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+10:36:40.523 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneCheckoutGitPullRequest
+10:36:40.523 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject
+10:36:40.523 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject
+10:36:40.524 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath
+10:36:40.524 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir
+10:36:40.524 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir
+10:36:40.524 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation
+10:36:40.524 [main] INFO  f.i.s.r.p.i.ProjectInspector - FlacocoLocalization
+10:36:40.524 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushFaultLocalizationSuggestions
+10:36:40.524 [main] INFO  f.i.s.r.p.s.CloneCheckoutGitPullRequest - Cloning repository https://github.com/INRIA/spoon.git in the following directory: ./workspace/INRIA-spoon-master-4344_repo
+10:41:58.211 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - 1 source dir was found:
+10:41:58.212 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/INRIA-spoon-master-4344_repo/src/main/java
+10:41:58.260 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - It seems the step is entering in a loop while searching the test dir. The following file has already been visited: /root/workspace/INRIA-spoon-master-4344_repo/pom.xml
+10:41:58.260 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - 1 test dir was found:
+10:41:58.260 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/INRIA-spoon-master-4344_repo/src/test/java
+10:41:58.584 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation - ---Test results---
+10:41:58.584 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Total tests: 2141
+10:41:58.584 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Tests run: 2123
+10:41:58.584 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Tests passing: 2123
+10:41:58.584 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Failures: 0
+10:41:58.584 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Errors: 0
+10:41:58.584 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Skipped: 18
+10:41:58.585 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation - 
+10:41:59.391 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+10:41:59.391 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE EXECUTION SUMMARY
+10:41:59.392 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+10:41:59.392 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneCheckoutGitPullRequest..........................SUCCESS [   9 s ]
+10:41:59.392 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject.........................................SUCCESS [  63 s ]
+10:41:59.392 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject..........................................SUCCESS [ 238 s ]
+10:41:59.392 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath.....................................SUCCESS [   7 s ]
+10:41:59.392 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir.....................................SUCCESS [   0 s ]
+10:41:59.392 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir.......................................SUCCESS [   0 s ]
+10:41:59.392 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation................................FAILURE [   0 s ]
+10:41:59.392 [main] INFO  f.i.s.r.p.i.ProjectInspector - FlacocoLocalization..................................NOT RUN          
+10:41:59.392 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushFaultLocalizationSuggestions.....................NOT RUN          
+10:41:59.392 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+10:41:59.392 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE FINDING: NOTFAILING
+10:41:59.392 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+10:41:59.392 [main] INFO  f.i.s.r.p.github.GithubMainProcess - Inspector is finished. The process will exit now.

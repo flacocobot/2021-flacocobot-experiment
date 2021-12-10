@@ -1,0 +1,50 @@
+Execute pipeline with following supplementary args: --smtpPort 25 --listenerMode NOOP --launcherMode FAULT_LOCALIZATION  --gitrepourl https://github.com/classgraph/classgraph --gitrepopullrequest 606
+java -cp /usr/local/openjdk-11/lib/tools.jar:repairnator-pipeline.jar -Dlogback.configurationFile=/root/logback.xml fr.inria.spirals.repairnator.pipeline.Launcher -d --runId null -o /var/log --ghOauth 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 --faultLocalization --flacocoThreshold 0.0 --flacocoTopK null --ghOauth  --smtpPort 25 --listenerMode NOOP --launcherMode FAULT_LOCALIZATION  --gitrepourl https://github.com/classgraph/classgraph --gitrepopullrequest 606
+
+16:13:08.837 [main] INFO  f.i.s.r.p.g.GithubInitSerializerEngines - Initialize file serializer engines.
+16:13:08.839 [main] INFO  f.i.s.r.p.g.GithubInitSerializerEngines - MongoDB won't be used for serialization.
+16:13:08.839 [main] INFO  f.i.s.r.p.github.GithubInitNotifiers - The email notifier engine won't be used.
+16:13:08.854 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+16:13:08.854 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE STEPS
+16:13:08.854 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+16:13:08.854 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneCheckoutGitPullRequest
+16:13:08.854 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject
+16:13:08.854 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject
+16:13:08.854 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath
+16:13:08.854 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir
+16:13:08.854 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir
+16:13:08.854 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation
+16:13:08.854 [main] INFO  f.i.s.r.p.i.ProjectInspector - FlacocoLocalization
+16:13:08.854 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushFaultLocalizationSuggestions
+16:13:08.854 [main] INFO  f.i.s.r.p.s.CloneCheckoutGitPullRequest - Cloning repository https://github.com/classgraph/classgraph.git in the following directory: ./workspace/classgraph-classgraph-master-606_repo
+16:14:16.834 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - 1 source dir was found:
+16:14:16.834 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/classgraph-classgraph-master-606_repo/src/main/java
+16:14:16.883 [main] ERROR f.i.s.r.process.maven.MavenHelper - Error while building complete model. The raw model will be used. Error message: 1 problem was encountered while building the effective model for io.github.classgraph:classgraph:4.8.138-SNAPSHOT
+[ERROR] Failed to determine Java version for profile jdk9plus @ 
+
+16:14:16.892 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - 1 test dir was found:
+16:14:16.892 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/classgraph-classgraph-master-606_repo/src/test/java
+16:14:17.042 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation - ---Test results---
+16:14:17.043 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Total tests: 164
+16:14:17.043 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Tests run: 162
+16:14:17.043 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Tests passing: 162
+16:14:17.043 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Failures: 0
+16:14:17.043 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Errors: 0
+16:14:17.043 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Skipped: 2
+16:14:17.043 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation - 
+16:14:17.259 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+16:14:17.260 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE EXECUTION SUMMARY
+16:14:17.260 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+16:14:17.260 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneCheckoutGitPullRequest...........................SUCCESS [  7 s ]
+16:14:17.260 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject..........................................SUCCESS [ 23 s ]
+16:14:17.260 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject...........................................SUCCESS [ 30 s ]
+16:14:17.260 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath......................................SUCCESS [  7 s ]
+16:14:17.260 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir......................................SUCCESS [  0 s ]
+16:14:17.260 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir........................................SUCCESS [  0 s ]
+16:14:17.260 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation.................................FAILURE [  0 s ]
+16:14:17.260 [main] INFO  f.i.s.r.p.i.ProjectInspector - FlacocoLocalization...................................NOT RUN         
+16:14:17.260 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushFaultLocalizationSuggestions......................NOT RUN         
+16:14:17.260 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+16:14:17.261 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE FINDING: NOTFAILING
+16:14:17.261 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+16:14:17.261 [main] INFO  f.i.s.r.p.github.GithubMainProcess - Inspector is finished. The process will exit now.
