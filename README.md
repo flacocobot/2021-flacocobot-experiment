@@ -2,11 +2,12 @@
 
 This directory contains the data related to the pull requests analyzed by Flacocobot.
 
-## Shadow Experiment Mode
+## Experiment Details
 
-Flacocobot scanned 15 Java projects that use Maven as building system. In total, Flacocobot analyzed 47 pull requests, and it found suspicious lines for 22 of them. In particular, for 4 pull requests, Flacocobot managed to find suspicious lines contained in the diff between the main code base and the changes created by the pull requests.
+Flacocobot scanned 22 Java projects that use Maven as building system. In total, Flacocobot analyzed 58 pull requests. Among them, 19 fail due to
+test failures or errors related to the logic of the program, and Flacocobot found suspicious lines for 16 of them (84.21%).
 
-The following table shows the pull requests analyzed by Flacocobot executed in the "shadow experiment" mode.
+The following table shows the pull requests analyzed by Flacocobot.
 
 - FSL - Found Suspicious Lines: it indicates that Flacocobot found suspicious lines associated with the failure;
 - NF - Not Failing: it indicates that it has not been possible to reproduce the failure;
