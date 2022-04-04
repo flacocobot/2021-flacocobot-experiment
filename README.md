@@ -1,6 +1,17 @@
 # Flacocobot Experiment Data
 
-This directory contains the data related to the pull requests analyzed by Flacocobot.
+If you use this data, please cite "[FLACOCO: Fault Localization for Java based on Industry-grade Coverage](http://arxiv.org/pdf/2111.12513)", Technical report, arXiv 2111.12513, 2021. 
+
+```bibtex
+@techreport{flacoco2021,
+ title = {FLACOCO: Fault Localization for Java based on Industry-grade Coverage},
+ year = {2021},
+ author = {André Silva and Matias Martinez and Benjamin Danglot and Davide Ginelli and Martin Monperrus},
+ url = {http://arxiv.org/pdf/2111.12513},
+ number = {2111.12513},
+ institution = {arXiv},
+}
+```
 
 ## Experiment Details
 
